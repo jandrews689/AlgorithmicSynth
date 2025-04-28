@@ -14,9 +14,9 @@ using namespace seed;
 
 DaisySeed hw;
 clasCapTouch objTouch;
-clasEulersOscillator<16> objLeadVoice;
-clasSecondOrderFilter objLPFLeadVoice;
 
+//OSCILLATORS//////////////////////////////////////////
+clasEulersOscillator<16> objLeadVoice;
 clasOscillator objLFOSlow;
 clasOscillator objLFOFast;
 
@@ -39,14 +39,8 @@ float adcPT9;
 float adcPT10;
 
 //FILTERS//////////////////////////////////////////////
-static OnePole objFilter1;
-static OnePole objFilter2;
-
 static clasSecondOrderFilter objLPFDrone;
-
-
-
-
+static clasSecondOrderFilter objLPFLeadVoice;
 
 //INTERRUPTS AND CALLBACKS//////////////////////////////////
 //Main audio call back function 
