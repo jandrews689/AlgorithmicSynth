@@ -1,0 +1,2286 @@
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"oscillator.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.section	.text._ZN14clasOscillator4InitEf8OSC_TYPE,"ax",%progbits
+  17              		.align	1
+  18              		.global	_ZN14clasOscillator4InitEf8OSC_TYPE
+  19              		.arch armv7e-m
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv5-d16
+  25              	_ZN14clasOscillator4InitEf8OSC_TYPE:
+  26              	.LFB550:
+  27              		.file 1 "oscillator.cpp"
+   1:oscillator.cpp **** #include "oscillator.h"
+   2:oscillator.cpp **** 
+   3:oscillator.cpp **** void clasOscillator::Init(float SampleRate, OSC_TYPE type){
+  28              		.loc 1 3 59
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 16
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+  32 0000 80B5     		push	{r7, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 84B0     		sub	sp, sp, #16
+  37              		.cfi_def_cfa_offset 24
+  38 0004 00AF     		add	r7, sp, #0
+  39              		.cfi_def_cfa_register 7
+  40 0006 F860     		str	r0, [r7, #12]
+  41 0008 87ED020A 		vstr.32	s0, [r7, #8]
+  42 000c 0B46     		mov	r3, r1
+  43 000e FB71     		strb	r3, [r7, #7]
+   4:oscillator.cpp ****     OSCILLATOR_TYPE_ = type;
+  44              		.loc 1 4 22
+  45 0010 FB68     		ldr	r3, [r7, #12]
+  46 0012 FA79     		ldrb	r2, [r7, #7]
+  47 0014 9A77     		strb	r2, [r3, #30]
+   5:oscillator.cpp **** 
+   6:oscillator.cpp ****     switch(OSCILLATOR_TYPE_){
+  48              		.loc 1 6 12
+  49 0016 FB68     		ldr	r3, [r7, #12]
+  50 0018 9B7F     		ldrb	r3, [r3, #30]	@ zero_extendqisi2
+  51              		.loc 1 6 5
+  52 001a 022B     		cmp	r3, #2
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 2
+
+
+  53 001c 16D0     		beq	.L2
+  54 001e 022B     		cmp	r3, #2
+  55 0020 1CDC     		bgt	.L3
+  56 0022 002B     		cmp	r3, #0
+  57 0024 02D0     		beq	.L4
+  58 0026 012B     		cmp	r3, #1
+  59 0028 08D0     		beq	.L5
+  60 002a 17E0     		b	.L3
+  61              	.L4:
+   7:oscillator.cpp ****         case OSC_NORMAL:
+   8:oscillator.cpp ****             flFreq_ = 100.0f;
+  62              		.loc 1 8 21
+  63 002c FB68     		ldr	r3, [r7, #12]
+  64 002e 294A     		ldr	r2, .L6
+  65 0030 9A60     		str	r2, [r3, #8]	@ float
+   9:oscillator.cpp ****             flAmplitude_ = 1.0f;
+  66              		.loc 1 9 26
+  67 0032 FB68     		ldr	r3, [r7, #12]
+  68 0034 4FF07E52 		mov	r2, #1065353216
+  69 0038 5A61     		str	r2, [r3, #20]	@ float
+  10:oscillator.cpp ****         break;
+  70              		.loc 1 10 9
+  71 003a 0FE0     		b	.L3
+  72              	.L5:
+  11:oscillator.cpp ****         case OSC_LFO_SLOW:
+  12:oscillator.cpp ****             flFreq_ = 2.5f;
+  73              		.loc 1 12 21
+  74 003c FB68     		ldr	r3, [r7, #12]
+  75 003e 264A     		ldr	r2, .L6+4
+  76 0040 9A60     		str	r2, [r3, #8]	@ float
+  13:oscillator.cpp ****             flAmplitude_ = 1.0f;
+  77              		.loc 1 13 26
+  78 0042 FB68     		ldr	r3, [r7, #12]
+  79 0044 4FF07E52 		mov	r2, #1065353216
+  80 0048 5A61     		str	r2, [r3, #20]	@ float
+  14:oscillator.cpp ****         break;
+  81              		.loc 1 14 9
+  82 004a 07E0     		b	.L3
+  83              	.L2:
+  15:oscillator.cpp ****         case OSC_LFO_FAST:
+  16:oscillator.cpp ****             flFreq_ = 10.0f;
+  84              		.loc 1 16 21
+  85 004c FB68     		ldr	r3, [r7, #12]
+  86 004e 234A     		ldr	r2, .L6+8
+  87 0050 9A60     		str	r2, [r3, #8]	@ float
+  17:oscillator.cpp ****             flAmplitude_ = 1.0f;
+  88              		.loc 1 17 26
+  89 0052 FB68     		ldr	r3, [r7, #12]
+  90 0054 4FF07E52 		mov	r2, #1065353216
+  91 0058 5A61     		str	r2, [r3, #20]	@ float
+  18:oscillator.cpp ****         break;
+  92              		.loc 1 18 9
+  93 005a 00BF     		nop
+  94              	.L3:
+  19:oscillator.cpp ****     }
+  20:oscillator.cpp **** 
+  21:oscillator.cpp ****     flSamplingRate_ = SampleRate;
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 3
+
+
+  95              		.loc 1 21 21
+  96 005c FB68     		ldr	r3, [r7, #12]
+  97 005e BA68     		ldr	r2, [r7, #8]	@ float
+  98 0060 1A60     		str	r2, [r3]	@ float
+  22:oscillator.cpp ****     flSamplingRateRecip_ = 1.0f / SampleRate;
+  99              		.loc 1 22 33
+ 100 0062 F7EE006A 		vmov.f32	s13, #1.0e+0
+ 101 0066 97ED027A 		vldr.32	s14, [r7, #8]
+ 102 006a C6EE877A 		vdiv.f32	s15, s13, s14
+ 103              		.loc 1 22 26
+ 104 006e FB68     		ldr	r3, [r7, #12]
+ 105 0070 C3ED017A 		vstr.32	s15, [r3, #4]
+  23:oscillator.cpp ****     uiRatio_ = 1;
+ 106              		.loc 1 23 14
+ 107 0074 FB68     		ldr	r3, [r7, #12]
+ 108 0076 0122     		movs	r2, #1
+ 109 0078 5A77     		strb	r2, [r3, #29]
+  24:oscillator.cpp ****     flPhase_ = 0.0f;
+ 110              		.loc 1 24 14
+ 111 007a FB68     		ldr	r3, [r7, #12]
+ 112 007c 4FF00002 		mov	r2, #0
+ 113 0080 DA60     		str	r2, [r3, #12]	@ float
+  25:oscillator.cpp ****     flPhaseInc_ = fxCalculatePhaseInc(flFreq_ * uiRatio_);
+ 114              		.loc 1 25 39
+ 115 0082 FB68     		ldr	r3, [r7, #12]
+ 116 0084 93ED027A 		vldr.32	s14, [r3, #8]
+ 117              		.loc 1 25 49
+ 118 0088 FB68     		ldr	r3, [r7, #12]
+ 119 008a 5B7F     		ldrb	r3, [r3, #29]	@ zero_extendqisi2
+ 120 008c 07EE903A 		vmov	s15, r3	@ int
+ 121              		.loc 1 25 38
+ 122 0090 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 123 0094 67EE277A 		vmul.f32	s15, s14, s15
+ 124 0098 B0EE670A 		vmov.f32	s0, s15
+ 125 009c F868     		ldr	r0, [r7, #12]
+ 126 009e FFF7FEFF 		bl	_ZN14clasOscillator19fxCalculatePhaseIncEf
+ 127 00a2 F0EE407A 		vmov.f32	s15, s0
+ 128              		.loc 1 25 17
+ 129 00a6 FB68     		ldr	r3, [r7, #12]
+ 130 00a8 C3ED047A 		vstr.32	s15, [r3, #16]
+  26:oscillator.cpp ****     flPulseWidth_ = 0.5f;
+ 131              		.loc 1 26 19
+ 132 00ac FB68     		ldr	r3, [r7, #12]
+ 133 00ae 4FF07C52 		mov	r2, #1056964608
+ 134 00b2 9A61     		str	r2, [r3, #24]	@ float
+  27:oscillator.cpp ****     uiWaveform_ = WAVE_SIN;
+ 135              		.loc 1 27 17
+ 136 00b4 FB68     		ldr	r3, [r7, #12]
+ 137 00b6 0022     		movs	r2, #0
+ 138 00b8 1A77     		strb	r2, [r3, #28]
+  28:oscillator.cpp ****     
+  29:oscillator.cpp ****     flDepth_ = 1.0f;
+ 139              		.loc 1 29 14
+ 140 00ba FB68     		ldr	r3, [r7, #12]
+ 141 00bc 4FF07E52 		mov	r2, #1065353216
+ 142 00c0 1A62     		str	r2, [r3, #32]	@ float
+  30:oscillator.cpp ****     flMaxDepth_ = 0.5f;
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 4
+
+
+ 143              		.loc 1 30 17
+ 144 00c2 FB68     		ldr	r3, [r7, #12]
+ 145 00c4 4FF07C52 		mov	r2, #1056964608
+ 146 00c8 5A62     		str	r2, [r3, #36]	@ float
+  31:oscillator.cpp **** }
+ 147              		.loc 1 31 1
+ 148 00ca 00BF     		nop
+ 149 00cc 1037     		adds	r7, r7, #16
+ 150              		.cfi_def_cfa_offset 8
+ 151 00ce BD46     		mov	sp, r7
+ 152              		.cfi_def_cfa_register 13
+ 153              		@ sp needed
+ 154 00d0 80BD     		pop	{r7, pc}
+ 155              	.L7:
+ 156 00d2 00BF     		.align	2
+ 157              	.L6:
+ 158 00d4 0000C842 		.word	1120403456
+ 159 00d8 00002040 		.word	1075838976
+ 160 00dc 00002041 		.word	1092616192
+ 161              		.cfi_endproc
+ 162              	.LFE550:
+ 164              		.section	.text._ZN14clasOscillator7ProcessEv,"ax",%progbits
+ 165              		.align	1
+ 166              		.global	_ZN14clasOscillator7ProcessEv
+ 167              		.syntax unified
+ 168              		.thumb
+ 169              		.thumb_func
+ 170              		.fpu fpv5-d16
+ 172              	_ZN14clasOscillator7ProcessEv:
+ 173              	.LFB551:
+  32:oscillator.cpp **** 
+  33:oscillator.cpp **** 
+  34:oscillator.cpp **** float clasOscillator::Process(){
+ 174              		.loc 1 34 32
+ 175              		.cfi_startproc
+ 176              		@ args = 0, pretend = 0, frame = 16
+ 177              		@ frame_needed = 1, uses_anonymous_args = 0
+ 178 0000 80B5     		push	{r7, lr}
+ 179              		.cfi_def_cfa_offset 8
+ 180              		.cfi_offset 7, -8
+ 181              		.cfi_offset 14, -4
+ 182 0002 84B0     		sub	sp, sp, #16
+ 183              		.cfi_def_cfa_offset 24
+ 184 0004 00AF     		add	r7, sp, #0
+ 185              		.cfi_def_cfa_register 7
+ 186 0006 7860     		str	r0, [r7, #4]
+  35:oscillator.cpp ****     float flOutput = 0.0f;
+ 187              		.loc 1 35 11
+ 188 0008 4FF00003 		mov	r3, #0
+ 189 000c FB60     		str	r3, [r7, #12]	@ float
+  36:oscillator.cpp ****     switch(uiWaveform_){
+ 190              		.loc 1 36 12
+ 191 000e 7B68     		ldr	r3, [r7, #4]
+ 192 0010 1B7F     		ldrb	r3, [r3, #28]	@ zero_extendqisi2
+ 193 0012 032B     		cmp	r3, #3
+ 194 0014 5AD8     		bhi	.L9
+ 195 0016 01A2     		adr	r2, .L11
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 5
+
+
+ 196 0018 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+ 197              		.p2align 2
+ 198              	.L11:
+ 199 001c 2D000000 		.word	.L14+1
+ 200 0020 49000000 		.word	.L13+1
+ 201 0024 93000000 		.word	.L12+1
+ 202 0028 AB000000 		.word	.L10+1
+ 203              		.p2align 1
+ 204              	.L14:
+  37:oscillator.cpp ****         case WAVE_SIN:
+  38:oscillator.cpp ****             flOutput = sinf(flPhase_ * (2.0f * PI_F));
+ 205              		.loc 1 38 29
+ 206 002c 7B68     		ldr	r3, [r7, #4]
+ 207 002e D3ED037A 		vldr.32	s15, [r3, #12]
+ 208              		.loc 1 38 28
+ 209 0032 9FED3E7A 		vldr.32	s14, .L30
+ 210 0036 67EE877A 		vmul.f32	s15, s15, s14
+ 211 003a B0EE670A 		vmov.f32	s0, s15
+ 212 003e FFF7FEFF 		bl	sinf
+ 213 0042 87ED030A 		vstr.32	s0, [r7, #12]
+  39:oscillator.cpp ****             break;
+ 214              		.loc 1 39 13
+ 215 0046 45E0     		b	.L15
+ 216              	.L13:
+  40:oscillator.cpp ****         case WAVE_TRI:
+  41:oscillator.cpp ****             flOutput = flPhase_ < flPulseWidth_ ? (4 * flPhase_ - 1) : (-4 * flPhase_ + 3);
+ 217              		.loc 1 41 24
+ 218 0048 7B68     		ldr	r3, [r7, #4]
+ 219 004a 93ED037A 		vldr.32	s14, [r3, #12]
+ 220              		.loc 1 41 35
+ 221 004e 7B68     		ldr	r3, [r7, #4]
+ 222 0050 D3ED067A 		vldr.32	s15, [r3, #24]
+ 223              		.loc 1 41 49
+ 224 0054 B4EEE77A 		vcmpe.f32	s14, s15
+ 225 0058 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 226 005c 0BD5     		bpl	.L28
+ 227              		.loc 1 41 56 discriminator 1
+ 228 005e 7B68     		ldr	r3, [r7, #4]
+ 229 0060 D3ED037A 		vldr.32	s15, [r3, #12]
+ 230              		.loc 1 41 54 discriminator 1
+ 231 0064 B1EE007A 		vmov.f32	s14, #4.0e+0
+ 232 0068 67EE877A 		vmul.f32	s15, s15, s14
+ 233              		.loc 1 41 49 discriminator 1
+ 234 006c B7EE007A 		vmov.f32	s14, #1.0e+0
+ 235 0070 77EEC77A 		vsub.f32	s15, s15, s14
+ 236 0074 0AE0     		b	.L18
+ 237              	.L28:
+ 238              		.loc 1 41 78 discriminator 2
+ 239 0076 7B68     		ldr	r3, [r7, #4]
+ 240 0078 D3ED037A 		vldr.32	s15, [r3, #12]
+ 241              		.loc 1 41 76 discriminator 2
+ 242 007c B9EE007A 		vmov.f32	s14, #-4.0e+0
+ 243 0080 67EE877A 		vmul.f32	s15, s15, s14
+ 244              		.loc 1 41 49 discriminator 2
+ 245 0084 B0EE087A 		vmov.f32	s14, #3.0e+0
+ 246 0088 77EE877A 		vadd.f32	s15, s15, s14
+ 247              	.L18:
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 6
+
+
+ 248              		.loc 1 41 22 discriminator 4
+ 249 008c C7ED037A 		vstr.32	s15, [r7, #12]
+  42:oscillator.cpp ****             break;
+ 250              		.loc 1 42 13 discriminator 4
+ 251 0090 20E0     		b	.L15
+ 252              	.L12:
+  43:oscillator.cpp ****         case WAVE_SAW:
+  44:oscillator.cpp ****             flOutput = (flPhase_ * 2) - 1;
+ 253              		.loc 1 44 25
+ 254 0092 7B68     		ldr	r3, [r7, #4]
+ 255 0094 D3ED037A 		vldr.32	s15, [r3, #12]
+ 256              		.loc 1 44 34
+ 257 0098 77EEA77A 		vadd.f32	s15, s15, s15
+ 258              		.loc 1 44 22
+ 259 009c B7EE007A 		vmov.f32	s14, #1.0e+0
+ 260 00a0 77EEC77A 		vsub.f32	s15, s15, s14
+ 261 00a4 C7ED037A 		vstr.32	s15, [r7, #12]
+  45:oscillator.cpp ****             break;
+ 262              		.loc 1 45 13
+ 263 00a8 14E0     		b	.L15
+ 264              	.L10:
+  46:oscillator.cpp ****         case WAVE_SQUARE:
+  47:oscillator.cpp ****             flOutput = flPhase_ < flPulseWidth_ ? 1.0f : -1.0f;
+ 265              		.loc 1 47 24
+ 266 00aa 7B68     		ldr	r3, [r7, #4]
+ 267 00ac 93ED037A 		vldr.32	s14, [r3, #12]
+ 268              		.loc 1 47 35
+ 269 00b0 7B68     		ldr	r3, [r7, #4]
+ 270 00b2 D3ED067A 		vldr.32	s15, [r3, #24]
+ 271              		.loc 1 47 49
+ 272 00b6 B4EEE77A 		vcmpe.f32	s14, s15
+ 273 00ba F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 274 00be 02D5     		bpl	.L29
+ 275              		.loc 1 47 49 is_stmt 0 discriminator 1
+ 276 00c0 4FF07E53 		mov	r3, #1065353216
+ 277 00c4 00E0     		b	.L21
+ 278              	.L29:
+ 279              		.loc 1 47 49 discriminator 2
+ 280 00c6 1A4B     		ldr	r3, .L30+4
+ 281              	.L21:
+ 282              		.loc 1 47 22 is_stmt 1 discriminator 4
+ 283 00c8 FB60     		str	r3, [r7, #12]	@ float
+  48:oscillator.cpp ****             break;
+ 284              		.loc 1 48 13 discriminator 4
+ 285 00ca 03E0     		b	.L15
+ 286              	.L9:
+  49:oscillator.cpp ****         // case WAVE_EXP_D:
+  50:oscillator.cpp ****         //     flOutput = exp(-5 * (1 - flPhase_)) * sinf(2 * PI_F * flPhase_);
+  51:oscillator.cpp ****         //     break;
+  52:oscillator.cpp ****         // case WAVE_GAUSSIAN:
+  53:oscillator.cpp ****         //     flOutput = exp(-10 * pow((flPhase_ - 0.5), 2));
+  54:oscillator.cpp ****         //     break;
+  55:oscillator.cpp ****         // case WAVE_SUPERSAW:
+  56:oscillator.cpp ****         //     flOutput = 0.0f;
+  57:oscillator.cpp ****         //     for(int i = 1; i <= 5; ++i){
+  58:oscillator.cpp ****         //         flOutput += sinf(2 * PI_F * i * flPhase_) / i;
+  59:oscillator.cpp ****         //     }
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 7
+
+
+  60:oscillator.cpp ****         //     break;
+  61:oscillator.cpp ****         // case WAVE_PARABOLA:
+  62:oscillator.cpp ****         //     flOutput = 1 - pow(2 * flPhase_ - 1, 2);
+  63:oscillator.cpp ****         //     break;
+  64:oscillator.cpp ****         // case WAVE_TANH:
+  65:oscillator.cpp ****         //     flOutput = tanh(3 * sinf(2 * PI_F * flPhase_));
+  66:oscillator.cpp ****         //     break;
+  67:oscillator.cpp ****         // case WAVE_PWM:
+  68:oscillator.cpp ****         //     flOutput = (fmod(2 * flPhase_, 1.0f) > 0.3f) ? 1.0f : -1.0f;
+  69:oscillator.cpp ****         //     break;
+  70:oscillator.cpp ****         default: flOutput = 0.0f; break;
+ 287              		.loc 1 70 27
+ 288 00cc 4FF00003 		mov	r3, #0
+ 289 00d0 FB60     		str	r3, [r7, #12]	@ float
+ 290              		.loc 1 70 35
+ 291 00d2 00BF     		nop
+ 292              	.L15:
+  71:oscillator.cpp ****     }
+  72:oscillator.cpp **** 
+  73:oscillator.cpp ****     //Increment phase
+  74:oscillator.cpp ****     flPhase_ += flPhaseInc_;
+ 293              		.loc 1 74 14
+ 294 00d4 7B68     		ldr	r3, [r7, #4]
+ 295 00d6 93ED037A 		vldr.32	s14, [r3, #12]
+ 296              		.loc 1 74 17
+ 297 00da 7B68     		ldr	r3, [r7, #4]
+ 298 00dc D3ED047A 		vldr.32	s15, [r3, #16]
+ 299              		.loc 1 74 14
+ 300 00e0 77EE277A 		vadd.f32	s15, s14, s15
+ 301 00e4 7B68     		ldr	r3, [r7, #4]
+ 302 00e6 C3ED037A 		vstr.32	s15, [r3, #12]
+  75:oscillator.cpp ****     if (flPhase_ > 1.0f){
+ 303              		.loc 1 75 9
+ 304 00ea 7B68     		ldr	r3, [r7, #4]
+ 305 00ec D3ED037A 		vldr.32	s15, [r3, #12]
+ 306              		.loc 1 75 5
+ 307 00f0 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 308 00f4 F4EEC77A 		vcmpe.f32	s15, s14
+ 309 00f8 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 310 00fc 09DD     		ble	.L22
+  76:oscillator.cpp ****         flPhase_ -= 1.0f;
+ 311              		.loc 1 76 18
+ 312 00fe 7B68     		ldr	r3, [r7, #4]
+ 313 0100 D3ED037A 		vldr.32	s15, [r3, #12]
+ 314 0104 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 315 0108 77EEC77A 		vsub.f32	s15, s15, s14
+ 316 010c 7B68     		ldr	r3, [r7, #4]
+ 317 010e C3ED037A 		vstr.32	s15, [r3, #12]
+ 318              	.L22:
+  77:oscillator.cpp ****     }
+  78:oscillator.cpp **** 
+  79:oscillator.cpp ****     return flOutput * flAmplitude_;
+ 319              		.loc 1 79 23
+ 320 0112 7B68     		ldr	r3, [r7, #4]
+ 321 0114 93ED057A 		vldr.32	s14, [r3, #20]
+ 322 0118 D7ED037A 		vldr.32	s15, [r7, #12]
+ 323 011c 67EE277A 		vmul.f32	s15, s14, s15
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 8
+
+
+  80:oscillator.cpp **** }
+ 324              		.loc 1 80 1
+ 325 0120 B0EE670A 		vmov.f32	s0, s15
+ 326 0124 1037     		adds	r7, r7, #16
+ 327              		.cfi_def_cfa_offset 8
+ 328 0126 BD46     		mov	sp, r7
+ 329              		.cfi_def_cfa_register 13
+ 330              		@ sp needed
+ 331 0128 80BD     		pop	{r7, pc}
+ 332              	.L31:
+ 333 012a 00BF     		.align	2
+ 334              	.L30:
+ 335 012c DB0FC940 		.word	1086918619
+ 336 0130 000080BF 		.word	-1082130432
+ 337              		.cfi_endproc
+ 338              	.LFE551:
+ 340              		.section	.text._ZN14clasOscillator19fxCalculatePhaseIncEf,"ax",%progbits
+ 341              		.align	1
+ 342              		.global	_ZN14clasOscillator19fxCalculatePhaseIncEf
+ 343              		.syntax unified
+ 344              		.thumb
+ 345              		.thumb_func
+ 346              		.fpu fpv5-d16
+ 348              	_ZN14clasOscillator19fxCalculatePhaseIncEf:
+ 349              	.LFB552:
+  81:oscillator.cpp **** 
+  82:oscillator.cpp **** 
+  83:oscillator.cpp **** float clasOscillator::fxCalculatePhaseInc(float freq){
+ 350              		.loc 1 83 54
+ 351              		.cfi_startproc
+ 352              		@ args = 0, pretend = 0, frame = 8
+ 353              		@ frame_needed = 1, uses_anonymous_args = 0
+ 354              		@ link register save eliminated.
+ 355 0000 80B4     		push	{r7}
+ 356              		.cfi_def_cfa_offset 4
+ 357              		.cfi_offset 7, -4
+ 358 0002 83B0     		sub	sp, sp, #12
+ 359              		.cfi_def_cfa_offset 16
+ 360 0004 00AF     		add	r7, sp, #0
+ 361              		.cfi_def_cfa_register 7
+ 362 0006 7860     		str	r0, [r7, #4]
+ 363 0008 87ED000A 		vstr.32	s0, [r7]
+  84:oscillator.cpp ****     return freq * flSamplingRateRecip_;
+ 364              		.loc 1 84 19
+ 365 000c 7B68     		ldr	r3, [r7, #4]
+ 366 000e 93ED017A 		vldr.32	s14, [r3, #4]
+ 367 0012 D7ED007A 		vldr.32	s15, [r7]
+ 368 0016 67EE277A 		vmul.f32	s15, s14, s15
+  85:oscillator.cpp **** }
+ 369              		.loc 1 85 1
+ 370 001a B0EE670A 		vmov.f32	s0, s15
+ 371 001e 0C37     		adds	r7, r7, #12
+ 372              		.cfi_def_cfa_offset 4
+ 373 0020 BD46     		mov	sp, r7
+ 374              		.cfi_def_cfa_register 13
+ 375              		@ sp needed
+ 376 0022 5DF8047B 		ldr	r7, [sp], #4
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 9
+
+
+ 377              		.cfi_restore 7
+ 378              		.cfi_def_cfa_offset 0
+ 379 0026 7047     		bx	lr
+ 380              		.cfi_endproc
+ 381              	.LFE552:
+ 383              		.section	.text._ZN14clasOscillator7SetFreqEf,"ax",%progbits
+ 384              		.align	1
+ 385              		.global	_ZN14clasOscillator7SetFreqEf
+ 386              		.syntax unified
+ 387              		.thumb
+ 388              		.thumb_func
+ 389              		.fpu fpv5-d16
+ 391              	_ZN14clasOscillator7SetFreqEf:
+ 392              	.LFB553:
+  86:oscillator.cpp **** 
+  87:oscillator.cpp **** //Change freq
+  88:oscillator.cpp **** void clasOscillator::SetFreq(const float frequency){
+ 393              		.loc 1 88 52
+ 394              		.cfi_startproc
+ 395              		@ args = 0, pretend = 0, frame = 8
+ 396              		@ frame_needed = 1, uses_anonymous_args = 0
+ 397 0000 80B5     		push	{r7, lr}
+ 398              		.cfi_def_cfa_offset 8
+ 399              		.cfi_offset 7, -8
+ 400              		.cfi_offset 14, -4
+ 401 0002 82B0     		sub	sp, sp, #8
+ 402              		.cfi_def_cfa_offset 16
+ 403 0004 00AF     		add	r7, sp, #0
+ 404              		.cfi_def_cfa_register 7
+ 405 0006 7860     		str	r0, [r7, #4]
+ 406 0008 87ED000A 		vstr.32	s0, [r7]
+  89:oscillator.cpp ****     flFreq_ = frequency;
+ 407              		.loc 1 89 13
+ 408 000c 7B68     		ldr	r3, [r7, #4]
+ 409 000e 3A68     		ldr	r2, [r7]	@ float
+ 410 0010 9A60     		str	r2, [r3, #8]	@ float
+  90:oscillator.cpp ****     switch(OSCILLATOR_TYPE_){
+ 411              		.loc 1 90 12
+ 412 0012 7B68     		ldr	r3, [r7, #4]
+ 413 0014 9B7F     		ldrb	r3, [r3, #30]	@ zero_extendqisi2
+ 414              		.loc 1 90 5
+ 415 0016 022B     		cmp	r3, #2
+ 416 0018 3ED0     		beq	.L35
+ 417 001a 022B     		cmp	r3, #2
+ 418 001c 58DC     		bgt	.L36
+ 419 001e 002B     		cmp	r3, #0
+ 420 0020 02D0     		beq	.L37
+ 421 0022 012B     		cmp	r3, #1
+ 422 0024 1CD0     		beq	.L38
+ 423 0026 53E0     		b	.L36
+ 424              	.L37:
+  91:oscillator.cpp ****         case OSC_NORMAL:
+  92:oscillator.cpp ****             if (flFreq_ < 20) {flFreq_ = 20;}
+ 425              		.loc 1 92 17
+ 426 0028 7B68     		ldr	r3, [r7, #4]
+ 427 002a D3ED027A 		vldr.32	s15, [r3, #8]
+ 428              		.loc 1 92 13
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 10
+
+
+ 429 002e B3EE047A 		vmov.f32	s14, #2.0e+1
+ 430 0032 F4EEC77A 		vcmpe.f32	s15, s14
+ 431 0036 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 432 003a 02D5     		bpl	.L39
+ 433              		.loc 1 92 40 discriminator 1
+ 434 003c 7B68     		ldr	r3, [r7, #4]
+ 435 003e 314A     		ldr	r2, .L58
+ 436 0040 9A60     		str	r2, [r3, #8]	@ float
+ 437              	.L39:
+  93:oscillator.cpp ****             if (flFreq_ > 1000){ flFreq_ = 1000;}
+ 438              		.loc 1 93 17
+ 439 0042 7B68     		ldr	r3, [r7, #4]
+ 440 0044 D3ED027A 		vldr.32	s15, [r3, #8]
+ 441              		.loc 1 93 13
+ 442 0048 9FED2F7A 		vldr.32	s14, .L58+4
+ 443 004c F4EEC77A 		vcmpe.f32	s15, s14
+ 444 0050 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 445 0054 00DC     		bgt	.L52
+  94:oscillator.cpp ****         break;
+ 446              		.loc 1 94 9
+ 447 0056 3BE0     		b	.L36
+ 448              	.L52:
+  93:oscillator.cpp ****             if (flFreq_ > 1000){ flFreq_ = 1000;}
+ 449              		.loc 1 93 42 discriminator 1
+ 450 0058 7B68     		ldr	r3, [r7, #4]
+ 451 005a 2C4A     		ldr	r2, .L58+8
+ 452 005c 9A60     		str	r2, [r3, #8]	@ float
+ 453              		.loc 1 94 9 discriminator 1
+ 454 005e 37E0     		b	.L36
+ 455              	.L38:
+  95:oscillator.cpp ****         case OSC_LFO_SLOW:
+  96:oscillator.cpp ****             if (flFreq_ < 0.1f) {flFreq_ = 0.1f;}
+ 456              		.loc 1 96 17
+ 457 0060 7B68     		ldr	r3, [r7, #4]
+ 458 0062 D3ED027A 		vldr.32	s15, [r3, #8]
+ 459              		.loc 1 96 13
+ 460 0066 9FED2A7A 		vldr.32	s14, .L58+12
+ 461 006a F4EEC77A 		vcmpe.f32	s15, s14
+ 462 006e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 463 0072 02D5     		bpl	.L43
+ 464              		.loc 1 96 42 discriminator 1
+ 465 0074 7B68     		ldr	r3, [r7, #4]
+ 466 0076 274A     		ldr	r2, .L58+16
+ 467 0078 9A60     		str	r2, [r3, #8]	@ float
+ 468              	.L43:
+  97:oscillator.cpp ****             if (flFreq_ > 5.0f){ flFreq_ = 5.0f;}
+ 469              		.loc 1 97 17
+ 470 007a 7B68     		ldr	r3, [r7, #4]
+ 471 007c D3ED027A 		vldr.32	s15, [r3, #8]
+ 472              		.loc 1 97 13
+ 473 0080 B1EE047A 		vmov.f32	s14, #5.0e+0
+ 474 0084 F4EEC77A 		vcmpe.f32	s15, s14
+ 475 0088 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 476 008c 00DC     		bgt	.L54
+  98:oscillator.cpp ****         break;
+ 477              		.loc 1 98 9
+ 478 008e 1FE0     		b	.L36
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 11
+
+
+ 479              	.L54:
+  97:oscillator.cpp ****             if (flFreq_ > 5.0f){ flFreq_ = 5.0f;}
+ 480              		.loc 1 97 42 discriminator 1
+ 481 0090 7B68     		ldr	r3, [r7, #4]
+ 482 0092 214A     		ldr	r2, .L58+20
+ 483 0094 9A60     		str	r2, [r3, #8]	@ float
+ 484              		.loc 1 98 9 discriminator 1
+ 485 0096 1BE0     		b	.L36
+ 486              	.L35:
+  99:oscillator.cpp ****         case OSC_LFO_FAST:
+ 100:oscillator.cpp ****             if (flFreq_ < 5.0f) {flFreq_ = 5.0f;}
+ 487              		.loc 1 100 17
+ 488 0098 7B68     		ldr	r3, [r7, #4]
+ 489 009a D3ED027A 		vldr.32	s15, [r3, #8]
+ 490              		.loc 1 100 13
+ 491 009e B1EE047A 		vmov.f32	s14, #5.0e+0
+ 492 00a2 F4EEC77A 		vcmpe.f32	s15, s14
+ 493 00a6 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 494 00aa 02D5     		bpl	.L47
+ 495              		.loc 1 100 42 discriminator 1
+ 496 00ac 7B68     		ldr	r3, [r7, #4]
+ 497 00ae 1A4A     		ldr	r2, .L58+20
+ 498 00b0 9A60     		str	r2, [r3, #8]	@ float
+ 499              	.L47:
+ 101:oscillator.cpp ****             if (flFreq_ > 20.0f){ flFreq_ = 20.0f;}
+ 500              		.loc 1 101 17
+ 501 00b2 7B68     		ldr	r3, [r7, #4]
+ 502 00b4 D3ED027A 		vldr.32	s15, [r3, #8]
+ 503              		.loc 1 101 13
+ 504 00b8 B3EE047A 		vmov.f32	s14, #2.0e+1
+ 505 00bc F4EEC77A 		vcmpe.f32	s15, s14
+ 506 00c0 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 507 00c4 00DC     		bgt	.L56
+ 102:oscillator.cpp ****         break;
+ 508              		.loc 1 102 9
+ 509 00c6 02E0     		b	.L57
+ 510              	.L56:
+ 101:oscillator.cpp ****             if (flFreq_ > 20.0f){ flFreq_ = 20.0f;}
+ 511              		.loc 1 101 43 discriminator 1
+ 512 00c8 7B68     		ldr	r3, [r7, #4]
+ 513 00ca 0E4A     		ldr	r2, .L58
+ 514 00cc 9A60     		str	r2, [r3, #8]	@ float
+ 515              	.L57:
+ 516              		.loc 1 102 9
+ 517 00ce 00BF     		nop
+ 518              	.L36:
+ 103:oscillator.cpp ****     }
+ 104:oscillator.cpp ****     flPhaseInc_ = fxCalculatePhaseInc(flFreq_ * uiRatio_);
+ 519              		.loc 1 104 39
+ 520 00d0 7B68     		ldr	r3, [r7, #4]
+ 521 00d2 93ED027A 		vldr.32	s14, [r3, #8]
+ 522              		.loc 1 104 49
+ 523 00d6 7B68     		ldr	r3, [r7, #4]
+ 524 00d8 5B7F     		ldrb	r3, [r3, #29]	@ zero_extendqisi2
+ 525 00da 07EE903A 		vmov	s15, r3	@ int
+ 526              		.loc 1 104 38
+ 527 00de F8EEE77A 		vcvt.f32.s32	s15, s15
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 12
+
+
+ 528 00e2 67EE277A 		vmul.f32	s15, s14, s15
+ 529 00e6 B0EE670A 		vmov.f32	s0, s15
+ 530 00ea 7868     		ldr	r0, [r7, #4]
+ 531 00ec FFF7FEFF 		bl	_ZN14clasOscillator19fxCalculatePhaseIncEf
+ 532 00f0 F0EE407A 		vmov.f32	s15, s0
+ 533              		.loc 1 104 17
+ 534 00f4 7B68     		ldr	r3, [r7, #4]
+ 535 00f6 C3ED047A 		vstr.32	s15, [r3, #16]
+ 105:oscillator.cpp **** }
+ 536              		.loc 1 105 1
+ 537 00fa 00BF     		nop
+ 538 00fc 0837     		adds	r7, r7, #8
+ 539              		.cfi_def_cfa_offset 8
+ 540 00fe BD46     		mov	sp, r7
+ 541              		.cfi_def_cfa_register 13
+ 542              		@ sp needed
+ 543 0100 80BD     		pop	{r7, pc}
+ 544              	.L59:
+ 545 0102 00BF     		.align	2
+ 546              	.L58:
+ 547 0104 0000A041 		.word	1101004800
+ 548 0108 00007A44 		.word	1148846080
+ 549 010c 00007A44 		.word	1148846080
+ 550 0110 CDCCCC3D 		.word	1036831949
+ 551 0114 CDCCCC3D 		.word	1036831949
+ 552 0118 0000A040 		.word	1084227584
+ 553              		.cfi_endproc
+ 554              	.LFE553:
+ 556              		.section	.text._ZN14clasOscillator6SetAmpEf,"ax",%progbits
+ 557              		.align	1
+ 558              		.global	_ZN14clasOscillator6SetAmpEf
+ 559              		.syntax unified
+ 560              		.thumb
+ 561              		.thumb_func
+ 562              		.fpu fpv5-d16
+ 564              	_ZN14clasOscillator6SetAmpEf:
+ 565              	.LFB554:
+ 106:oscillator.cpp **** 
+ 107:oscillator.cpp **** 
+ 108:oscillator.cpp **** //Change amp
+ 109:oscillator.cpp **** void clasOscillator::SetAmp(const float amplitude){
+ 566              		.loc 1 109 51
+ 567              		.cfi_startproc
+ 568              		@ args = 0, pretend = 0, frame = 8
+ 569              		@ frame_needed = 1, uses_anonymous_args = 0
+ 570              		@ link register save eliminated.
+ 571 0000 80B4     		push	{r7}
+ 572              		.cfi_def_cfa_offset 4
+ 573              		.cfi_offset 7, -4
+ 574 0002 83B0     		sub	sp, sp, #12
+ 575              		.cfi_def_cfa_offset 16
+ 576 0004 00AF     		add	r7, sp, #0
+ 577              		.cfi_def_cfa_register 7
+ 578 0006 7860     		str	r0, [r7, #4]
+ 579 0008 87ED000A 		vstr.32	s0, [r7]
+ 110:oscillator.cpp ****     flAmplitude_ = amplitude;
+ 580              		.loc 1 110 18
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 13
+
+
+ 581 000c 7B68     		ldr	r3, [r7, #4]
+ 582 000e 3A68     		ldr	r2, [r7]	@ float
+ 583 0010 5A61     		str	r2, [r3, #20]	@ float
+ 111:oscillator.cpp ****     if (flAmplitude_ <= 0.0f) {flAmplitude_ = 0.0f;}
+ 584              		.loc 1 111 9
+ 585 0012 7B68     		ldr	r3, [r7, #4]
+ 586 0014 D3ED057A 		vldr.32	s15, [r3, #20]
+ 587              		.loc 1 111 5
+ 588 0018 F5EEC07A 		vcmpe.f32	s15, #0
+ 589 001c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 590 0020 03D8     		bhi	.L61
+ 591              		.loc 1 111 45 discriminator 1
+ 592 0022 7B68     		ldr	r3, [r7, #4]
+ 593 0024 4FF00002 		mov	r2, #0
+ 594 0028 5A61     		str	r2, [r3, #20]	@ float
+ 595              	.L61:
+ 112:oscillator.cpp ****     if (flAmplitude_ >= 1.0f) {flAmplitude_ = 1.0f;}
+ 596              		.loc 1 112 9
+ 597 002a 7B68     		ldr	r3, [r7, #4]
+ 598 002c D3ED057A 		vldr.32	s15, [r3, #20]
+ 599              		.loc 1 112 5
+ 600 0030 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 601 0034 F4EEC77A 		vcmpe.f32	s15, s14
+ 602 0038 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 603 003c 00DA     		bge	.L66
+ 113:oscillator.cpp **** }
+ 604              		.loc 1 113 1
+ 605 003e 03E0     		b	.L67
+ 606              	.L66:
+ 112:oscillator.cpp ****     if (flAmplitude_ >= 1.0f) {flAmplitude_ = 1.0f;}
+ 607              		.loc 1 112 45 discriminator 1
+ 608 0040 7B68     		ldr	r3, [r7, #4]
+ 609 0042 4FF07E52 		mov	r2, #1065353216
+ 610 0046 5A61     		str	r2, [r3, #20]	@ float
+ 611              	.L67:
+ 612              		.loc 1 113 1
+ 613 0048 00BF     		nop
+ 614 004a 0C37     		adds	r7, r7, #12
+ 615              		.cfi_def_cfa_offset 4
+ 616 004c BD46     		mov	sp, r7
+ 617              		.cfi_def_cfa_register 13
+ 618              		@ sp needed
+ 619 004e 5DF8047B 		ldr	r7, [sp], #4
+ 620              		.cfi_restore 7
+ 621              		.cfi_def_cfa_offset 0
+ 622 0052 7047     		bx	lr
+ 623              		.cfi_endproc
+ 624              	.LFE554:
+ 626              		.section	.text._ZN14clasOscillator11SetWaveformEh,"ax",%progbits
+ 627              		.align	1
+ 628              		.global	_ZN14clasOscillator11SetWaveformEh
+ 629              		.syntax unified
+ 630              		.thumb
+ 631              		.thumb_func
+ 632              		.fpu fpv5-d16
+ 634              	_ZN14clasOscillator11SetWaveformEh:
+ 635              	.LFB555:
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 14
+
+
+ 114:oscillator.cpp **** 
+ 115:oscillator.cpp **** //Change Waveform;
+ 116:oscillator.cpp **** void clasOscillator::SetWaveform(const uint8_t waveform){
+ 636              		.loc 1 116 57
+ 637              		.cfi_startproc
+ 638              		@ args = 0, pretend = 0, frame = 8
+ 639              		@ frame_needed = 1, uses_anonymous_args = 0
+ 640              		@ link register save eliminated.
+ 641 0000 80B4     		push	{r7}
+ 642              		.cfi_def_cfa_offset 4
+ 643              		.cfi_offset 7, -4
+ 644 0002 83B0     		sub	sp, sp, #12
+ 645              		.cfi_def_cfa_offset 16
+ 646 0004 00AF     		add	r7, sp, #0
+ 647              		.cfi_def_cfa_register 7
+ 648 0006 7860     		str	r0, [r7, #4]
+ 649 0008 0B46     		mov	r3, r1
+ 650 000a FB70     		strb	r3, [r7, #3]
+ 117:oscillator.cpp ****     uiWaveform_ = waveform;
+ 651              		.loc 1 117 17
+ 652 000c 7B68     		ldr	r3, [r7, #4]
+ 653 000e FA78     		ldrb	r2, [r7, #3]
+ 654 0010 1A77     		strb	r2, [r3, #28]
+ 118:oscillator.cpp ****     if (uiWaveform_ <= 0) {uiWaveform_ = 0;}
+ 655              		.loc 1 118 9
+ 656 0012 7B68     		ldr	r3, [r7, #4]
+ 657 0014 1B7F     		ldrb	r3, [r3, #28]	@ zero_extendqisi2
+ 658              		.loc 1 118 5
+ 659 0016 002B     		cmp	r3, #0
+ 660 0018 02D1     		bne	.L69
+ 661              		.loc 1 118 40 discriminator 1
+ 662 001a 7B68     		ldr	r3, [r7, #4]
+ 663 001c 0022     		movs	r2, #0
+ 664 001e 1A77     		strb	r2, [r3, #28]
+ 665              	.L69:
+ 119:oscillator.cpp ****     if (uiWaveform_ >= 3) {uiWaveform_ = 3;}
+ 666              		.loc 1 119 9
+ 667 0020 7B68     		ldr	r3, [r7, #4]
+ 668 0022 1B7F     		ldrb	r3, [r3, #28]	@ zero_extendqisi2
+ 669              		.loc 1 119 5
+ 670 0024 022B     		cmp	r3, #2
+ 671 0026 02D9     		bls	.L71
+ 672              		.loc 1 119 40 discriminator 1
+ 673 0028 7B68     		ldr	r3, [r7, #4]
+ 674 002a 0322     		movs	r2, #3
+ 675 002c 1A77     		strb	r2, [r3, #28]
+ 676              	.L71:
+ 120:oscillator.cpp **** }
+ 677              		.loc 1 120 1
+ 678 002e 00BF     		nop
+ 679 0030 0C37     		adds	r7, r7, #12
+ 680              		.cfi_def_cfa_offset 4
+ 681 0032 BD46     		mov	sp, r7
+ 682              		.cfi_def_cfa_register 13
+ 683              		@ sp needed
+ 684 0034 5DF8047B 		ldr	r7, [sp], #4
+ 685              		.cfi_restore 7
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 15
+
+
+ 686              		.cfi_def_cfa_offset 0
+ 687 0038 7047     		bx	lr
+ 688              		.cfi_endproc
+ 689              	.LFE555:
+ 691              		.section	.text._ZN14clasOscillator8PhaseAddEf,"ax",%progbits
+ 692              		.align	1
+ 693              		.global	_ZN14clasOscillator8PhaseAddEf
+ 694              		.syntax unified
+ 695              		.thumb
+ 696              		.thumb_func
+ 697              		.fpu fpv5-d16
+ 699              	_ZN14clasOscillator8PhaseAddEf:
+ 700              	.LFB556:
+ 121:oscillator.cpp **** 
+ 122:oscillator.cpp **** // Adds a value between 0-1 to the current phase. Used for FM. 
+ 123:oscillator.cpp **** void clasOscillator::PhaseAdd(float phase) { 
+ 701              		.loc 1 123 44
+ 702              		.cfi_startproc
+ 703              		@ args = 0, pretend = 0, frame = 8
+ 704              		@ frame_needed = 1, uses_anonymous_args = 0
+ 705              		@ link register save eliminated.
+ 706 0000 80B4     		push	{r7}
+ 707              		.cfi_def_cfa_offset 4
+ 708              		.cfi_offset 7, -4
+ 709 0002 83B0     		sub	sp, sp, #12
+ 710              		.cfi_def_cfa_offset 16
+ 711 0004 00AF     		add	r7, sp, #0
+ 712              		.cfi_def_cfa_register 7
+ 713 0006 7860     		str	r0, [r7, #4]
+ 714 0008 87ED000A 		vstr.32	s0, [r7]
+ 124:oscillator.cpp ****     flPhase_ += phase; 
+ 715              		.loc 1 124 14
+ 716 000c 7B68     		ldr	r3, [r7, #4]
+ 717 000e 93ED037A 		vldr.32	s14, [r3, #12]
+ 718 0012 D7ED007A 		vldr.32	s15, [r7]
+ 719 0016 77EE277A 		vadd.f32	s15, s14, s15
+ 720 001a 7B68     		ldr	r3, [r7, #4]
+ 721 001c C3ED037A 		vstr.32	s15, [r3, #12]
+ 125:oscillator.cpp **** }
+ 722              		.loc 1 125 1
+ 723 0020 00BF     		nop
+ 724 0022 0C37     		adds	r7, r7, #12
+ 725              		.cfi_def_cfa_offset 4
+ 726 0024 BD46     		mov	sp, r7
+ 727              		.cfi_def_cfa_register 13
+ 728              		@ sp needed
+ 729 0026 5DF8047B 		ldr	r7, [sp], #4
+ 730              		.cfi_restore 7
+ 731              		.cfi_def_cfa_offset 0
+ 732 002a 7047     		bx	lr
+ 733              		.cfi_endproc
+ 734              	.LFE556:
+ 736              		.section	.text._ZN14clasOscillator7GetFreqEv,"ax",%progbits
+ 737              		.align	1
+ 738              		.global	_ZN14clasOscillator7GetFreqEv
+ 739              		.syntax unified
+ 740              		.thumb
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 16
+
+
+ 741              		.thumb_func
+ 742              		.fpu fpv5-d16
+ 744              	_ZN14clasOscillator7GetFreqEv:
+ 745              	.LFB557:
+ 126:oscillator.cpp **** 
+ 127:oscillator.cpp **** //Get Current Frequency 
+ 128:oscillator.cpp **** float clasOscillator::GetFreq(){
+ 746              		.loc 1 128 32
+ 747              		.cfi_startproc
+ 748              		@ args = 0, pretend = 0, frame = 8
+ 749              		@ frame_needed = 1, uses_anonymous_args = 0
+ 750              		@ link register save eliminated.
+ 751 0000 80B4     		push	{r7}
+ 752              		.cfi_def_cfa_offset 4
+ 753              		.cfi_offset 7, -4
+ 754 0002 83B0     		sub	sp, sp, #12
+ 755              		.cfi_def_cfa_offset 16
+ 756 0004 00AF     		add	r7, sp, #0
+ 757              		.cfi_def_cfa_register 7
+ 758 0006 7860     		str	r0, [r7, #4]
+ 129:oscillator.cpp ****     return flFreq_;
+ 759              		.loc 1 129 12
+ 760 0008 7B68     		ldr	r3, [r7, #4]
+ 761 000a 9B68     		ldr	r3, [r3, #8]	@ float
+ 762 000c 07EE903A 		vmov	s15, r3
+ 130:oscillator.cpp **** }
+ 763              		.loc 1 130 1
+ 764 0010 B0EE670A 		vmov.f32	s0, s15
+ 765 0014 0C37     		adds	r7, r7, #12
+ 766              		.cfi_def_cfa_offset 4
+ 767 0016 BD46     		mov	sp, r7
+ 768              		.cfi_def_cfa_register 13
+ 769              		@ sp needed
+ 770 0018 5DF8047B 		ldr	r7, [sp], #4
+ 771              		.cfi_restore 7
+ 772              		.cfi_def_cfa_offset 0
+ 773 001c 7047     		bx	lr
+ 774              		.cfi_endproc
+ 775              	.LFE557:
+ 777              		.section	.text._ZN14clasOscillator6GetAmpEv,"ax",%progbits
+ 778              		.align	1
+ 779              		.global	_ZN14clasOscillator6GetAmpEv
+ 780              		.syntax unified
+ 781              		.thumb
+ 782              		.thumb_func
+ 783              		.fpu fpv5-d16
+ 785              	_ZN14clasOscillator6GetAmpEv:
+ 786              	.LFB558:
+ 131:oscillator.cpp **** 
+ 132:oscillator.cpp **** 
+ 133:oscillator.cpp **** //Get Current Amplitude
+ 134:oscillator.cpp **** float clasOscillator::GetAmp(){
+ 787              		.loc 1 134 31
+ 788              		.cfi_startproc
+ 789              		@ args = 0, pretend = 0, frame = 8
+ 790              		@ frame_needed = 1, uses_anonymous_args = 0
+ 791              		@ link register save eliminated.
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 17
+
+
+ 792 0000 80B4     		push	{r7}
+ 793              		.cfi_def_cfa_offset 4
+ 794              		.cfi_offset 7, -4
+ 795 0002 83B0     		sub	sp, sp, #12
+ 796              		.cfi_def_cfa_offset 16
+ 797 0004 00AF     		add	r7, sp, #0
+ 798              		.cfi_def_cfa_register 7
+ 799 0006 7860     		str	r0, [r7, #4]
+ 135:oscillator.cpp ****     return flAmplitude_;
+ 800              		.loc 1 135 12
+ 801 0008 7B68     		ldr	r3, [r7, #4]
+ 802 000a 5B69     		ldr	r3, [r3, #20]	@ float
+ 803 000c 07EE903A 		vmov	s15, r3
+ 136:oscillator.cpp **** }
+ 804              		.loc 1 136 1
+ 805 0010 B0EE670A 		vmov.f32	s0, s15
+ 806 0014 0C37     		adds	r7, r7, #12
+ 807              		.cfi_def_cfa_offset 4
+ 808 0016 BD46     		mov	sp, r7
+ 809              		.cfi_def_cfa_register 13
+ 810              		@ sp needed
+ 811 0018 5DF8047B 		ldr	r7, [sp], #4
+ 812              		.cfi_restore 7
+ 813              		.cfi_def_cfa_offset 0
+ 814 001c 7047     		bx	lr
+ 815              		.cfi_endproc
+ 816              	.LFE558:
+ 818              		.section	.text._ZN14clasOscillator8GetDepthEv,"ax",%progbits
+ 819              		.align	1
+ 820              		.global	_ZN14clasOscillator8GetDepthEv
+ 821              		.syntax unified
+ 822              		.thumb
+ 823              		.thumb_func
+ 824              		.fpu fpv5-d16
+ 826              	_ZN14clasOscillator8GetDepthEv:
+ 827              	.LFB559:
+ 137:oscillator.cpp **** 
+ 138:oscillator.cpp **** 
+ 139:oscillator.cpp **** //Get Current Amplitude
+ 140:oscillator.cpp **** float clasOscillator::GetDepth(){
+ 828              		.loc 1 140 33
+ 829              		.cfi_startproc
+ 830              		@ args = 0, pretend = 0, frame = 8
+ 831              		@ frame_needed = 1, uses_anonymous_args = 0
+ 832              		@ link register save eliminated.
+ 833 0000 80B4     		push	{r7}
+ 834              		.cfi_def_cfa_offset 4
+ 835              		.cfi_offset 7, -4
+ 836 0002 83B0     		sub	sp, sp, #12
+ 837              		.cfi_def_cfa_offset 16
+ 838 0004 00AF     		add	r7, sp, #0
+ 839              		.cfi_def_cfa_register 7
+ 840 0006 7860     		str	r0, [r7, #4]
+ 141:oscillator.cpp ****     return flDepth_;
+ 841              		.loc 1 141 12
+ 842 0008 7B68     		ldr	r3, [r7, #4]
+ 843 000a 1B6A     		ldr	r3, [r3, #32]	@ float
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 18
+
+
+ 844 000c 07EE903A 		vmov	s15, r3
+ 142:oscillator.cpp **** }
+ 845              		.loc 1 142 1
+ 846 0010 B0EE670A 		vmov.f32	s0, s15
+ 847 0014 0C37     		adds	r7, r7, #12
+ 848              		.cfi_def_cfa_offset 4
+ 849 0016 BD46     		mov	sp, r7
+ 850              		.cfi_def_cfa_register 13
+ 851              		@ sp needed
+ 852 0018 5DF8047B 		ldr	r7, [sp], #4
+ 853              		.cfi_restore 7
+ 854              		.cfi_def_cfa_offset 0
+ 855 001c 7047     		bx	lr
+ 856              		.cfi_endproc
+ 857              	.LFE559:
+ 859              		.section	.text._ZN14clasOscillator8SetDepthEf,"ax",%progbits
+ 860              		.align	1
+ 861              		.global	_ZN14clasOscillator8SetDepthEf
+ 862              		.syntax unified
+ 863              		.thumb
+ 864              		.thumb_func
+ 865              		.fpu fpv5-d16
+ 867              	_ZN14clasOscillator8SetDepthEf:
+ 868              	.LFB560:
+ 143:oscillator.cpp **** 
+ 144:oscillator.cpp **** //Get Current Amplitude
+ 145:oscillator.cpp **** void clasOscillator::SetDepth(float input){
+ 869              		.loc 1 145 43
+ 870              		.cfi_startproc
+ 871              		@ args = 0, pretend = 0, frame = 8
+ 872              		@ frame_needed = 1, uses_anonymous_args = 0
+ 873              		@ link register save eliminated.
+ 874 0000 80B4     		push	{r7}
+ 875              		.cfi_def_cfa_offset 4
+ 876              		.cfi_offset 7, -4
+ 877 0002 83B0     		sub	sp, sp, #12
+ 878              		.cfi_def_cfa_offset 16
+ 879 0004 00AF     		add	r7, sp, #0
+ 880              		.cfi_def_cfa_register 7
+ 881 0006 7860     		str	r0, [r7, #4]
+ 882 0008 87ED000A 		vstr.32	s0, [r7]
+ 146:oscillator.cpp ****     if (input <= 0.0f) {flDepth_ = 0.0f;}
+ 883              		.loc 1 146 5
+ 884 000c D7ED007A 		vldr.32	s15, [r7]
+ 885 0010 F5EEC07A 		vcmpe.f32	s15, #0
+ 886 0014 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 887 0018 03D8     		bhi	.L80
+ 888              		.loc 1 146 34 discriminator 1
+ 889 001a 7B68     		ldr	r3, [r7, #4]
+ 890 001c 4FF00002 		mov	r2, #0
+ 891 0020 1A62     		str	r2, [r3, #32]	@ float
+ 892              	.L80:
+ 147:oscillator.cpp ****     if (input >= flMaxDepth_) {flDepth_ = flMaxDepth_;}
+ 893              		.loc 1 147 18
+ 894 0022 7B68     		ldr	r3, [r7, #4]
+ 895 0024 D3ED097A 		vldr.32	s15, [r3, #36]
+ 896              		.loc 1 147 5
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 19
+
+
+ 897 0028 97ED007A 		vldr.32	s14, [r7]
+ 898 002c B4EEE77A 		vcmpe.f32	s14, s15
+ 899 0030 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 900 0034 03DB     		blt	.L82
+ 901              		.loc 1 147 43 discriminator 1
+ 902 0036 7B68     		ldr	r3, [r7, #4]
+ 903 0038 5A6A     		ldr	r2, [r3, #36]	@ float
+ 904              		.loc 1 147 41 discriminator 1
+ 905 003a 7B68     		ldr	r3, [r7, #4]
+ 906 003c 1A62     		str	r2, [r3, #32]	@ float
+ 907              	.L82:
+ 148:oscillator.cpp **** 
+ 149:oscillator.cpp ****     flAmplitude_ = flDepth_;
+ 908              		.loc 1 149 20
+ 909 003e 7B68     		ldr	r3, [r7, #4]
+ 910 0040 1A6A     		ldr	r2, [r3, #32]	@ float
+ 911              		.loc 1 149 18
+ 912 0042 7B68     		ldr	r3, [r7, #4]
+ 913 0044 5A61     		str	r2, [r3, #20]	@ float
+ 150:oscillator.cpp **** }
+ 914              		.loc 1 150 1
+ 915 0046 00BF     		nop
+ 916 0048 0C37     		adds	r7, r7, #12
+ 917              		.cfi_def_cfa_offset 4
+ 918 004a BD46     		mov	sp, r7
+ 919              		.cfi_def_cfa_register 13
+ 920              		@ sp needed
+ 921 004c 5DF8047B 		ldr	r7, [sp], #4
+ 922              		.cfi_restore 7
+ 923              		.cfi_def_cfa_offset 0
+ 924 0050 7047     		bx	lr
+ 925              		.cfi_endproc
+ 926              	.LFE560:
+ 928              		.section	.text._ZN14clasOscillator11GetWaveformEv,"ax",%progbits
+ 929              		.align	1
+ 930              		.global	_ZN14clasOscillator11GetWaveformEv
+ 931              		.syntax unified
+ 932              		.thumb
+ 933              		.thumb_func
+ 934              		.fpu fpv5-d16
+ 936              	_ZN14clasOscillator11GetWaveformEv:
+ 937              	.LFB561:
+ 151:oscillator.cpp **** 
+ 152:oscillator.cpp **** 
+ 153:oscillator.cpp **** //Get current waveform
+ 154:oscillator.cpp **** uint8_t clasOscillator::GetWaveform(){
+ 938              		.loc 1 154 38
+ 939              		.cfi_startproc
+ 940              		@ args = 0, pretend = 0, frame = 8
+ 941              		@ frame_needed = 1, uses_anonymous_args = 0
+ 942              		@ link register save eliminated.
+ 943 0000 80B4     		push	{r7}
+ 944              		.cfi_def_cfa_offset 4
+ 945              		.cfi_offset 7, -4
+ 946 0002 83B0     		sub	sp, sp, #12
+ 947              		.cfi_def_cfa_offset 16
+ 948 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 20
+
+
+ 949              		.cfi_def_cfa_register 7
+ 950 0006 7860     		str	r0, [r7, #4]
+ 155:oscillator.cpp ****     return uiWaveform_;
+ 951              		.loc 1 155 12
+ 952 0008 7B68     		ldr	r3, [r7, #4]
+ 953 000a 1B7F     		ldrb	r3, [r3, #28]	@ zero_extendqisi2
+ 156:oscillator.cpp **** }
+ 954              		.loc 1 156 1
+ 955 000c 1846     		mov	r0, r3
+ 956 000e 0C37     		adds	r7, r7, #12
+ 957              		.cfi_def_cfa_offset 4
+ 958 0010 BD46     		mov	sp, r7
+ 959              		.cfi_def_cfa_register 13
+ 960              		@ sp needed
+ 961 0012 5DF8047B 		ldr	r7, [sp], #4
+ 962              		.cfi_restore 7
+ 963              		.cfi_def_cfa_offset 0
+ 964 0016 7047     		bx	lr
+ 965              		.cfi_endproc
+ 966              	.LFE561:
+ 968              		.section	.text._ZN14clasOscillator8GetRatioEv,"ax",%progbits
+ 969              		.align	1
+ 970              		.global	_ZN14clasOscillator8GetRatioEv
+ 971              		.syntax unified
+ 972              		.thumb
+ 973              		.thumb_func
+ 974              		.fpu fpv5-d16
+ 976              	_ZN14clasOscillator8GetRatioEv:
+ 977              	.LFB562:
+ 157:oscillator.cpp **** 
+ 158:oscillator.cpp **** 
+ 159:oscillator.cpp **** //Get current ratio
+ 160:oscillator.cpp **** uint8_t clasOscillator::GetRatio(){
+ 978              		.loc 1 160 35
+ 979              		.cfi_startproc
+ 980              		@ args = 0, pretend = 0, frame = 8
+ 981              		@ frame_needed = 1, uses_anonymous_args = 0
+ 982              		@ link register save eliminated.
+ 983 0000 80B4     		push	{r7}
+ 984              		.cfi_def_cfa_offset 4
+ 985              		.cfi_offset 7, -4
+ 986 0002 83B0     		sub	sp, sp, #12
+ 987              		.cfi_def_cfa_offset 16
+ 988 0004 00AF     		add	r7, sp, #0
+ 989              		.cfi_def_cfa_register 7
+ 990 0006 7860     		str	r0, [r7, #4]
+ 161:oscillator.cpp ****     return uiRatio_;
+ 991              		.loc 1 161 12
+ 992 0008 7B68     		ldr	r3, [r7, #4]
+ 993 000a 5B7F     		ldrb	r3, [r3, #29]	@ zero_extendqisi2
+ 162:oscillator.cpp **** }
+ 994              		.loc 1 162 1
+ 995 000c 1846     		mov	r0, r3
+ 996 000e 0C37     		adds	r7, r7, #12
+ 997              		.cfi_def_cfa_offset 4
+ 998 0010 BD46     		mov	sp, r7
+ 999              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 21
+
+
+ 1000              		@ sp needed
+ 1001 0012 5DF8047B 		ldr	r7, [sp], #4
+ 1002              		.cfi_restore 7
+ 1003              		.cfi_def_cfa_offset 0
+ 1004 0016 7047     		bx	lr
+ 1005              		.cfi_endproc
+ 1006              	.LFE562:
+ 1008              		.section	.text._ZN14clasOscillator8SetRatioEh,"ax",%progbits
+ 1009              		.align	1
+ 1010              		.global	_ZN14clasOscillator8SetRatioEh
+ 1011              		.syntax unified
+ 1012              		.thumb
+ 1013              		.thumb_func
+ 1014              		.fpu fpv5-d16
+ 1016              	_ZN14clasOscillator8SetRatioEh:
+ 1017              	.LFB563:
+ 163:oscillator.cpp **** 
+ 164:oscillator.cpp **** //Sets the oscillators ratio
+ 165:oscillator.cpp **** void clasOscillator::SetRatio(uint8_t uiRatio){
+ 1018              		.loc 1 165 47
+ 1019              		.cfi_startproc
+ 1020              		@ args = 0, pretend = 0, frame = 8
+ 1021              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1022 0000 80B5     		push	{r7, lr}
+ 1023              		.cfi_def_cfa_offset 8
+ 1024              		.cfi_offset 7, -8
+ 1025              		.cfi_offset 14, -4
+ 1026 0002 82B0     		sub	sp, sp, #8
+ 1027              		.cfi_def_cfa_offset 16
+ 1028 0004 00AF     		add	r7, sp, #0
+ 1029              		.cfi_def_cfa_register 7
+ 1030 0006 7860     		str	r0, [r7, #4]
+ 1031 0008 0B46     		mov	r3, r1
+ 1032 000a FB70     		strb	r3, [r7, #3]
+ 166:oscillator.cpp ****     uiRatio_ = uiRatio;
+ 1033              		.loc 1 166 14
+ 1034 000c 7B68     		ldr	r3, [r7, #4]
+ 1035 000e FA78     		ldrb	r2, [r7, #3]
+ 1036 0010 5A77     		strb	r2, [r3, #29]
+ 167:oscillator.cpp ****     if (uiRatio_ <= 1) {uiRatio_ = 1;}
+ 1037              		.loc 1 167 9
+ 1038 0012 7B68     		ldr	r3, [r7, #4]
+ 1039 0014 5B7F     		ldrb	r3, [r3, #29]	@ zero_extendqisi2
+ 1040              		.loc 1 167 5
+ 1041 0016 012B     		cmp	r3, #1
+ 1042 0018 02D8     		bhi	.L91
+ 1043              		.loc 1 167 34 discriminator 1
+ 1044 001a 7B68     		ldr	r3, [r7, #4]
+ 1045 001c 0122     		movs	r2, #1
+ 1046 001e 5A77     		strb	r2, [r3, #29]
+ 1047              	.L91:
+ 168:oscillator.cpp ****     if (uiRatio_ >= 9) {uiRatio_ = 9;}
+ 1048              		.loc 1 168 9
+ 1049 0020 7B68     		ldr	r3, [r7, #4]
+ 1050 0022 5B7F     		ldrb	r3, [r3, #29]	@ zero_extendqisi2
+ 1051              		.loc 1 168 5
+ 1052 0024 082B     		cmp	r3, #8
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 22
+
+
+ 1053 0026 02D9     		bls	.L92
+ 1054              		.loc 1 168 34 discriminator 1
+ 1055 0028 7B68     		ldr	r3, [r7, #4]
+ 1056 002a 0922     		movs	r2, #9
+ 1057 002c 5A77     		strb	r2, [r3, #29]
+ 1058              	.L92:
+ 169:oscillator.cpp ****     flPhaseInc_ = fxCalculatePhaseInc(flFreq_ * uiRatio_);
+ 1059              		.loc 1 169 39
+ 1060 002e 7B68     		ldr	r3, [r7, #4]
+ 1061 0030 93ED027A 		vldr.32	s14, [r3, #8]
+ 1062              		.loc 1 169 49
+ 1063 0034 7B68     		ldr	r3, [r7, #4]
+ 1064 0036 5B7F     		ldrb	r3, [r3, #29]	@ zero_extendqisi2
+ 1065 0038 07EE903A 		vmov	s15, r3	@ int
+ 1066              		.loc 1 169 38
+ 1067 003c F8EEE77A 		vcvt.f32.s32	s15, s15
+ 1068 0040 67EE277A 		vmul.f32	s15, s14, s15
+ 1069 0044 B0EE670A 		vmov.f32	s0, s15
+ 1070 0048 7868     		ldr	r0, [r7, #4]
+ 1071 004a FFF7FEFF 		bl	_ZN14clasOscillator19fxCalculatePhaseIncEf
+ 1072 004e F0EE407A 		vmov.f32	s15, s0
+ 1073              		.loc 1 169 17
+ 1074 0052 7B68     		ldr	r3, [r7, #4]
+ 1075 0054 C3ED047A 		vstr.32	s15, [r3, #16]
+ 170:oscillator.cpp **** }
+ 1076              		.loc 1 170 1
+ 1077 0058 00BF     		nop
+ 1078 005a 0837     		adds	r7, r7, #8
+ 1079              		.cfi_def_cfa_offset 8
+ 1080 005c BD46     		mov	sp, r7
+ 1081              		.cfi_def_cfa_register 13
+ 1082              		@ sp needed
+ 1083 005e 80BD     		pop	{r7, pc}
+ 1084              		.cfi_endproc
+ 1085              	.LFE563:
+ 1087              		.section	.text._ZN14clasOscillator7TromoloEf,"ax",%progbits
+ 1088              		.align	1
+ 1089              		.global	_ZN14clasOscillator7TromoloEf
+ 1090              		.syntax unified
+ 1091              		.thumb
+ 1092              		.thumb_func
+ 1093              		.fpu fpv5-d16
+ 1095              	_ZN14clasOscillator7TromoloEf:
+ 1096              	.LFB564:
+ 171:oscillator.cpp **** 
+ 172:oscillator.cpp **** 
+ 173:oscillator.cpp **** // float clasOscillator::LFOProcess(float flSignalInput){
+ 174:oscillator.cpp **** //     return flSignalInput * Process();
+ 175:oscillator.cpp **** // }
+ 176:oscillator.cpp **** 
+ 177:oscillator.cpp **** 
+ 178:oscillator.cpp **** //Tromolo effect
+ 179:oscillator.cpp **** float clasOscillator::Tromolo(float Signal){
+ 1097              		.loc 1 179 44
+ 1098              		.cfi_startproc
+ 1099              		@ args = 0, pretend = 0, frame = 16
+ 1100              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 23
+
+
+ 1101 0000 80B5     		push	{r7, lr}
+ 1102              		.cfi_def_cfa_offset 8
+ 1103              		.cfi_offset 7, -8
+ 1104              		.cfi_offset 14, -4
+ 1105 0002 84B0     		sub	sp, sp, #16
+ 1106              		.cfi_def_cfa_offset 24
+ 1107 0004 00AF     		add	r7, sp, #0
+ 1108              		.cfi_def_cfa_register 7
+ 1109 0006 7860     		str	r0, [r7, #4]
+ 1110 0008 87ED000A 		vstr.32	s0, [r7]
+ 180:oscillator.cpp ****     flMaxDepth_ = 0.5f;
+ 1111              		.loc 1 180 17
+ 1112 000c 7B68     		ldr	r3, [r7, #4]
+ 1113 000e 4FF07C52 		mov	r2, #1056964608
+ 1114 0012 5A62     		str	r2, [r3, #36]	@ float
+ 181:oscillator.cpp ****     float flTromolo = Process() + 0.5;
+ 1115              		.loc 1 181 30
+ 1116 0014 7868     		ldr	r0, [r7, #4]
+ 1117 0016 FFF7FEFF 		bl	_ZN14clasOscillator7ProcessEv
+ 1118 001a F0EE407A 		vmov.f32	s15, s0
+ 1119 001e B7EEE77A 		vcvt.f64.f32	d7, s15
+ 1120              		.loc 1 181 33
+ 1121 0022 B6EE006B 		vmov.f64	d6, #5.0e-1
+ 1122 0026 37EE067B 		vadd.f64	d7, d7, d6
+ 1123              		.loc 1 181 35
+ 1124 002a F7EEC77B 		vcvt.f32.f64	s15, d7
+ 1125 002e C7ED037A 		vstr.32	s15, [r7, #12]
+ 182:oscillator.cpp ****     return Signal * flTromolo;
+ 1126              		.loc 1 182 21
+ 1127 0032 97ED007A 		vldr.32	s14, [r7]
+ 1128 0036 D7ED037A 		vldr.32	s15, [r7, #12]
+ 1129 003a 67EE277A 		vmul.f32	s15, s14, s15
+ 183:oscillator.cpp **** }
+ 1130              		.loc 1 183 1
+ 1131 003e B0EE670A 		vmov.f32	s0, s15
+ 1132 0042 1037     		adds	r7, r7, #16
+ 1133              		.cfi_def_cfa_offset 8
+ 1134 0044 BD46     		mov	sp, r7
+ 1135              		.cfi_def_cfa_register 13
+ 1136              		@ sp needed
+ 1137 0046 80BD     		pop	{r7, pc}
+ 1138              		.cfi_endproc
+ 1139              	.LFE564:
+ 1141              		.section	.text._ZSt3powIifEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_XsrSt12__is_integerIS2_
+ 1142              		.align	1
+ 1143              		.weak	_ZSt3powIifEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_XsrSt12__is_integerIS2_E7__value
+ 1144              		.syntax unified
+ 1145              		.thumb
+ 1146              		.thumb_func
+ 1147              		.fpu fpv5-d16
+ 1149              	_ZSt3powIifEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_XsrSt12__is_integerIS2_E7__valueEE6__ty
+ 1150              	.LFB566:
+ 1151              		.file 2 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
+   1:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // -*- C++ -*- C forwarding header.
+   2:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+   3:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // Copyright (C) 1997-2020 Free Software Foundation, Inc.
+   4:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** //
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 24
+
+
+   5:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // software; you can redistribute it and/or modify it under the
+   7:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // terms of the GNU General Public License as published by the
+   8:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // Free Software Foundation; either version 3, or (at your option)
+   9:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // any later version.
+  10:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  11:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // This library is distributed in the hope that it will be useful,
+  12:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // GNU General Public License for more details.
+  15:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  16:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // Under Section 7 of GPL version 3, you are granted additional
+  17:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // permissions described in the GCC Runtime Library Exception, version
+  18:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // 3.1, as published by the Free Software Foundation.
+  19:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  20:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // You should have received a copy of the GNU General Public License and
+  21:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // <http://www.gnu.org/licenses/>.
+  24:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  25:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** /** @file include/cmath
+  26:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****  *  This is a Standard C++ Library file.  You should @c \#include this file
+  27:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****  *  in your programs, rather than any of the @a *.h implementation files.
+  28:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****  *
+  29:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****  *  This is the C++ version of the Standard C Library header @c math.h,
+  30:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****  *  and its contents are (mostly) the same as that header, but are all
+  31:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****  *  contained in the namespace @c std (except for names which are defined
+  32:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****  *  as macros in C).
+  33:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****  */
+  34:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  35:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** //
+  36:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // ISO C++ 14882: 26.5  C library
+  37:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** //
+  38:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  39:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #pragma GCC system_header
+  40:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  41:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #include <bits/c++config.h>
+  42:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #include <bits/cpp_type_traits.h>
+  43:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #include <ext/type_traits.h>
+  44:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #define _GLIBCXX_INCLUDE_NEXT_C_HEADERS
+  45:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #include_next <math.h>
+  46:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef _GLIBCXX_INCLUDE_NEXT_C_HEADERS
+  47:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #include <bits/std_abs.h>
+  48:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  49:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef _GLIBCXX_CMATH
+  50:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #define _GLIBCXX_CMATH 1
+  51:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  52:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** // Get rid of those macros defined in <math.h> in lieu of real functions.
+  53:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef div
+  54:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef acos
+  55:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef asin
+  56:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef atan
+  57:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef atan2
+  58:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef ceil
+  59:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef cos
+  60:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef cosh
+  61:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef exp
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 25
+
+
+  62:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef fabs
+  63:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef floor
+  64:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef fmod
+  65:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef frexp
+  66:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef ldexp
+  67:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef log
+  68:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef log10
+  69:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef modf
+  70:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef pow
+  71:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef sin
+  72:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef sinh
+  73:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef sqrt
+  74:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef tan
+  75:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #undef tanh
+  76:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  77:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** extern "C++"
+  78:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** {
+  79:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** namespace std _GLIBCXX_VISIBILITY(default)
+  80:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** {
+  81:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+  82:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  83:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::acos;
+  84:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  85:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+  86:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+  87:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   acos(float __x)
+  88:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_acosf(__x); }
+  89:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  90:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+  91:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   acos(long double __x)
+  92:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_acosl(__x); }
+  93:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+  94:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+  95:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp>
+  96:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+  97:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+  98:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****                                     double>::__type
+  99:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     acos(_Tp __x)
+ 100:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     { return __builtin_acos(__x); }
+ 101:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 102:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::asin;
+ 103:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 104:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 105:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 106:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   asin(float __x)
+ 107:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_asinf(__x); }
+ 108:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 109:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 110:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   asin(long double __x)
+ 111:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_asinl(__x); }
+ 112:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 113:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 114:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp>
+ 115:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 116:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 117:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****                                     double>::__type
+ 118:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     asin(_Tp __x)
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 26
+
+
+ 119:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     { return __builtin_asin(__x); }
+ 120:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 121:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::atan;
+ 122:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 123:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 124:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 125:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   atan(float __x)
+ 126:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_atanf(__x); }
+ 127:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 128:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 129:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   atan(long double __x)
+ 130:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_atanl(__x); }
+ 131:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 132:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 133:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp>
+ 134:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 135:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 136:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****                                     double>::__type
+ 137:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     atan(_Tp __x)
+ 138:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     { return __builtin_atan(__x); }
+ 139:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 140:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::atan2;
+ 141:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 142:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 143:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 144:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   atan2(float __y, float __x)
+ 145:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_atan2f(__y, __x); }
+ 146:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 147:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 148:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   atan2(long double __y, long double __x)
+ 149:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_atan2l(__y, __x); }
+ 150:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 151:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 152:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp, typename _Up>
+ 153:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 154:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__promote_2<_Tp, _Up>::__type
+ 155:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     atan2(_Tp __y, _Up __x)
+ 156:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     {
+ 157:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****       typedef typename __gnu_cxx::__promote_2<_Tp, _Up>::__type __type;
+ 158:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****       return atan2(__type(__y), __type(__x));
+ 159:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     }
+ 160:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 161:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::ceil;
+ 162:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 163:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 164:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 165:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   ceil(float __x)
+ 166:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_ceilf(__x); }
+ 167:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 168:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 169:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   ceil(long double __x)
+ 170:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_ceill(__x); }
+ 171:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 172:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 173:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp>
+ 174:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 175:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 27
+
+
+ 176:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****                                     double>::__type
+ 177:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     ceil(_Tp __x)
+ 178:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     { return __builtin_ceil(__x); }
+ 179:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 180:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::cos;
+ 181:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 182:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 183:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 184:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   cos(float __x)
+ 185:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_cosf(__x); }
+ 186:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 187:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 188:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   cos(long double __x)
+ 189:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_cosl(__x); }
+ 190:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 191:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 192:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp>
+ 193:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 194:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 195:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****                                     double>::__type
+ 196:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     cos(_Tp __x)
+ 197:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     { return __builtin_cos(__x); }
+ 198:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 199:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::cosh;
+ 200:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 201:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 202:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 203:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   cosh(float __x)
+ 204:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_coshf(__x); }
+ 205:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 206:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 207:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   cosh(long double __x)
+ 208:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_coshl(__x); }
+ 209:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 210:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 211:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp>
+ 212:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 213:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 214:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****                                     double>::__type
+ 215:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     cosh(_Tp __x)
+ 216:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     { return __builtin_cosh(__x); }
+ 217:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 218:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::exp;
+ 219:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 220:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 221:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 222:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   exp(float __x)
+ 223:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_expf(__x); }
+ 224:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 225:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 226:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   exp(long double __x)
+ 227:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_expl(__x); }
+ 228:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 229:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 230:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp>
+ 231:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 232:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 28
+
+
+ 233:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****                                     double>::__type
+ 234:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     exp(_Tp __x)
+ 235:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     { return __builtin_exp(__x); }
+ 236:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 237:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::fabs;
+ 238:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 239:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 240:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 241:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   fabs(float __x)
+ 242:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_fabsf(__x); }
+ 243:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 244:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 245:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   fabs(long double __x)
+ 246:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_fabsl(__x); }
+ 247:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 248:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 249:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp>
+ 250:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 251:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 252:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****                                     double>::__type
+ 253:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     fabs(_Tp __x)
+ 254:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     { return __builtin_fabs(__x); }
+ 255:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 256:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::floor;
+ 257:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 258:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 259:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 260:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   floor(float __x)
+ 261:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_floorf(__x); }
+ 262:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 263:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 264:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   floor(long double __x)
+ 265:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_floorl(__x); }
+ 266:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 267:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 268:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp>
+ 269:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 270:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 271:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****                                     double>::__type
+ 272:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     floor(_Tp __x)
+ 273:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     { return __builtin_floor(__x); }
+ 274:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 275:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::fmod;
+ 276:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 277:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 278:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 279:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   fmod(float __x, float __y)
+ 280:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_fmodf(__x, __y); }
+ 281:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 282:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 283:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   fmod(long double __x, long double __y)
+ 284:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_fmodl(__x, __y); }
+ 285:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 286:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 287:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp, typename _Up>
+ 288:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 289:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__promote_2<_Tp, _Up>::__type
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 29
+
+
+ 290:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     fmod(_Tp __x, _Up __y)
+ 291:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     {
+ 292:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****       typedef typename __gnu_cxx::__promote_2<_Tp, _Up>::__type __type;
+ 293:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****       return fmod(__type(__x), __type(__y));
+ 294:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     }
+ 295:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 296:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::frexp;
+ 297:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 298:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 299:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline float
+ 300:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   frexp(float __x, int* __exp)
+ 301:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_frexpf(__x, __exp); }
+ 302:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 303:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline long double
+ 304:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   frexp(long double __x, int* __exp)
+ 305:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_frexpl(__x, __exp); }
+ 306:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 307:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 308:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp>
+ 309:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 310:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+ 311:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****                                     double>::__type
+ 312:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     frexp(_Tp __x, int* __exp)
+ 313:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     { return __builtin_frexp(__x, __exp); }
+ 314:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 315:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::ldexp;
+ 316:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 317:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 318:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 319:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   ldexp(float __x, int __exp)
+ 320:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_ldexpf(__x, __exp); }
+ 321:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 322:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 323:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   ldexp(long double __x, int __exp)
+ 324:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_ldexpl(__x, __exp); }
+ 325:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 326:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 327:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp>
+ 328:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 329:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+ 330:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****                                     double>::__type
+ 331:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     ldexp(_Tp __x, int __exp)
+ 332:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     { return __builtin_ldexp(__x, __exp); }
+ 333:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 334:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::log;
+ 335:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 336:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 337:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 338:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   log(float __x)
+ 339:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_logf(__x); }
+ 340:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 341:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 342:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   log(long double __x)
+ 343:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_logl(__x); }
+ 344:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 345:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 346:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp>
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 30
+
+
+ 347:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 348:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+ 349:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****                                     double>::__type
+ 350:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     log(_Tp __x)
+ 351:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     { return __builtin_log(__x); }
+ 352:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 353:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::log10;
+ 354:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 355:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 356:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 357:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   log10(float __x)
+ 358:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_log10f(__x); }
+ 359:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 360:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 361:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   log10(long double __x)
+ 362:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_log10l(__x); }
+ 363:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 364:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 365:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp>
+ 366:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 367:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 368:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****                                     double>::__type
+ 369:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     log10(_Tp __x)
+ 370:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     { return __builtin_log10(__x); }
+ 371:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 372:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::modf;
+ 373:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 374:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 375:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline float
+ 376:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   modf(float __x, float* __iptr)
+ 377:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_modff(__x, __iptr); }
+ 378:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 379:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline long double
+ 380:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   modf(long double __x, long double* __iptr)
+ 381:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_modfl(__x, __iptr); }
+ 382:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 383:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 384:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   using ::pow;
+ 385:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 386:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 387:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 388:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   pow(float __x, float __y)
+ 389:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_powf(__x, __y); }
+ 390:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 391:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 392:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   pow(long double __x, long double __y)
+ 393:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_powl(__x, __y); }
+ 394:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 395:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #if __cplusplus < 201103L
+ 396:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   // _GLIBCXX_RESOLVE_LIB_DEFECTS
+ 397:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   // DR 550. What should the return type of pow(float,int) be?
+ 398:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline double
+ 399:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   pow(double __x, int __i)
+ 400:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_powi(__x, __i); }
+ 401:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 402:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline float
+ 403:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   pow(float __x, int __n)
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 31
+
+
+ 404:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_powif(__x, __n); }
+ 405:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 406:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   inline long double
+ 407:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   pow(long double __x, int __n)
+ 408:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   { return __builtin_powil(__x, __n); }
+ 409:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 410:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** #endif
+ 411:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath **** 
+ 412:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****   template<typename _Tp, typename _Up>
+ 413:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     inline _GLIBCXX_CONSTEXPR
+ 414:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     typename __gnu_cxx::__promote_2<_Tp, _Up>::__type
+ 415:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     pow(_Tp __x, _Up __y)
+ 1152              		.loc 2 415 5
+ 1153              		.cfi_startproc
+ 1154              		@ args = 0, pretend = 0, frame = 8
+ 1155              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1156 0000 80B5     		push	{r7, lr}
+ 1157              		.cfi_def_cfa_offset 8
+ 1158              		.cfi_offset 7, -8
+ 1159              		.cfi_offset 14, -4
+ 1160 0002 82B0     		sub	sp, sp, #8
+ 1161              		.cfi_def_cfa_offset 16
+ 1162 0004 00AF     		add	r7, sp, #0
+ 1163              		.cfi_def_cfa_register 7
+ 1164 0006 7860     		str	r0, [r7, #4]
+ 1165 0008 87ED000A 		vstr.32	s0, [r7]
+ 416:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     {
+ 417:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****       typedef typename __gnu_cxx::__promote_2<_Tp, _Up>::__type __type;
+ 418:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****       return pow(__type(__x), __type(__y));
+ 1166              		.loc 2 418 17
+ 1167 000c 7B68     		ldr	r3, [r7, #4]
+ 1168 000e 07EE903A 		vmov	s15, r3	@ int
+ 1169 0012 B8EEE77B 		vcvt.f64.s32	d7, s15
+ 1170 0016 D7ED006A 		vldr.32	s13, [r7]
+ 1171 001a B7EEE66A 		vcvt.f64.f32	d6, s13
+ 1172 001e B0EE461B 		vmov.f64	d1, d6
+ 1173 0022 B0EE470B 		vmov.f64	d0, d7
+ 1174 0026 FFF7FEFF 		bl	pow
+ 1175 002a B0EE407B 		vmov.f64	d7, d0
+ 419:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\cmath ****     }
+ 1176              		.loc 2 419 5
+ 1177 002e B0EE470B 		vmov.f64	d0, d7
+ 1178 0032 0837     		adds	r7, r7, #8
+ 1179              		.cfi_def_cfa_offset 8
+ 1180 0034 BD46     		mov	sp, r7
+ 1181              		.cfi_def_cfa_register 13
+ 1182              		@ sp needed
+ 1183 0036 80BD     		pop	{r7, pc}
+ 1184              		.cfi_endproc
+ 1185              	.LFE566:
+ 1187              		.section	.text._ZN14clasOscillator7VibratoEf,"ax",%progbits
+ 1188              		.align	1
+ 1189              		.global	_ZN14clasOscillator7VibratoEf
+ 1190              		.syntax unified
+ 1191              		.thumb
+ 1192              		.thumb_func
+ 1193              		.fpu fpv5-d16
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 32
+
+
+ 1195              	_ZN14clasOscillator7VibratoEf:
+ 1196              	.LFB565:
+ 184:oscillator.cpp **** 
+ 185:oscillator.cpp **** // //Vibrato effect 
+ 186:oscillator.cpp **** // float clasOscillator::Vibrato(float Signal){
+ 187:oscillator.cpp **** //     flMaxDepth_ = 12.0f;
+ 188:oscillator.cpp **** //     float flVibrato = Process();
+ 189:oscillator.cpp **** //     flVibrato /= 12;
+ 190:oscillator.cpp **** //     float flOutput = pow(2, (flVibrato));
+ 191:oscillator.cpp **** //     return (Signal * flOutput);
+ 192:oscillator.cpp **** // }
+ 193:oscillator.cpp **** 
+ 194:oscillator.cpp **** 
+ 195:oscillator.cpp **** //Vibrato effect 
+ 196:oscillator.cpp **** float clasOscillator::Vibrato(float Signal){
+ 1197              		.loc 1 196 44
+ 1198              		.cfi_startproc
+ 1199              		@ args = 0, pretend = 0, frame = 16
+ 1200              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1201 0000 80B5     		push	{r7, lr}
+ 1202              		.cfi_def_cfa_offset 8
+ 1203              		.cfi_offset 7, -8
+ 1204              		.cfi_offset 14, -4
+ 1205 0002 84B0     		sub	sp, sp, #16
+ 1206              		.cfi_def_cfa_offset 24
+ 1207 0004 00AF     		add	r7, sp, #0
+ 1208              		.cfi_def_cfa_register 7
+ 1209 0006 7860     		str	r0, [r7, #4]
+ 1210 0008 87ED000A 		vstr.32	s0, [r7]
+ 197:oscillator.cpp ****     flMaxDepth_ = 12.0f;
+ 1211              		.loc 1 197 17
+ 1212 000c 7B68     		ldr	r3, [r7, #4]
+ 1213 000e 124A     		ldr	r2, .L99
+ 1214 0010 5A62     		str	r2, [r3, #36]	@ float
+ 198:oscillator.cpp ****     float flOutput = Process();
+ 1215              		.loc 1 198 29
+ 1216 0012 7868     		ldr	r0, [r7, #4]
+ 1217 0014 FFF7FEFF 		bl	_ZN14clasOscillator7ProcessEv
+ 1218 0018 87ED030A 		vstr.32	s0, [r7, #12]
+ 199:oscillator.cpp ****     // float flFrequency = Signal;
+ 200:oscillator.cpp ****     flOutput = flOutput / 12.0;
+ 1219              		.loc 1 200 14
+ 1220 001c 97ED037A 		vldr.32	s14, [r7, #12]
+ 1221 0020 F2EE086A 		vmov.f32	s13, #1.2e+1
+ 1222 0024 C7EE267A 		vdiv.f32	s15, s14, s13
+ 1223 0028 C7ED037A 		vstr.32	s15, [r7, #12]
+ 201:oscillator.cpp ****     flOutput = pow(2, (flOutput));
+ 1224              		.loc 1 201 19
+ 1225 002c 97ED030A 		vldr.32	s0, [r7, #12]
+ 1226 0030 0220     		movs	r0, #2
+ 1227 0032 FFF7FEFF 		bl	_ZSt3powIifEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_XsrSt12__is_integerIS2_E7__valueEE6
+ 1228 0036 B0EE407B 		vmov.f64	d7, d0
+ 1229              		.loc 1 201 14
+ 1230 003a F7EEC77B 		vcvt.f32.f64	s15, d7
+ 1231 003e C7ED037A 		vstr.32	s15, [r7, #12]
+ 202:oscillator.cpp ****     return (Signal * flOutput);
+ 1232              		.loc 1 202 30
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 33
+
+
+ 1233 0042 97ED007A 		vldr.32	s14, [r7]
+ 1234 0046 D7ED037A 		vldr.32	s15, [r7, #12]
+ 1235 004a 67EE277A 		vmul.f32	s15, s14, s15
+ 203:oscillator.cpp **** }
+ 1236              		.loc 1 203 1
+ 1237 004e B0EE670A 		vmov.f32	s0, s15
+ 1238 0052 1037     		adds	r7, r7, #16
+ 1239              		.cfi_def_cfa_offset 8
+ 1240 0054 BD46     		mov	sp, r7
+ 1241              		.cfi_def_cfa_register 13
+ 1242              		@ sp needed
+ 1243 0056 80BD     		pop	{r7, pc}
+ 1244              	.L100:
+ 1245              		.align	2
+ 1246              	.L99:
+ 1247 0058 00004041 		.word	1094713344
+ 1248              		.cfi_endproc
+ 1249              	.LFE565:
+ 1251              		.section	.text._ZN14clasOscillator10SetTromoloEv,"ax",%progbits
+ 1252              		.align	1
+ 1253              		.global	_ZN14clasOscillator10SetTromoloEv
+ 1254              		.syntax unified
+ 1255              		.thumb
+ 1256              		.thumb_func
+ 1257              		.fpu fpv5-d16
+ 1259              	_ZN14clasOscillator10SetTromoloEv:
+ 1260              	.LFB567:
+ 204:oscillator.cpp **** 
+ 205:oscillator.cpp **** 
+ 206:oscillator.cpp **** //Turns on tromolo mode
+ 207:oscillator.cpp **** void clasOscillator::SetTromolo(){
+ 1261              		.loc 1 207 34
+ 1262              		.cfi_startproc
+ 1263              		@ args = 0, pretend = 0, frame = 8
+ 1264              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1265              		@ link register save eliminated.
+ 1266 0000 80B4     		push	{r7}
+ 1267              		.cfi_def_cfa_offset 4
+ 1268              		.cfi_offset 7, -4
+ 1269 0002 83B0     		sub	sp, sp, #12
+ 1270              		.cfi_def_cfa_offset 16
+ 1271 0004 00AF     		add	r7, sp, #0
+ 1272              		.cfi_def_cfa_register 7
+ 1273 0006 7860     		str	r0, [r7, #4]
+ 208:oscillator.cpp ****     xVibratoMode_ = false;
+ 1274              		.loc 1 208 19
+ 1275 0008 7B68     		ldr	r3, [r7, #4]
+ 1276 000a 0022     		movs	r2, #0
+ 1277 000c 83F82920 		strb	r2, [r3, #41]
+ 209:oscillator.cpp ****     xTromoloMode_ = true;
+ 1278              		.loc 1 209 19
+ 1279 0010 7B68     		ldr	r3, [r7, #4]
+ 1280 0012 0122     		movs	r2, #1
+ 1281 0014 83F82820 		strb	r2, [r3, #40]
+ 210:oscillator.cpp **** }
+ 1282              		.loc 1 210 1
+ 1283 0018 00BF     		nop
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 34
+
+
+ 1284 001a 0C37     		adds	r7, r7, #12
+ 1285              		.cfi_def_cfa_offset 4
+ 1286 001c BD46     		mov	sp, r7
+ 1287              		.cfi_def_cfa_register 13
+ 1288              		@ sp needed
+ 1289 001e 5DF8047B 		ldr	r7, [sp], #4
+ 1290              		.cfi_restore 7
+ 1291              		.cfi_def_cfa_offset 0
+ 1292 0022 7047     		bx	lr
+ 1293              		.cfi_endproc
+ 1294              	.LFE567:
+ 1296              		.section	.text._ZN14clasOscillator10SetVibratoEv,"ax",%progbits
+ 1297              		.align	1
+ 1298              		.global	_ZN14clasOscillator10SetVibratoEv
+ 1299              		.syntax unified
+ 1300              		.thumb
+ 1301              		.thumb_func
+ 1302              		.fpu fpv5-d16
+ 1304              	_ZN14clasOscillator10SetVibratoEv:
+ 1305              	.LFB568:
+ 211:oscillator.cpp **** 
+ 212:oscillator.cpp **** //Turns on vibrato mode
+ 213:oscillator.cpp **** void clasOscillator::SetVibrato(){
+ 1306              		.loc 1 213 34
+ 1307              		.cfi_startproc
+ 1308              		@ args = 0, pretend = 0, frame = 8
+ 1309              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1310              		@ link register save eliminated.
+ 1311 0000 80B4     		push	{r7}
+ 1312              		.cfi_def_cfa_offset 4
+ 1313              		.cfi_offset 7, -4
+ 1314 0002 83B0     		sub	sp, sp, #12
+ 1315              		.cfi_def_cfa_offset 16
+ 1316 0004 00AF     		add	r7, sp, #0
+ 1317              		.cfi_def_cfa_register 7
+ 1318 0006 7860     		str	r0, [r7, #4]
+ 214:oscillator.cpp ****     xTromoloMode_ = false;
+ 1319              		.loc 1 214 19
+ 1320 0008 7B68     		ldr	r3, [r7, #4]
+ 1321 000a 0022     		movs	r2, #0
+ 1322 000c 83F82820 		strb	r2, [r3, #40]
+ 215:oscillator.cpp ****     xVibratoMode_ = true;
+ 1323              		.loc 1 215 19
+ 1324 0010 7B68     		ldr	r3, [r7, #4]
+ 1325 0012 0122     		movs	r2, #1
+ 1326 0014 83F82920 		strb	r2, [r3, #41]
+ 216:oscillator.cpp **** }
+ 1327              		.loc 1 216 1
+ 1328 0018 00BF     		nop
+ 1329 001a 0C37     		adds	r7, r7, #12
+ 1330              		.cfi_def_cfa_offset 4
+ 1331 001c BD46     		mov	sp, r7
+ 1332              		.cfi_def_cfa_register 13
+ 1333              		@ sp needed
+ 1334 001e 5DF8047B 		ldr	r7, [sp], #4
+ 1335              		.cfi_restore 7
+ 1336              		.cfi_def_cfa_offset 0
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 35
+
+
+ 1337 0022 7047     		bx	lr
+ 1338              		.cfi_endproc
+ 1339              	.LFE568:
+ 1341              		.section	.text._ZN14clasOscillator14GetTromoloModeEv,"ax",%progbits
+ 1342              		.align	1
+ 1343              		.global	_ZN14clasOscillator14GetTromoloModeEv
+ 1344              		.syntax unified
+ 1345              		.thumb
+ 1346              		.thumb_func
+ 1347              		.fpu fpv5-d16
+ 1349              	_ZN14clasOscillator14GetTromoloModeEv:
+ 1350              	.LFB569:
+ 217:oscillator.cpp **** 
+ 218:oscillator.cpp **** //Turns on tromolo mode
+ 219:oscillator.cpp **** bool clasOscillator::GetTromoloMode(){
+ 1351              		.loc 1 219 38
+ 1352              		.cfi_startproc
+ 1353              		@ args = 0, pretend = 0, frame = 8
+ 1354              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1355              		@ link register save eliminated.
+ 1356 0000 80B4     		push	{r7}
+ 1357              		.cfi_def_cfa_offset 4
+ 1358              		.cfi_offset 7, -4
+ 1359 0002 83B0     		sub	sp, sp, #12
+ 1360              		.cfi_def_cfa_offset 16
+ 1361 0004 00AF     		add	r7, sp, #0
+ 1362              		.cfi_def_cfa_register 7
+ 1363 0006 7860     		str	r0, [r7, #4]
+ 220:oscillator.cpp ****     return xTromoloMode_;
+ 1364              		.loc 1 220 12
+ 1365 0008 7B68     		ldr	r3, [r7, #4]
+ 1366 000a 93F82830 		ldrb	r3, [r3, #40]	@ zero_extendqisi2
+ 221:oscillator.cpp **** }
+ 1367              		.loc 1 221 1
+ 1368 000e 1846     		mov	r0, r3
+ 1369 0010 0C37     		adds	r7, r7, #12
+ 1370              		.cfi_def_cfa_offset 4
+ 1371 0012 BD46     		mov	sp, r7
+ 1372              		.cfi_def_cfa_register 13
+ 1373              		@ sp needed
+ 1374 0014 5DF8047B 		ldr	r7, [sp], #4
+ 1375              		.cfi_restore 7
+ 1376              		.cfi_def_cfa_offset 0
+ 1377 0018 7047     		bx	lr
+ 1378              		.cfi_endproc
+ 1379              	.LFE569:
+ 1381              		.section	.text._ZN14clasOscillator14GetVibratoModeEv,"ax",%progbits
+ 1382              		.align	1
+ 1383              		.global	_ZN14clasOscillator14GetVibratoModeEv
+ 1384              		.syntax unified
+ 1385              		.thumb
+ 1386              		.thumb_func
+ 1387              		.fpu fpv5-d16
+ 1389              	_ZN14clasOscillator14GetVibratoModeEv:
+ 1390              	.LFB570:
+ 222:oscillator.cpp **** 
+ 223:oscillator.cpp **** //Turns on vibrato mode
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 36
+
+
+ 224:oscillator.cpp **** bool clasOscillator::GetVibratoMode(){
+ 1391              		.loc 1 224 38
+ 1392              		.cfi_startproc
+ 1393              		@ args = 0, pretend = 0, frame = 8
+ 1394              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1395              		@ link register save eliminated.
+ 1396 0000 80B4     		push	{r7}
+ 1397              		.cfi_def_cfa_offset 4
+ 1398              		.cfi_offset 7, -4
+ 1399 0002 83B0     		sub	sp, sp, #12
+ 1400              		.cfi_def_cfa_offset 16
+ 1401 0004 00AF     		add	r7, sp, #0
+ 1402              		.cfi_def_cfa_register 7
+ 1403 0006 7860     		str	r0, [r7, #4]
+ 225:oscillator.cpp ****     return xVibratoMode_;
+ 1404              		.loc 1 225 12
+ 1405 0008 7B68     		ldr	r3, [r7, #4]
+ 1406 000a 93F82930 		ldrb	r3, [r3, #41]	@ zero_extendqisi2
+ 226:oscillator.cpp **** }
+ 1407              		.loc 1 226 1
+ 1408 000e 1846     		mov	r0, r3
+ 1409 0010 0C37     		adds	r7, r7, #12
+ 1410              		.cfi_def_cfa_offset 4
+ 1411 0012 BD46     		mov	sp, r7
+ 1412              		.cfi_def_cfa_register 13
+ 1413              		@ sp needed
+ 1414 0014 5DF8047B 		ldr	r7, [sp], #4
+ 1415              		.cfi_restore 7
+ 1416              		.cfi_def_cfa_offset 0
+ 1417 0018 7047     		bx	lr
+ 1418              		.cfi_endproc
+ 1419              	.LFE570:
+ 1421              		.section	.text._ZN14clasOscillator10LFOProcessEf,"ax",%progbits
+ 1422              		.align	1
+ 1423              		.global	_ZN14clasOscillator10LFOProcessEf
+ 1424              		.syntax unified
+ 1425              		.thumb
+ 1426              		.thumb_func
+ 1427              		.fpu fpv5-d16
+ 1429              	_ZN14clasOscillator10LFOProcessEf:
+ 1430              	.LFB571:
+ 227:oscillator.cpp **** 
+ 228:oscillator.cpp **** 
+ 229:oscillator.cpp **** float clasOscillator::LFOProcess(float flSignal){
+ 1431              		.loc 1 229 49
+ 1432              		.cfi_startproc
+ 1433              		@ args = 0, pretend = 0, frame = 16
+ 1434              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1435 0000 80B5     		push	{r7, lr}
+ 1436              		.cfi_def_cfa_offset 8
+ 1437              		.cfi_offset 7, -8
+ 1438              		.cfi_offset 14, -4
+ 1439 0002 84B0     		sub	sp, sp, #16
+ 1440              		.cfi_def_cfa_offset 24
+ 1441 0004 00AF     		add	r7, sp, #0
+ 1442              		.cfi_def_cfa_register 7
+ 1443 0006 7860     		str	r0, [r7, #4]
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 37
+
+
+ 1444 0008 87ED000A 		vstr.32	s0, [r7]
+ 230:oscillator.cpp ****     float flOutput = 0.0f;
+ 1445              		.loc 1 230 11
+ 1446 000c 4FF00003 		mov	r3, #0
+ 1447 0010 FB60     		str	r3, [r7, #12]	@ float
+ 231:oscillator.cpp ****     if (xTromoloMode_){
+ 1448              		.loc 1 231 9
+ 1449 0012 7B68     		ldr	r3, [r7, #4]
+ 1450 0014 93F82830 		ldrb	r3, [r3, #40]	@ zero_extendqisi2
+ 1451              		.loc 1 231 5
+ 1452 0018 002B     		cmp	r3, #0
+ 1453 001a 07D0     		beq	.L108
+ 232:oscillator.cpp ****         flOutput = Tromolo(flSignal);
+ 1454              		.loc 1 232 27
+ 1455 001c 97ED000A 		vldr.32	s0, [r7]
+ 1456 0020 7868     		ldr	r0, [r7, #4]
+ 1457 0022 FFF7FEFF 		bl	_ZN14clasOscillator7TromoloEf
+ 1458 0026 87ED030A 		vstr.32	s0, [r7, #12]
+ 1459 002a 0BE0     		b	.L109
+ 1460              	.L108:
+ 233:oscillator.cpp ****     } else if (xVibratoMode_){
+ 1461              		.loc 1 233 16
+ 1462 002c 7B68     		ldr	r3, [r7, #4]
+ 1463 002e 93F82930 		ldrb	r3, [r3, #41]	@ zero_extendqisi2
+ 1464              		.loc 1 233 12
+ 1465 0032 002B     		cmp	r3, #0
+ 1466 0034 06D0     		beq	.L109
+ 234:oscillator.cpp ****         flOutput = Vibrato(flSignal);
+ 1467              		.loc 1 234 27
+ 1468 0036 97ED000A 		vldr.32	s0, [r7]
+ 1469 003a 7868     		ldr	r0, [r7, #4]
+ 1470 003c FFF7FEFF 		bl	_ZN14clasOscillator7VibratoEf
+ 1471 0040 87ED030A 		vstr.32	s0, [r7, #12]
+ 1472              	.L109:
+ 235:oscillator.cpp ****     }
+ 236:oscillator.cpp ****     return flOutput;
+ 1473              		.loc 1 236 12
+ 1474 0044 FB68     		ldr	r3, [r7, #12]	@ float
+ 1475 0046 07EE903A 		vmov	s15, r3
+ 237:oscillator.cpp **** }
+ 1476              		.loc 1 237 1
+ 1477 004a B0EE670A 		vmov.f32	s0, s15
+ 1478 004e 1037     		adds	r7, r7, #16
+ 1479              		.cfi_def_cfa_offset 8
+ 1480 0050 BD46     		mov	sp, r7
+ 1481              		.cfi_def_cfa_register 13
+ 1482              		@ sp needed
+ 1483 0052 80BD     		pop	{r7, pc}
+ 1484              		.cfi_endproc
+ 1485              	.LFE571:
+ 1487              		.text
+ 1488              	.Letext0:
+ 1489              		.file 3 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1490              		.file 4 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 1491              		.file 5 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
+ 1492              		.file 6 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\th
+ 1493              		.file 7 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\ext\\type_traits.
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 38
+
+
+ 1494              		.file 8 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\math.h"
+ 1495              		.file 9 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\math.h"
+ 1496              		.file 10 "oscillator.h"
+ 1497              		.file 11 "<built-in>"
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s 			page 39
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 oscillator.cpp
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:17     .text._ZN14clasOscillator4InitEf8OSC_TYPE:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:25     .text._ZN14clasOscillator4InitEf8OSC_TYPE:00000000 _ZN14clasOscillator4InitEf8OSC_TYPE
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:348    .text._ZN14clasOscillator19fxCalculatePhaseIncEf:00000000 _ZN14clasOscillator19fxCalculatePhaseIncEf
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:158    .text._ZN14clasOscillator4InitEf8OSC_TYPE:000000d4 $d
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:165    .text._ZN14clasOscillator7ProcessEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:172    .text._ZN14clasOscillator7ProcessEv:00000000 _ZN14clasOscillator7ProcessEv
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:199    .text._ZN14clasOscillator7ProcessEv:0000001c $d
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:203    .text._ZN14clasOscillator7ProcessEv:0000002c $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:335    .text._ZN14clasOscillator7ProcessEv:0000012c $d
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:341    .text._ZN14clasOscillator19fxCalculatePhaseIncEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:384    .text._ZN14clasOscillator7SetFreqEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:391    .text._ZN14clasOscillator7SetFreqEf:00000000 _ZN14clasOscillator7SetFreqEf
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:547    .text._ZN14clasOscillator7SetFreqEf:00000104 $d
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:557    .text._ZN14clasOscillator6SetAmpEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:564    .text._ZN14clasOscillator6SetAmpEf:00000000 _ZN14clasOscillator6SetAmpEf
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:627    .text._ZN14clasOscillator11SetWaveformEh:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:634    .text._ZN14clasOscillator11SetWaveformEh:00000000 _ZN14clasOscillator11SetWaveformEh
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:692    .text._ZN14clasOscillator8PhaseAddEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:699    .text._ZN14clasOscillator8PhaseAddEf:00000000 _ZN14clasOscillator8PhaseAddEf
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:737    .text._ZN14clasOscillator7GetFreqEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:744    .text._ZN14clasOscillator7GetFreqEv:00000000 _ZN14clasOscillator7GetFreqEv
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:778    .text._ZN14clasOscillator6GetAmpEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:785    .text._ZN14clasOscillator6GetAmpEv:00000000 _ZN14clasOscillator6GetAmpEv
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:819    .text._ZN14clasOscillator8GetDepthEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:826    .text._ZN14clasOscillator8GetDepthEv:00000000 _ZN14clasOscillator8GetDepthEv
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:860    .text._ZN14clasOscillator8SetDepthEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:867    .text._ZN14clasOscillator8SetDepthEf:00000000 _ZN14clasOscillator8SetDepthEf
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:929    .text._ZN14clasOscillator11GetWaveformEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:936    .text._ZN14clasOscillator11GetWaveformEv:00000000 _ZN14clasOscillator11GetWaveformEv
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:969    .text._ZN14clasOscillator8GetRatioEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:976    .text._ZN14clasOscillator8GetRatioEv:00000000 _ZN14clasOscillator8GetRatioEv
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1009   .text._ZN14clasOscillator8SetRatioEh:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1016   .text._ZN14clasOscillator8SetRatioEh:00000000 _ZN14clasOscillator8SetRatioEh
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1088   .text._ZN14clasOscillator7TromoloEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1095   .text._ZN14clasOscillator7TromoloEf:00000000 _ZN14clasOscillator7TromoloEf
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1142   .text._ZSt3powIifEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_XsrSt12__is_integerIS2_E7__valueEE6__typeENS4_IS3_XsrS5_IS3_E7__valueEE6__typeEE6__typeES2_S3_:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1149   .text._ZSt3powIifEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_XsrSt12__is_integerIS2_E7__valueEE6__typeENS4_IS3_XsrS5_IS3_E7__valueEE6__typeEE6__typeES2_S3_:00000000 _ZSt3powIifEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_XsrSt12__is_integerIS2_E7__valueEE6__typeENS4_IS3_XsrS5_IS3_E7__valueEE6__typeEE6__typeES2_S3_
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1188   .text._ZN14clasOscillator7VibratoEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1195   .text._ZN14clasOscillator7VibratoEf:00000000 _ZN14clasOscillator7VibratoEf
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1247   .text._ZN14clasOscillator7VibratoEf:00000058 $d
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1252   .text._ZN14clasOscillator10SetTromoloEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1259   .text._ZN14clasOscillator10SetTromoloEv:00000000 _ZN14clasOscillator10SetTromoloEv
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1297   .text._ZN14clasOscillator10SetVibratoEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1304   .text._ZN14clasOscillator10SetVibratoEv:00000000 _ZN14clasOscillator10SetVibratoEv
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1342   .text._ZN14clasOscillator14GetTromoloModeEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1349   .text._ZN14clasOscillator14GetTromoloModeEv:00000000 _ZN14clasOscillator14GetTromoloModeEv
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1382   .text._ZN14clasOscillator14GetVibratoModeEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1389   .text._ZN14clasOscillator14GetVibratoModeEv:00000000 _ZN14clasOscillator14GetVibratoModeEv
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1422   .text._ZN14clasOscillator10LFOProcessEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\cc3HnfSA.s:1429   .text._ZN14clasOscillator10LFOProcessEf:00000000 _ZN14clasOscillator10LFOProcessEf
+
+UNDEFINED SYMBOLS
+sinf
+pow

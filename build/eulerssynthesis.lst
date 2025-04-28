@@ -1,0 +1,2224 @@
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.eabi_attribute 28, 1
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 1
+  11              		.eabi_attribute 18, 4
+  12              		.file	"eulerssynthesis.cpp"
+  13              		.text
+  14              	.Ltext0:
+  15              		.cfi_sections	.debug_frame
+  16              		.section	.rodata._ZStL19piecewise_construct,"a"
+  17              		.align	2
+  20              	_ZStL19piecewise_construct:
+  21 0000 00       		.space	1
+  22              		.section	.text._ZL20__gthread_key_deletei,"ax",%progbits
+  23              		.align	1
+  24              		.arch armv7e-m
+  25              		.syntax unified
+  26              		.thumb
+  27              		.thumb_func
+  28              		.fpu fpv5-d16
+  30              	_ZL20__gthread_key_deletei:
+  31              	.LFB1226:
+  32              		.file 1 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\th
+   1:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Threads compatibility routines for libgcc2 and libobjc.  */
+   2:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Compile this one with gcc.  */
+   3:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Copyright (C) 1997-2020 Free Software Foundation, Inc.
+   4:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+   5:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** This file is part of GCC.
+   6:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+   7:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** GCC is free software; you can redistribute it and/or modify it under
+   8:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** the terms of the GNU General Public License as published by the Free
+   9:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** Software Foundation; either version 3, or (at your option) any later
+  10:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** version.
+  11:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  12:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** GCC is distributed in the hope that it will be useful, but WITHOUT ANY
+  13:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  14:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+  15:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** for more details.
+  16:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  17:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** Under Section 7 of GPL version 3, you are granted additional
+  18:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** permissions described in the GCC Runtime Library Exception, version
+  19:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 3.1, as published by the Free Software Foundation.
+  20:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  21:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** You should have received a copy of the GNU General Public License and
+  22:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** a copy of the GCC Runtime Library Exception along with this program;
+  23:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  24:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** <http://www.gnu.org/licenses/>.  */
+  25:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  26:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** #ifndef _GLIBCXX_GCC_GTHR_SINGLE_H
+  27:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** #define _GLIBCXX_GCC_GTHR_SINGLE_H
+  28:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 2
+
+
+  29:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Just provide compatibility for mutex handling.  */
+  30:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  31:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** typedef int __gthread_key_t;
+  32:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** typedef int __gthread_once_t;
+  33:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** typedef int __gthread_mutex_t;
+  34:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** typedef int __gthread_recursive_mutex_t;
+  35:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  36:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** #define __GTHREAD_ONCE_INIT 0
+  37:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** #define __GTHREAD_MUTEX_INIT 0
+  38:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** #define __GTHREAD_MUTEX_INIT_FUNCTION(mx) do {} while (0)
+  39:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** #define __GTHREAD_RECURSIVE_MUTEX_INIT 0
+  40:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  41:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** #define _GLIBCXX_UNUSED __attribute__((__unused__))
+  42:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  43:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** #ifdef _LIBOBJC
+  44:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  45:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Thread local storage for a single thread */
+  46:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static void *thread_local_storage = NULL;
+  47:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  48:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Backend initialization functions */
+  49:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  50:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Initialize the threads subsystem.  */
+  51:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+  52:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_init_thread_system (void)
+  53:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+  54:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   /* No thread support available */
+  55:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return -1;
+  56:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+  57:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  58:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Close the threads subsystem.  */
+  59:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+  60:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_close_thread_system (void)
+  61:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+  62:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   /* No thread support available */
+  63:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return -1;
+  64:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+  65:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  66:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Backend thread functions */
+  67:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  68:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Create a new thread of execution.  */
+  69:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline objc_thread_t
+  70:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_thread_detach (void (* func)(void *), void * arg _GLIBCXX_UNUSED)
+  71:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+  72:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   /* No thread support available */
+  73:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return NULL;
+  74:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+  75:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  76:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Set the current thread's priority.  */
+  77:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+  78:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_thread_set_priority (int priority _GLIBCXX_UNUSED)
+  79:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+  80:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   /* No thread support available */
+  81:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return -1;
+  82:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+  83:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  84:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Return the current thread's priority.  */
+  85:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 3
+
+
+  86:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_thread_get_priority (void)
+  87:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+  88:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return OBJC_THREAD_INTERACTIVE_PRIORITY;
+  89:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+  90:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  91:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Yield our process time to another thread.  */
+  92:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline void
+  93:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_thread_yield (void)
+  94:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+  95:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return;
+  96:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+  97:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+  98:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Terminate the current thread.  */
+  99:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 100:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_thread_exit (void)
+ 101:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 102:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   /* No thread support available */
+ 103:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   /* Should we really exit the program */
+ 104:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   /* exit (&__objc_thread_exit_status); */
+ 105:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return -1;
+ 106:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 107:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 108:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Returns an integer value which uniquely describes a thread.  */
+ 109:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline objc_thread_t
+ 110:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_thread_id (void)
+ 111:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 112:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   /* No thread support, use 1.  */
+ 113:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return (objc_thread_t) 1;
+ 114:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 115:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 116:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Sets the thread's local storage pointer.  */
+ 117:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 118:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_thread_set_data (void *value)
+ 119:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 120:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   thread_local_storage = value;
+ 121:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 122:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 123:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 124:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Returns the thread's local storage pointer.  */
+ 125:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline void *
+ 126:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_thread_get_data (void)
+ 127:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 128:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return thread_local_storage;
+ 129:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 130:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 131:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Backend mutex functions */
+ 132:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 133:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Allocate a mutex.  */
+ 134:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 135:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_mutex_allocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 136:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 137:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 138:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 139:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 140:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Deallocate a mutex.  */
+ 141:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 142:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_mutex_deallocate (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 4
+
+
+ 143:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 144:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 145:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 146:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 147:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Grab a lock on a mutex.  */
+ 148:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 149:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_mutex_lock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 150:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 151:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 152:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 153:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 154:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 155:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Try to grab a lock on a mutex.  */
+ 156:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 157:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_mutex_trylock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 158:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 159:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   /* There can only be one thread, so we always get the lock */
+ 160:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 161:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 162:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 163:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Unlock the mutex */
+ 164:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 165:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_mutex_unlock (objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 166:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 167:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 168:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 169:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 170:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Backend condition mutex functions */
+ 171:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 172:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Allocate a condition.  */
+ 173:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 174:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_condition_allocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 175:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 176:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 177:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 178:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 179:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Deallocate a condition.  */
+ 180:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 181:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_condition_deallocate (objc_condition_t condition _GLIBCXX_UNUSED)
+ 182:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 183:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 184:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 185:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 186:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Wait on the condition */
+ 187:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 188:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_condition_wait (objc_condition_t condition _GLIBCXX_UNUSED,
+ 189:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 			       objc_mutex_t mutex _GLIBCXX_UNUSED)
+ 190:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 191:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 192:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 193:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 194:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Wake up all threads waiting on this condition.  */
+ 195:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 196:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_condition_broadcast (objc_condition_t condition _GLIBCXX_UNUSED)
+ 197:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 198:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 199:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 5
+
+
+ 200:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 201:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** /* Wake up one thread waiting on this condition.  */
+ 202:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 203:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_objc_condition_signal (objc_condition_t condition _GLIBCXX_UNUSED)
+ 204:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 205:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 206:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 207:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 208:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** #else /* _LIBOBJC */
+ 209:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 210:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 211:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_active_p (void)
+ 212:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 213:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 214:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 215:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 216:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int
+ 217:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_once (__gthread_once_t *__once _GLIBCXX_UNUSED, void (*__func) (void) _GLIBCXX_UNUSED)
+ 218:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 219:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 220:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 221:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 222:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static inline int _GLIBCXX_UNUSED
+ 223:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_key_create (__gthread_key_t *__key _GLIBCXX_UNUSED, void (*__func) (void *) _GLIBCXX_UNUS
+ 224:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+ 225:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+ 226:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+ 227:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** 
+ 228:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** static int _GLIBCXX_UNUSED
+ 229:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** __gthread_key_delete (__gthread_key_t __key _GLIBCXX_UNUSED)
+ 230:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** {
+  33              		.loc 1 230 1
+  34              		.cfi_startproc
+  35              		@ args = 0, pretend = 0, frame = 8
+  36              		@ frame_needed = 1, uses_anonymous_args = 0
+  37              		@ link register save eliminated.
+  38 0000 80B4     		push	{r7}
+  39              		.cfi_def_cfa_offset 4
+  40              		.cfi_offset 7, -4
+  41 0002 83B0     		sub	sp, sp, #12
+  42              		.cfi_def_cfa_offset 16
+  43 0004 00AF     		add	r7, sp, #0
+  44              		.cfi_def_cfa_register 7
+  45 0006 7860     		str	r0, [r7, #4]
+ 231:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h ****   return 0;
+  46              		.loc 1 231 10
+  47 0008 0023     		movs	r3, #0
+ 232:c:\program files\daisytoolchain\arm-none-eabi\include\c++\10.2.1\arm-none-eabi\thumb\v7e-m+dp\hard\bits\gthr-default.h **** }
+  48              		.loc 1 232 1
+  49 000a 1846     		mov	r0, r3
+  50 000c 0C37     		adds	r7, r7, #12
+  51              		.cfi_def_cfa_offset 4
+  52 000e BD46     		mov	sp, r7
+  53              		.cfi_def_cfa_register 13
+  54              		@ sp needed
+  55 0010 5DF8047B 		ldr	r7, [sp], #4
+  56              		.cfi_restore 7
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 6
+
+
+  57              		.cfi_def_cfa_offset 0
+  58 0014 7047     		bx	lr
+  59              		.cfi_endproc
+  60              	.LFE1226:
+  62              		.section	.rodata._ZN7daisyspL9kRandFracE,"a"
+  63              		.align	2
+  66              	_ZN7daisyspL9kRandFracE:
+  67 0000 00000030 		.word	805306368
+  68              		.section	.rodata._ZN7daisyspL11kOneTwelfthE,"a"
+  69              		.align	2
+  72              	_ZN7daisyspL11kOneTwelfthE:
+  73 0000 ABAAAA3D 		.word	1034594987
+  74              		.section	.rodata._ZN5daisyL15kWavFileChunkIdE,"a"
+  75              		.align	2
+  78              	_ZN5daisyL15kWavFileChunkIdE:
+  79 0000 52494646 		.word	1179011410
+  80              		.section	.rodata._ZN5daisyL14kWavFileWaveIdE,"a"
+  81              		.align	2
+  84              	_ZN5daisyL14kWavFileWaveIdE:
+  85 0000 57415645 		.word	1163280727
+  86              		.section	.rodata._ZN5daisyL19kWavFileSubChunk1IdE,"a"
+  87              		.align	2
+  90              	_ZN5daisyL19kWavFileSubChunk1IdE:
+  91 0000 666D7420 		.word	544501094
+  92              		.section	.rodata._ZN5daisyL19kWavFileSubChunk2IdE,"a"
+  93              		.align	2
+  96              	_ZN5daisyL19kWavFileSubChunk2IdE:
+  97 0000 64617461 		.word	1635017060
+  98              		.section	.rodata._ZL19kMaxSr595DaisyChain,"a"
+  99              		.align	2
+ 102              	_ZL19kMaxSr595DaisyChain:
+ 103 0000 10000000 		.word	16
+ 104              		.section	.rodata._ZN5daisy4seedL2D0E,"a"
+ 105              		.align	2
+ 108              	_ZN5daisy4seedL2D0E:
+ 109 0000 01       		.byte	1
+ 110 0001 0C       		.byte	12
+ 111              		.section	.rodata._ZN5daisy4seedL2D1E,"a"
+ 112              		.align	2
+ 115              	_ZN5daisy4seedL2D1E:
+ 116 0000 02       		.byte	2
+ 117 0001 0B       		.byte	11
+ 118              		.section	.rodata._ZN5daisy4seedL2D2E,"a"
+ 119              		.align	2
+ 122              	_ZN5daisy4seedL2D2E:
+ 123 0000 02       		.byte	2
+ 124 0001 0A       		.byte	10
+ 125              		.section	.rodata._ZN5daisy4seedL2D3E,"a"
+ 126              		.align	2
+ 129              	_ZN5daisy4seedL2D3E:
+ 130 0000 02       		.byte	2
+ 131 0001 09       		.byte	9
+ 132              		.section	.rodata._ZN5daisy4seedL2D4E,"a"
+ 133              		.align	2
+ 136              	_ZN5daisy4seedL2D4E:
+ 137 0000 02       		.byte	2
+ 138 0001 08       		.byte	8
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 7
+
+
+ 139              		.section	.rodata._ZN5daisy4seedL2D5E,"a"
+ 140              		.align	2
+ 143              	_ZN5daisy4seedL2D5E:
+ 144 0000 03       		.byte	3
+ 145 0001 02       		.byte	2
+ 146              		.section	.rodata._ZN5daisy4seedL2D6E,"a"
+ 147              		.align	2
+ 150              	_ZN5daisy4seedL2D6E:
+ 151 0000 02       		.byte	2
+ 152 0001 0C       		.byte	12
+ 153              		.section	.rodata._ZN5daisy4seedL2D7E,"a"
+ 154              		.align	2
+ 157              	_ZN5daisy4seedL2D7E:
+ 158 0000 06       		.byte	6
+ 159 0001 0A       		.byte	10
+ 160              		.section	.rodata._ZN5daisy4seedL2D8E,"a"
+ 161              		.align	2
+ 164              	_ZN5daisy4seedL2D8E:
+ 165 0000 06       		.byte	6
+ 166 0001 0B       		.byte	11
+ 167              		.section	.rodata._ZN5daisy4seedL2D9E,"a"
+ 168              		.align	2
+ 171              	_ZN5daisy4seedL2D9E:
+ 172 0000 01       		.byte	1
+ 173 0001 04       		.byte	4
+ 174              		.section	.rodata._ZN5daisy4seedL3D10E,"a"
+ 175              		.align	2
+ 178              	_ZN5daisy4seedL3D10E:
+ 179 0000 01       		.byte	1
+ 180 0001 05       		.byte	5
+ 181              		.section	.rodata._ZN5daisy4seedL3D11E,"a"
+ 182              		.align	2
+ 185              	_ZN5daisy4seedL3D11E:
+ 186 0000 01       		.byte	1
+ 187 0001 08       		.byte	8
+ 188              		.section	.rodata._ZN5daisy4seedL3D12E,"a"
+ 189              		.align	2
+ 192              	_ZN5daisy4seedL3D12E:
+ 193 0000 01       		.byte	1
+ 194 0001 09       		.byte	9
+ 195              		.section	.rodata._ZN5daisy4seedL3D13E,"a"
+ 196              		.align	2
+ 199              	_ZN5daisy4seedL3D13E:
+ 200 0000 01       		.byte	1
+ 201 0001 06       		.byte	6
+ 202              		.section	.rodata._ZN5daisy4seedL3D14E,"a"
+ 203              		.align	2
+ 206              	_ZN5daisy4seedL3D14E:
+ 207 0000 01       		.byte	1
+ 208 0001 07       		.byte	7
+ 209              		.section	.rodata._ZN5daisy4seedL3D15E,"a"
+ 210              		.align	2
+ 213              	_ZN5daisy4seedL3D15E:
+ 214 0000 02       		.byte	2
+ 215 0001 00       		.byte	0
+ 216              		.section	.rodata._ZN5daisy4seedL3D16E,"a"
+ 217              		.align	2
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 8
+
+
+ 220              	_ZN5daisy4seedL3D16E:
+ 221 0000 00       		.byte	0
+ 222 0001 03       		.byte	3
+ 223              		.section	.rodata._ZN5daisy4seedL3D17E,"a"
+ 224              		.align	2
+ 227              	_ZN5daisy4seedL3D17E:
+ 228 0000 01       		.byte	1
+ 229 0001 01       		.byte	1
+ 230              		.section	.rodata._ZN5daisy4seedL3D18E,"a"
+ 231              		.align	2
+ 234              	_ZN5daisy4seedL3D18E:
+ 235 0000 00       		.byte	0
+ 236 0001 07       		.byte	7
+ 237              		.section	.rodata._ZN5daisy4seedL3D19E,"a"
+ 238              		.align	2
+ 241              	_ZN5daisy4seedL3D19E:
+ 242 0000 00       		.byte	0
+ 243 0001 06       		.byte	6
+ 244              		.section	.rodata._ZN5daisy4seedL3D20E,"a"
+ 245              		.align	2
+ 248              	_ZN5daisy4seedL3D20E:
+ 249 0000 02       		.byte	2
+ 250 0001 01       		.byte	1
+ 251              		.section	.rodata._ZN5daisy4seedL3D21E,"a"
+ 252              		.align	2
+ 255              	_ZN5daisy4seedL3D21E:
+ 256 0000 02       		.byte	2
+ 257 0001 04       		.byte	4
+ 258              		.section	.rodata._ZN5daisy4seedL3D22E,"a"
+ 259              		.align	2
+ 262              	_ZN5daisy4seedL3D22E:
+ 263 0000 00       		.byte	0
+ 264 0001 05       		.byte	5
+ 265              		.section	.rodata._ZN5daisy4seedL3D23E,"a"
+ 266              		.align	2
+ 269              	_ZN5daisy4seedL3D23E:
+ 270 0000 00       		.byte	0
+ 271 0001 04       		.byte	4
+ 272              		.section	.rodata._ZN5daisy4seedL3D24E,"a"
+ 273              		.align	2
+ 276              	_ZN5daisy4seedL3D24E:
+ 277 0000 00       		.byte	0
+ 278 0001 01       		.byte	1
+ 279              		.section	.rodata._ZN5daisy4seedL3D25E,"a"
+ 280              		.align	2
+ 283              	_ZN5daisy4seedL3D25E:
+ 284 0000 0000     		.space	2
+ 285              		.section	.rodata._ZN5daisy4seedL3D26E,"a"
+ 286              		.align	2
+ 289              	_ZN5daisy4seedL3D26E:
+ 290 0000 03       		.byte	3
+ 291 0001 0B       		.byte	11
+ 292              		.section	.rodata._ZN5daisy4seedL3D27E,"a"
+ 293              		.align	2
+ 296              	_ZN5daisy4seedL3D27E:
+ 297 0000 06       		.byte	6
+ 298 0001 09       		.byte	9
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 9
+
+
+ 299              		.section	.rodata._ZN5daisy4seedL3D28E,"a"
+ 300              		.align	2
+ 303              	_ZN5daisy4seedL3D28E:
+ 304 0000 00       		.byte	0
+ 305 0001 02       		.byte	2
+ 306              		.section	.rodata._ZN5daisy4seedL3D29E,"a"
+ 307              		.align	2
+ 310              	_ZN5daisy4seedL3D29E:
+ 311 0000 01       		.byte	1
+ 312 0001 0E       		.byte	14
+ 313              		.section	.rodata._ZN5daisy4seedL3D30E,"a"
+ 314              		.align	2
+ 317              	_ZN5daisy4seedL3D30E:
+ 318 0000 01       		.byte	1
+ 319 0001 0F       		.byte	15
+ 320              		.section	.rodata._ZN5daisy4seedL2A0E,"a"
+ 321              		.align	2
+ 324              	_ZN5daisy4seedL2A0E:
+ 325 0000 02       		.byte	2
+ 326 0001 00       		.byte	0
+ 327              		.section	.rodata._ZN5daisy4seedL2A1E,"a"
+ 328              		.align	2
+ 331              	_ZN5daisy4seedL2A1E:
+ 332 0000 00       		.byte	0
+ 333 0001 03       		.byte	3
+ 334              		.section	.rodata._ZN5daisy4seedL2A2E,"a"
+ 335              		.align	2
+ 338              	_ZN5daisy4seedL2A2E:
+ 339 0000 01       		.byte	1
+ 340 0001 01       		.byte	1
+ 341              		.section	.rodata._ZN5daisy4seedL2A3E,"a"
+ 342              		.align	2
+ 345              	_ZN5daisy4seedL2A3E:
+ 346 0000 00       		.byte	0
+ 347 0001 07       		.byte	7
+ 348              		.section	.rodata._ZN5daisy4seedL2A4E,"a"
+ 349              		.align	2
+ 352              	_ZN5daisy4seedL2A4E:
+ 353 0000 00       		.byte	0
+ 354 0001 06       		.byte	6
+ 355              		.section	.rodata._ZN5daisy4seedL2A5E,"a"
+ 356              		.align	2
+ 359              	_ZN5daisy4seedL2A5E:
+ 360 0000 02       		.byte	2
+ 361 0001 01       		.byte	1
+ 362              		.section	.rodata._ZN5daisy4seedL2A6E,"a"
+ 363              		.align	2
+ 366              	_ZN5daisy4seedL2A6E:
+ 367 0000 02       		.byte	2
+ 368 0001 04       		.byte	4
+ 369              		.section	.rodata._ZN5daisy4seedL2A7E,"a"
+ 370              		.align	2
+ 373              	_ZN5daisy4seedL2A7E:
+ 374 0000 00       		.byte	0
+ 375 0001 05       		.byte	5
+ 376              		.section	.rodata._ZN5daisy4seedL2A8E,"a"
+ 377              		.align	2
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 10
+
+
+ 380              	_ZN5daisy4seedL2A8E:
+ 381 0000 00       		.byte	0
+ 382 0001 04       		.byte	4
+ 383              		.section	.rodata._ZN5daisy4seedL2A9E,"a"
+ 384              		.align	2
+ 387              	_ZN5daisy4seedL2A9E:
+ 388 0000 00       		.byte	0
+ 389 0001 01       		.byte	1
+ 390              		.section	.rodata._ZN5daisy4seedL3A10E,"a"
+ 391              		.align	2
+ 394              	_ZN5daisy4seedL3A10E:
+ 395 0000 0000     		.space	2
+ 396              		.section	.rodata._ZN5daisy4seedL3A11E,"a"
+ 397              		.align	2
+ 400              	_ZN5daisy4seedL3A11E:
+ 401 0000 00       		.byte	0
+ 402 0001 02       		.byte	2
+ 403              		.section	.rodata._ZN5daisy4seedL3D31E,"a"
+ 404              		.align	2
+ 407              	_ZN5daisy4seedL3D31E:
+ 408 0000 02       		.byte	2
+ 409 0001 02       		.byte	2
+ 410              		.section	.rodata._ZN5daisy4seedL3D32E,"a"
+ 411              		.align	2
+ 414              	_ZN5daisy4seedL3D32E:
+ 415 0000 02       		.byte	2
+ 416 0001 03       		.byte	3
+ 417              		.section	.rodata._ZN5daisy4seedL3A12E,"a"
+ 418              		.align	2
+ 421              	_ZN5daisy4seedL3A12E:
+ 422 0000 02       		.byte	2
+ 423 0001 02       		.byte	2
+ 424              		.section	.rodata._ZN5daisy4seedL3A13E,"a"
+ 425              		.align	2
+ 428              	_ZN5daisy4seedL3A13E:
+ 429 0000 02       		.byte	2
+ 430 0001 03       		.byte	3
+ 431              		.section	.text._ZN20clasEulersOscillatorILi16EE19fxCalculatePhaseIncEf,"axG",%progbits,_ZN20clasEu
+ 432              		.align	1
+ 433              		.weak	_ZN20clasEulersOscillatorILi16EE19fxCalculatePhaseIncEf
+ 434              		.syntax unified
+ 435              		.thumb
+ 436              		.thumb_func
+ 437              		.fpu fpv5-d16
+ 439              	_ZN20clasEulersOscillatorILi16EE19fxCalculatePhaseIncEf:
+ 440              	.LFB5002:
+ 441              		.file 2 "eulerssynthesis.cpp"
+   1:eulerssynthesis.cpp **** #include "eulerssynthesis.h"
+   2:eulerssynthesis.cpp **** 
+   3:eulerssynthesis.cpp **** 
+   4:eulerssynthesis.cpp **** //Calculates the phase increment based from Sampling Frequency. 
+   5:eulerssynthesis.cpp **** template <int num_harmonics>
+   6:eulerssynthesis.cpp **** float clasEulersOscillator<num_harmonics>::fxCalculatePhaseInc(float frequency){
+ 442              		.loc 2 6 7
+ 443              		.cfi_startproc
+ 444              		@ args = 0, pretend = 0, frame = 8
+ 445              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 11
+
+
+ 446              		@ link register save eliminated.
+ 447 0000 80B4     		push	{r7}
+ 448              		.cfi_def_cfa_offset 4
+ 449              		.cfi_offset 7, -4
+ 450 0002 83B0     		sub	sp, sp, #12
+ 451              		.cfi_def_cfa_offset 16
+ 452 0004 00AF     		add	r7, sp, #0
+ 453              		.cfi_def_cfa_register 7
+ 454 0006 7860     		str	r0, [r7, #4]
+ 455 0008 87ED000A 		vstr.32	s0, [r7]
+   7:eulerssynthesis.cpp ****     return frequency * flSamplingRateRecip_;
+ 456              		.loc 2 7 24
+ 457 000c 7B68     		ldr	r3, [r7, #4]
+ 458 000e 93ED027A 		vldr.32	s14, [r3, #8]
+ 459 0012 D7ED007A 		vldr.32	s15, [r7]
+ 460 0016 67EE277A 		vmul.f32	s15, s14, s15
+   8:eulerssynthesis.cpp **** };
+ 461              		.loc 2 8 1
+ 462 001a B0EE670A 		vmov.f32	s0, s15
+ 463 001e 0C37     		adds	r7, r7, #12
+ 464              		.cfi_def_cfa_offset 4
+ 465 0020 BD46     		mov	sp, r7
+ 466              		.cfi_def_cfa_register 13
+ 467              		@ sp needed
+ 468 0022 5DF8047B 		ldr	r7, [sp], #4
+ 469              		.cfi_restore 7
+ 470              		.cfi_def_cfa_offset 0
+ 471 0026 7047     		bx	lr
+ 472              		.cfi_endproc
+ 473              	.LFE5002:
+ 475              		.section	.text._ZN20clasEulersOscillatorILi16EE4InitEf,"axG",%progbits,_ZN20clasEulersOscillatorIL
+ 476              		.align	1
+ 477              		.weak	_ZN20clasEulersOscillatorILi16EE4InitEf
+ 478              		.syntax unified
+ 479              		.thumb
+ 480              		.thumb_func
+ 481              		.fpu fpv5-d16
+ 483              	_ZN20clasEulersOscillatorILi16EE4InitEf:
+ 484              	.LFB5003:
+   9:eulerssynthesis.cpp **** 
+  10:eulerssynthesis.cpp **** 
+  11:eulerssynthesis.cpp **** // //Set Harmonic value
+  12:eulerssynthesis.cpp **** // template <int num_harmonics>
+  13:eulerssynthesis.cpp **** // float clasEulersOscillator<num_harmonics>::SetHarmonic(float value){
+  14:eulerssynthesis.cpp **** //     return value;
+  15:eulerssynthesis.cpp **** // };
+  16:eulerssynthesis.cpp **** 
+  17:eulerssynthesis.cpp **** 
+  18:eulerssynthesis.cpp **** template <int num_harmonics>
+  19:eulerssynthesis.cpp **** void clasEulersOscillator<num_harmonics>::Init(float SampleRate){
+ 485              		.loc 2 19 6
+ 486              		.cfi_startproc
+ 487              		@ args = 0, pretend = 0, frame = 8
+ 488              		@ frame_needed = 1, uses_anonymous_args = 0
+ 489 0000 80B5     		push	{r7, lr}
+ 490              		.cfi_def_cfa_offset 8
+ 491              		.cfi_offset 7, -8
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 12
+
+
+ 492              		.cfi_offset 14, -4
+ 493 0002 82B0     		sub	sp, sp, #8
+ 494              		.cfi_def_cfa_offset 16
+ 495 0004 00AF     		add	r7, sp, #0
+ 496              		.cfi_def_cfa_register 7
+ 497 0006 7860     		str	r0, [r7, #4]
+ 498 0008 87ED000A 		vstr.32	s0, [r7]
+  20:eulerssynthesis.cpp ****     flSamplingRate_ = SampleRate;
+ 499              		.loc 2 20 21
+ 500 000c 7B68     		ldr	r3, [r7, #4]
+ 501 000e 3A68     		ldr	r2, [r7]	@ float
+ 502 0010 5A60     		str	r2, [r3, #4]	@ float
+  21:eulerssynthesis.cpp ****     flSamplingRateRecip_ = 1.0f / SampleRate;
+ 503              		.loc 2 21 33
+ 504 0012 F7EE006A 		vmov.f32	s13, #1.0e+0
+ 505 0016 97ED007A 		vldr.32	s14, [r7]
+ 506 001a C6EE877A 		vdiv.f32	s15, s13, s14
+ 507              		.loc 2 21 26
+ 508 001e 7B68     		ldr	r3, [r7, #4]
+ 509 0020 C3ED027A 		vstr.32	s15, [r3, #8]
+  22:eulerssynthesis.cpp ****     flFreq_ = 150.0f;
+ 510              		.loc 2 22 13
+ 511 0024 7B68     		ldr	r3, [r7, #4]
+ 512 0026 194A     		ldr	r2, .L6
+ 513 0028 DA60     		str	r2, [r3, #12]	@ float
+  23:eulerssynthesis.cpp ****     flPhase_ = 0.0f;
+ 514              		.loc 2 23 14
+ 515 002a 7B68     		ldr	r3, [r7, #4]
+ 516 002c 4FF00002 		mov	r2, #0
+ 517 0030 1A61     		str	r2, [r3, #16]	@ float
+  24:eulerssynthesis.cpp ****     flPhaseInc_ = fxCalculatePhaseInc(flFreq_);
+ 518              		.loc 2 24 38
+ 519 0032 7B68     		ldr	r3, [r7, #4]
+ 520 0034 D3ED037A 		vldr.32	s15, [r3, #12]
+ 521 0038 B0EE670A 		vmov.f32	s0, s15
+ 522 003c 7868     		ldr	r0, [r7, #4]
+ 523 003e FFF7FEFF 		bl	_ZN20clasEulersOscillatorILi16EE19fxCalculatePhaseIncEf
+ 524 0042 F0EE407A 		vmov.f32	s15, s0
+ 525              		.loc 2 24 17
+ 526 0046 7B68     		ldr	r3, [r7, #4]
+ 527 0048 C3ED057A 		vstr.32	s15, [r3, #20]
+  25:eulerssynthesis.cpp ****     flAmplitude_ = 0.0f;
+ 528              		.loc 2 25 18
+ 529 004c 7B68     		ldr	r3, [r7, #4]
+ 530 004e 4FF00002 		mov	r2, #0
+ 531 0052 9A61     		str	r2, [r3, #24]	@ float
+  26:eulerssynthesis.cpp ****     flReal_ = 0.0f;
+ 532              		.loc 2 26 13
+ 533 0054 7B68     		ldr	r3, [r7, #4]
+ 534 0056 4FF00002 		mov	r2, #0
+ 535 005a DA61     		str	r2, [r3, #28]	@ float
+  27:eulerssynthesis.cpp ****     flImag_ = 0.0f;
+ 536              		.loc 2 27 13
+ 537 005c 7B68     		ldr	r3, [r7, #4]
+ 538 005e 4FF00002 		mov	r2, #0
+ 539 0062 1A62     		str	r2, [r3, #32]	@ float
+  28:eulerssynthesis.cpp ****     flRealAmp_ = 0.5f;
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 13
+
+
+ 540              		.loc 2 28 16
+ 541 0064 7B68     		ldr	r3, [r7, #4]
+ 542 0066 4FF07C52 		mov	r2, #1056964608
+ 543 006a 5A62     		str	r2, [r3, #36]	@ float
+  29:eulerssynthesis.cpp ****     flImagAmp_ = 0.5f;
+ 544              		.loc 2 29 16
+ 545 006c 7B68     		ldr	r3, [r7, #4]
+ 546 006e 4FF07C52 		mov	r2, #1056964608
+ 547 0072 9A62     		str	r2, [r3, #40]	@ float
+  30:eulerssynthesis.cpp ****     // flHarmonicAmp_ = 0.0f;
+  31:eulerssynthesis.cpp ****     uiHarmonicWave_ = LEAD_SQUARE;
+ 548              		.loc 2 31 21
+ 549 0074 7B68     		ldr	r3, [r7, #4]
+ 550 0076 0122     		movs	r2, #1
+ 551 0078 83F82C20 		strb	r2, [r3, #44]
+  32:eulerssynthesis.cpp ****     uiOctave_ = 0;
+ 552              		.loc 2 32 15
+ 553 007c 7B68     		ldr	r3, [r7, #4]
+ 554 007e 0022     		movs	r2, #0
+ 555 0080 83F82D20 		strb	r2, [r3, #45]
+  33:eulerssynthesis.cpp **** };
+ 556              		.loc 2 33 1
+ 557 0084 00BF     		nop
+ 558 0086 0837     		adds	r7, r7, #8
+ 559              		.cfi_def_cfa_offset 8
+ 560 0088 BD46     		mov	sp, r7
+ 561              		.cfi_def_cfa_register 13
+ 562              		@ sp needed
+ 563 008a 80BD     		pop	{r7, pc}
+ 564              	.L7:
+ 565              		.align	2
+ 566              	.L6:
+ 567 008c 00001643 		.word	1125515264
+ 568              		.cfi_endproc
+ 569              	.LFE5003:
+ 571              		.section	.text._ZN20clasEulersOscillatorILi16EE7ProcessEv,"axG",%progbits,_ZN20clasEulersOscillato
+ 572              		.align	1
+ 573              		.weak	_ZN20clasEulersOscillatorILi16EE7ProcessEv
+ 574              		.syntax unified
+ 575              		.thumb
+ 576              		.thumb_func
+ 577              		.fpu fpv5-d16
+ 579              	_ZN20clasEulersOscillatorILi16EE7ProcessEv:
+ 580              	.LFB5004:
+  34:eulerssynthesis.cpp **** 
+  35:eulerssynthesis.cpp **** 
+  36:eulerssynthesis.cpp **** //Process the oscillator signal and send to output. 
+  37:eulerssynthesis.cpp **** template <int num_harmonics>
+  38:eulerssynthesis.cpp **** float clasEulersOscillator<num_harmonics>::Process(){
+ 581              		.loc 2 38 7
+ 582              		.cfi_startproc
+ 583              		@ args = 0, pretend = 0, frame = 56
+ 584              		@ frame_needed = 1, uses_anonymous_args = 0
+ 585 0000 80B5     		push	{r7, lr}
+ 586              		.cfi_def_cfa_offset 8
+ 587              		.cfi_offset 7, -8
+ 588              		.cfi_offset 14, -4
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 14
+
+
+ 589 0002 8EB0     		sub	sp, sp, #56
+ 590              		.cfi_def_cfa_offset 64
+ 591 0004 00AF     		add	r7, sp, #0
+ 592              		.cfi_def_cfa_register 7
+ 593 0006 7860     		str	r0, [r7, #4]
+  39:eulerssynthesis.cpp ****     int num = num_harmonics;
+ 594              		.loc 2 39 9
+ 595 0008 1023     		movs	r3, #16
+ 596 000a 7B62     		str	r3, [r7, #36]
+  40:eulerssynthesis.cpp **** 
+  41:eulerssynthesis.cpp ****     flReal_ = 0.0f;
+ 597              		.loc 2 41 13
+ 598 000c 7B68     		ldr	r3, [r7, #4]
+ 599 000e 4FF00002 		mov	r2, #0
+ 600 0012 DA61     		str	r2, [r3, #28]	@ float
+  42:eulerssynthesis.cpp ****     flImag_ = 0.0f;
+ 601              		.loc 2 42 13
+ 602 0014 7B68     		ldr	r3, [r7, #4]
+ 603 0016 4FF00002 		mov	r2, #0
+ 604 001a 1A62     		str	r2, [r3, #32]	@ float
+  43:eulerssynthesis.cpp **** 
+  44:eulerssynthesis.cpp ****     //Computate the fundamental frequency of the real and imag parts using eulers. 
+  45:eulerssynthesis.cpp ****     float flExpReal = cosf(flPhase_);
+ 605              		.loc 2 45 27
+ 606 001c 7B68     		ldr	r3, [r7, #4]
+ 607 001e D3ED047A 		vldr.32	s15, [r3, #16]
+ 608 0022 B0EE670A 		vmov.f32	s0, s15
+ 609 0026 FFF7FEFF 		bl	cosf
+ 610 002a 87ED080A 		vstr.32	s0, [r7, #32]
+  46:eulerssynthesis.cpp ****     float flExpImag = sinf(flPhase_);
+ 611              		.loc 2 46 27
+ 612 002e 7B68     		ldr	r3, [r7, #4]
+ 613 0030 D3ED047A 		vldr.32	s15, [r3, #16]
+ 614 0034 B0EE670A 		vmov.f32	s0, s15
+ 615 0038 FFF7FEFF 		bl	sinf
+ 616 003c 87ED070A 		vstr.32	s0, [r7, #28]
+  47:eulerssynthesis.cpp **** 
+  48:eulerssynthesis.cpp ****     //Store the exponent numbers into Pow for recursive multiplication
+  49:eulerssynthesis.cpp ****     float flPowReal = flExpReal;
+ 617              		.loc 2 49 11
+ 618 0040 3B6A     		ldr	r3, [r7, #32]	@ float
+ 619 0042 7B63     		str	r3, [r7, #52]	@ float
+  50:eulerssynthesis.cpp ****     float flPowImag = flExpImag;
+ 620              		.loc 2 50 11
+ 621 0044 FB69     		ldr	r3, [r7, #28]	@ float
+ 622 0046 3B63     		str	r3, [r7, #48]	@ float
+ 623              	.LBB2:
+  51:eulerssynthesis.cpp **** 
+  52:eulerssynthesis.cpp ****     for(float i = 2.0f; i<=num; i++){
+ 624              		.loc 2 52 15
+ 625 0048 4FF08043 		mov	r3, #1073741824
+ 626 004c FB62     		str	r3, [r7, #44]	@ float
+ 627              	.L11:
+ 628              		.loc 2 52 26 discriminator 3
+ 629 004e 7B6A     		ldr	r3, [r7, #36]
+ 630 0050 07EE903A 		vmov	s15, r3	@ int
+ 631 0054 F8EEE77A 		vcvt.f32.s32	s15, s15
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 15
+
+
+ 632 0058 97ED0B7A 		vldr.32	s14, [r7, #44]
+ 633 005c B4EEE77A 		vcmpe.f32	s14, s15
+ 634 0060 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 635 0064 57D8     		bhi	.L23
+ 636              	.LBB3:
+  53:eulerssynthesis.cpp ****         //Recursive computation of the harmonic components. 
+  54:eulerssynthesis.cpp ****         float tempReal = flPowReal;
+ 637              		.loc 2 54 15 discriminator 2
+ 638 0066 7B6B     		ldr	r3, [r7, #52]	@ float
+ 639 0068 3B61     		str	r3, [r7, #16]	@ float
+  55:eulerssynthesis.cpp ****         flPowReal = (flPowReal * flExpReal) - (flPowImag * flExpImag);
+ 640              		.loc 2 55 32 discriminator 2
+ 641 006a 97ED0D7A 		vldr.32	s14, [r7, #52]
+ 642 006e D7ED087A 		vldr.32	s15, [r7, #32]
+ 643 0072 27EE277A 		vmul.f32	s14, s14, s15
+ 644              		.loc 2 55 58 discriminator 2
+ 645 0076 D7ED0C6A 		vldr.32	s13, [r7, #48]
+ 646 007a D7ED077A 		vldr.32	s15, [r7, #28]
+ 647 007e 66EEA77A 		vmul.f32	s15, s13, s15
+ 648              		.loc 2 55 19 discriminator 2
+ 649 0082 77EE677A 		vsub.f32	s15, s14, s15
+ 650 0086 C7ED0D7A 		vstr.32	s15, [r7, #52]
+  56:eulerssynthesis.cpp ****         flPowImag = (tempReal * flExpImag) + (flPowImag * flExpReal);
+ 651              		.loc 2 56 31 discriminator 2
+ 652 008a 97ED047A 		vldr.32	s14, [r7, #16]
+ 653 008e D7ED077A 		vldr.32	s15, [r7, #28]
+ 654 0092 27EE277A 		vmul.f32	s14, s14, s15
+ 655              		.loc 2 56 57 discriminator 2
+ 656 0096 D7ED0C6A 		vldr.32	s13, [r7, #48]
+ 657 009a D7ED087A 		vldr.32	s15, [r7, #32]
+ 658 009e 66EEA77A 		vmul.f32	s15, s13, s15
+ 659              		.loc 2 56 19 discriminator 2
+ 660 00a2 77EE277A 		vadd.f32	s15, s14, s15
+ 661 00a6 C7ED0C7A 		vstr.32	s15, [r7, #48]
+  57:eulerssynthesis.cpp **** 
+  58:eulerssynthesis.cpp ****         //Harmonic Amplitude waveform 
+  59:eulerssynthesis.cpp ****         float flHarmonicAmp = GetHarmonicAmp(i);
+ 662              		.loc 2 59 45 discriminator 2
+ 663 00aa 97ED0B0A 		vldr.32	s0, [r7, #44]
+ 664 00ae 7868     		ldr	r0, [r7, #4]
+ 665 00b0 FFF7FEFF 		bl	_ZN20clasEulersOscillatorILi16EE14GetHarmonicAmpEf
+ 666 00b4 87ED030A 		vstr.32	s0, [r7, #12]
+  60:eulerssynthesis.cpp **** 
+  61:eulerssynthesis.cpp ****         flImag_ += flHarmonicAmp * flPowImag * flImagAmp_;
+ 667              		.loc 2 61 17 discriminator 2
+ 668 00b8 7B68     		ldr	r3, [r7, #4]
+ 669 00ba 93ED087A 		vldr.32	s14, [r3, #32]
+ 670              		.loc 2 61 34 discriminator 2
+ 671 00be D7ED036A 		vldr.32	s13, [r7, #12]
+ 672 00c2 D7ED0C7A 		vldr.32	s15, [r7, #48]
+ 673 00c6 66EEA76A 		vmul.f32	s13, s13, s15
+ 674              		.loc 2 61 48 discriminator 2
+ 675 00ca 7B68     		ldr	r3, [r7, #4]
+ 676 00cc D3ED0A7A 		vldr.32	s15, [r3, #40]
+ 677              		.loc 2 61 46 discriminator 2
+ 678 00d0 66EEA77A 		vmul.f32	s15, s13, s15
+ 679              		.loc 2 61 17 discriminator 2
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 16
+
+
+ 680 00d4 77EE277A 		vadd.f32	s15, s14, s15
+ 681 00d8 7B68     		ldr	r3, [r7, #4]
+ 682 00da C3ED087A 		vstr.32	s15, [r3, #32]
+  62:eulerssynthesis.cpp ****         flReal_ += flHarmonicAmp * flPowReal * flRealAmp_;
+ 683              		.loc 2 62 17 discriminator 2
+ 684 00de 7B68     		ldr	r3, [r7, #4]
+ 685 00e0 93ED077A 		vldr.32	s14, [r3, #28]
+ 686              		.loc 2 62 34 discriminator 2
+ 687 00e4 D7ED036A 		vldr.32	s13, [r7, #12]
+ 688 00e8 D7ED0D7A 		vldr.32	s15, [r7, #52]
+ 689 00ec 66EEA76A 		vmul.f32	s13, s13, s15
+ 690              		.loc 2 62 48 discriminator 2
+ 691 00f0 7B68     		ldr	r3, [r7, #4]
+ 692 00f2 D3ED097A 		vldr.32	s15, [r3, #36]
+ 693              		.loc 2 62 46 discriminator 2
+ 694 00f6 66EEA77A 		vmul.f32	s15, s13, s15
+ 695              		.loc 2 62 17 discriminator 2
+ 696 00fa 77EE277A 		vadd.f32	s15, s14, s15
+ 697 00fe 7B68     		ldr	r3, [r7, #4]
+ 698 0100 C3ED077A 		vstr.32	s15, [r3, #28]
+ 699              	.LBE3:
+  52:eulerssynthesis.cpp ****         //Recursive computation of the harmonic components. 
+ 700              		.loc 2 52 5 discriminator 2
+ 701 0104 D7ED0B7A 		vldr.32	s15, [r7, #44]
+ 702 0108 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 703 010c 77EE877A 		vadd.f32	s15, s15, s14
+ 704 0110 C7ED0B7A 		vstr.32	s15, [r7, #44]
+ 705 0114 9BE7     		b	.L11
+ 706              	.L23:
+ 707              	.LBE2:
+  63:eulerssynthesis.cpp ****     }
+  64:eulerssynthesis.cpp **** 
+  65:eulerssynthesis.cpp **** 
+  66:eulerssynthesis.cpp **** 
+  67:eulerssynthesis.cpp **** 
+  68:eulerssynthesis.cpp ****     //Add the fundamental frequency. and multiply by 50% to prevent going over 1.
+  69:eulerssynthesis.cpp ****     flReal_ += flExpReal * flRealAmp_;
+ 708              		.loc 2 69 13
+ 709 0116 7B68     		ldr	r3, [r7, #4]
+ 710 0118 93ED077A 		vldr.32	s14, [r3, #28]
+ 711              		.loc 2 69 28
+ 712 011c 7B68     		ldr	r3, [r7, #4]
+ 713 011e D3ED096A 		vldr.32	s13, [r3, #36]
+ 714              		.loc 2 69 26
+ 715 0122 D7ED087A 		vldr.32	s15, [r7, #32]
+ 716 0126 66EEA77A 		vmul.f32	s15, s13, s15
+ 717              		.loc 2 69 13
+ 718 012a 77EE277A 		vadd.f32	s15, s14, s15
+ 719 012e 7B68     		ldr	r3, [r7, #4]
+ 720 0130 C3ED077A 		vstr.32	s15, [r3, #28]
+  70:eulerssynthesis.cpp ****     flImag_ += flExpImag * flImagAmp_;
+ 721              		.loc 2 70 13
+ 722 0134 7B68     		ldr	r3, [r7, #4]
+ 723 0136 93ED087A 		vldr.32	s14, [r3, #32]
+ 724              		.loc 2 70 28
+ 725 013a 7B68     		ldr	r3, [r7, #4]
+ 726 013c D3ED0A6A 		vldr.32	s13, [r3, #40]
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 17
+
+
+ 727              		.loc 2 70 26
+ 728 0140 D7ED077A 		vldr.32	s15, [r7, #28]
+ 729 0144 66EEA77A 		vmul.f32	s15, s13, s15
+ 730              		.loc 2 70 13
+ 731 0148 77EE277A 		vadd.f32	s15, s14, s15
+ 732 014c 7B68     		ldr	r3, [r7, #4]
+ 733 014e C3ED087A 		vstr.32	s15, [r3, #32]
+  71:eulerssynthesis.cpp **** 
+  72:eulerssynthesis.cpp ****     //Find the aboslute value of the signal. 
+  73:eulerssynthesis.cpp ****     float sum_val = fabsf(flReal_ + flImag_);
+ 734              		.loc 2 73 27
+ 735 0152 7B68     		ldr	r3, [r7, #4]
+ 736 0154 93ED077A 		vldr.32	s14, [r3, #28]
+ 737              		.loc 2 73 37
+ 738 0158 7B68     		ldr	r3, [r7, #4]
+ 739 015a D3ED087A 		vldr.32	s15, [r3, #32]
+ 740              		.loc 2 73 35
+ 741 015e 77EE277A 		vadd.f32	s15, s14, s15
+ 742              		.loc 2 73 11
+ 743 0162 F0EEE77A 		vabs.f32	s15, s15
+ 744 0166 C7ED067A 		vstr.32	s15, [r7, #24]
+ 745              	.LBB4:
+  74:eulerssynthesis.cpp **** 
+  75:eulerssynthesis.cpp ****     //Normalise to between 0 - 1;
+  76:eulerssynthesis.cpp ****     if(sum_val > 1.0f)
+ 746              		.loc 2 76 5
+ 747 016a D7ED067A 		vldr.32	s15, [r7, #24]
+ 748 016e B7EE007A 		vmov.f32	s14, #1.0e+0
+ 749 0172 F4EEC77A 		vcmpe.f32	s15, s14
+ 750 0176 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 751 017a 1BDD     		ble	.L12
+ 752              	.LBB5:
+  77:eulerssynthesis.cpp ****     {
+  78:eulerssynthesis.cpp ****         float norm = 1.0f / sum_val;
+ 753              		.loc 2 78 15
+ 754 017c F7EE006A 		vmov.f32	s13, #1.0e+0
+ 755 0180 97ED067A 		vldr.32	s14, [r7, #24]
+ 756 0184 C6EE877A 		vdiv.f32	s15, s13, s14
+ 757 0188 C7ED057A 		vstr.32	s15, [r7, #20]
+  79:eulerssynthesis.cpp ****         flReal_ *= norm;
+ 758              		.loc 2 79 17
+ 759 018c 7B68     		ldr	r3, [r7, #4]
+ 760 018e 93ED077A 		vldr.32	s14, [r3, #28]
+ 761 0192 D7ED057A 		vldr.32	s15, [r7, #20]
+ 762 0196 67EE277A 		vmul.f32	s15, s14, s15
+ 763 019a 7B68     		ldr	r3, [r7, #4]
+ 764 019c C3ED077A 		vstr.32	s15, [r3, #28]
+  80:eulerssynthesis.cpp ****         flImag_ *= norm;
+ 765              		.loc 2 80 17
+ 766 01a0 7B68     		ldr	r3, [r7, #4]
+ 767 01a2 93ED087A 		vldr.32	s14, [r3, #32]
+ 768 01a6 D7ED057A 		vldr.32	s15, [r7, #20]
+ 769 01aa 67EE277A 		vmul.f32	s15, s14, s15
+ 770 01ae 7B68     		ldr	r3, [r7, #4]
+ 771 01b0 C3ED087A 		vstr.32	s15, [r3, #32]
+ 772              	.L12:
+ 773              	.LBE5:
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 18
+
+
+ 774              	.LBE4:
+  81:eulerssynthesis.cpp ****     }
+  82:eulerssynthesis.cpp **** 
+  83:eulerssynthesis.cpp ****     //Combine the outputs.
+  84:eulerssynthesis.cpp ****     float flOutput = (flReal_ + flImag_);
+ 775              		.loc 2 84 23
+ 776 01b4 7B68     		ldr	r3, [r7, #4]
+ 777 01b6 93ED077A 		vldr.32	s14, [r3, #28]
+ 778              		.loc 2 84 33
+ 779 01ba 7B68     		ldr	r3, [r7, #4]
+ 780 01bc D3ED087A 		vldr.32	s15, [r3, #32]
+ 781              		.loc 2 84 11
+ 782 01c0 77EE277A 		vadd.f32	s15, s14, s15
+ 783 01c4 C7ED0A7A 		vstr.32	s15, [r7, #40]
+  85:eulerssynthesis.cpp **** 
+  86:eulerssynthesis.cpp ****     if (flOutput > 1.0f){
+ 784              		.loc 2 86 5
+ 785 01c8 D7ED0A7A 		vldr.32	s15, [r7, #40]
+ 786 01cc B7EE007A 		vmov.f32	s14, #1.0e+0
+ 787 01d0 F4EEC77A 		vcmpe.f32	s15, s14
+ 788 01d4 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 789 01d8 02DD     		ble	.L14
+  87:eulerssynthesis.cpp ****         flOutput = 1.0f;
+ 790              		.loc 2 87 18
+ 791 01da 4FF07E53 		mov	r3, #1065353216
+ 792 01de BB62     		str	r3, [r7, #40]	@ float
+ 793              	.L14:
+  88:eulerssynthesis.cpp ****     }
+  89:eulerssynthesis.cpp **** 
+  90:eulerssynthesis.cpp ****     //Increment phase
+  91:eulerssynthesis.cpp ****     flPhase_ += flPhaseInc_;
+ 794              		.loc 2 91 14
+ 795 01e0 7B68     		ldr	r3, [r7, #4]
+ 796 01e2 93ED047A 		vldr.32	s14, [r3, #16]
+ 797              		.loc 2 91 17
+ 798 01e6 7B68     		ldr	r3, [r7, #4]
+ 799 01e8 D3ED057A 		vldr.32	s15, [r3, #20]
+ 800              		.loc 2 91 14
+ 801 01ec 77EE277A 		vadd.f32	s15, s14, s15
+ 802 01f0 7B68     		ldr	r3, [r7, #4]
+ 803 01f2 C3ED047A 		vstr.32	s15, [r3, #16]
+  92:eulerssynthesis.cpp ****     if (flPhase_ > 1.0f){
+ 804              		.loc 2 92 9
+ 805 01f6 7B68     		ldr	r3, [r7, #4]
+ 806 01f8 D3ED047A 		vldr.32	s15, [r3, #16]
+ 807              		.loc 2 92 5
+ 808 01fc B7EE007A 		vmov.f32	s14, #1.0e+0
+ 809 0200 F4EEC77A 		vcmpe.f32	s15, s14
+ 810 0204 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 811 0208 09DD     		ble	.L16
+  93:eulerssynthesis.cpp ****         flPhase_ -= 1.0f;
+ 812              		.loc 2 93 18
+ 813 020a 7B68     		ldr	r3, [r7, #4]
+ 814 020c D3ED047A 		vldr.32	s15, [r3, #16]
+ 815 0210 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 816 0214 77EEC77A 		vsub.f32	s15, s15, s14
+ 817 0218 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 19
+
+
+ 818 021a C3ED047A 		vstr.32	s15, [r3, #16]
+ 819              	.L16:
+  94:eulerssynthesis.cpp ****     }
+  95:eulerssynthesis.cpp **** 
+  96:eulerssynthesis.cpp ****     return flOutput * flAmplitude_;
+ 820              		.loc 2 96 23
+ 821 021e 7B68     		ldr	r3, [r7, #4]
+ 822 0220 93ED067A 		vldr.32	s14, [r3, #24]
+ 823 0224 D7ED0A7A 		vldr.32	s15, [r7, #40]
+ 824 0228 67EE277A 		vmul.f32	s15, s14, s15
+  97:eulerssynthesis.cpp **** };
+ 825              		.loc 2 97 1
+ 826 022c B0EE670A 		vmov.f32	s0, s15
+ 827 0230 3837     		adds	r7, r7, #56
+ 828              		.cfi_def_cfa_offset 8
+ 829 0232 BD46     		mov	sp, r7
+ 830              		.cfi_def_cfa_register 13
+ 831              		@ sp needed
+ 832 0234 80BD     		pop	{r7, pc}
+ 833              		.cfi_endproc
+ 834              	.LFE5004:
+ 836              		.section	.text._ZN20clasEulersOscillatorILi16EE8PhaseAddEf,"axG",%progbits,_ZN20clasEulersOscillat
+ 837              		.align	1
+ 838              		.weak	_ZN20clasEulersOscillatorILi16EE8PhaseAddEf
+ 839              		.syntax unified
+ 840              		.thumb
+ 841              		.thumb_func
+ 842              		.fpu fpv5-d16
+ 844              	_ZN20clasEulersOscillatorILi16EE8PhaseAddEf:
+ 845              	.LFB5005:
+  98:eulerssynthesis.cpp **** 
+  99:eulerssynthesis.cpp **** 
+ 100:eulerssynthesis.cpp **** 
+ 101:eulerssynthesis.cpp **** 
+ 102:eulerssynthesis.cpp **** 
+ 103:eulerssynthesis.cpp **** //Change freq
+ 104:eulerssynthesis.cpp **** template <int num_harmonics>
+ 105:eulerssynthesis.cpp **** void clasEulersOscillator<num_harmonics>::SetFreq(float frequency){
+ 106:eulerssynthesis.cpp ****     flFreq_ = frequency;
+ 107:eulerssynthesis.cpp ****     if (flFreq_ < 11) {flFreq_ = 11;}
+ 108:eulerssynthesis.cpp ****     if (flFreq_ > 1000){ flFreq_ = 1000;}
+ 109:eulerssynthesis.cpp ****     flPhaseInc_ = fxCalculatePhaseInc(flFreq_);
+ 110:eulerssynthesis.cpp **** };
+ 111:eulerssynthesis.cpp **** 
+ 112:eulerssynthesis.cpp **** 
+ 113:eulerssynthesis.cpp **** //Change amp
+ 114:eulerssynthesis.cpp **** template <int num_harmonics>
+ 115:eulerssynthesis.cpp **** void clasEulersOscillator<num_harmonics>::SetAmp(const float amplitude){
+ 116:eulerssynthesis.cpp ****     flAmplitude_ = amplitude;
+ 117:eulerssynthesis.cpp **** };
+ 118:eulerssynthesis.cpp **** 
+ 119:eulerssynthesis.cpp **** 
+ 120:eulerssynthesis.cpp **** // //Change Waveform;
+ 121:eulerssynthesis.cpp **** // template <int num_harmonics>
+ 122:eulerssynthesis.cpp **** // void clasEulersOscillator<num_harmonics>::SetWaveform(const uint8_t waveform){
+ 123:eulerssynthesis.cpp **** //     uiWaveform_ = waveform;
+ 124:eulerssynthesis.cpp **** // };
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 20
+
+
+ 125:eulerssynthesis.cpp **** 
+ 126:eulerssynthesis.cpp **** 
+ 127:eulerssynthesis.cpp **** // Adds a value between 0-1 to the current phase. Used for FM. 
+ 128:eulerssynthesis.cpp **** template <int num_harmonics>
+ 129:eulerssynthesis.cpp **** void clasEulersOscillator<num_harmonics>::PhaseAdd(float phase) { 
+ 846              		.loc 2 129 6
+ 847              		.cfi_startproc
+ 848              		@ args = 0, pretend = 0, frame = 8
+ 849              		@ frame_needed = 1, uses_anonymous_args = 0
+ 850              		@ link register save eliminated.
+ 851 0000 80B4     		push	{r7}
+ 852              		.cfi_def_cfa_offset 4
+ 853              		.cfi_offset 7, -4
+ 854 0002 83B0     		sub	sp, sp, #12
+ 855              		.cfi_def_cfa_offset 16
+ 856 0004 00AF     		add	r7, sp, #0
+ 857              		.cfi_def_cfa_register 7
+ 858 0006 7860     		str	r0, [r7, #4]
+ 859 0008 87ED000A 		vstr.32	s0, [r7]
+ 130:eulerssynthesis.cpp ****     flPhase_ += phase; 
+ 860              		.loc 2 130 14
+ 861 000c 7B68     		ldr	r3, [r7, #4]
+ 862 000e 93ED047A 		vldr.32	s14, [r3, #16]
+ 863 0012 D7ED007A 		vldr.32	s15, [r7]
+ 864 0016 77EE277A 		vadd.f32	s15, s14, s15
+ 865 001a 7B68     		ldr	r3, [r7, #4]
+ 866 001c C3ED047A 		vstr.32	s15, [r3, #16]
+ 131:eulerssynthesis.cpp **** };
+ 867              		.loc 2 131 1
+ 868 0020 00BF     		nop
+ 869 0022 0C37     		adds	r7, r7, #12
+ 870              		.cfi_def_cfa_offset 4
+ 871 0024 BD46     		mov	sp, r7
+ 872              		.cfi_def_cfa_register 13
+ 873              		@ sp needed
+ 874 0026 5DF8047B 		ldr	r7, [sp], #4
+ 875              		.cfi_restore 7
+ 876              		.cfi_def_cfa_offset 0
+ 877 002a 7047     		bx	lr
+ 878              		.cfi_endproc
+ 879              	.LFE5005:
+ 881              		.section	.text._ZN20clasEulersOscillatorILi16EE7SetFreqEf,"axG",%progbits,_ZN20clasEulersOscillato
+ 882              		.align	1
+ 883              		.weak	_ZN20clasEulersOscillatorILi16EE7SetFreqEf
+ 884              		.syntax unified
+ 885              		.thumb
+ 886              		.thumb_func
+ 887              		.fpu fpv5-d16
+ 889              	_ZN20clasEulersOscillatorILi16EE7SetFreqEf:
+ 890              	.LFB5006:
+ 105:eulerssynthesis.cpp ****     flFreq_ = frequency;
+ 891              		.loc 2 105 6
+ 892              		.cfi_startproc
+ 893              		@ args = 0, pretend = 0, frame = 8
+ 894              		@ frame_needed = 1, uses_anonymous_args = 0
+ 895 0000 80B5     		push	{r7, lr}
+ 896              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 21
+
+
+ 897              		.cfi_offset 7, -8
+ 898              		.cfi_offset 14, -4
+ 899 0002 82B0     		sub	sp, sp, #8
+ 900              		.cfi_def_cfa_offset 16
+ 901 0004 00AF     		add	r7, sp, #0
+ 902              		.cfi_def_cfa_register 7
+ 903 0006 7860     		str	r0, [r7, #4]
+ 904 0008 87ED000A 		vstr.32	s0, [r7]
+ 106:eulerssynthesis.cpp ****     if (flFreq_ < 11) {flFreq_ = 11;}
+ 905              		.loc 2 106 13
+ 906 000c 7B68     		ldr	r3, [r7, #4]
+ 907 000e 3A68     		ldr	r2, [r7]	@ float
+ 908 0010 DA60     		str	r2, [r3, #12]	@ float
+ 107:eulerssynthesis.cpp ****     if (flFreq_ > 1000){ flFreq_ = 1000;}
+ 909              		.loc 2 107 9
+ 910 0012 7B68     		ldr	r3, [r7, #4]
+ 911 0014 D3ED037A 		vldr.32	s15, [r3, #12]
+ 107:eulerssynthesis.cpp ****     if (flFreq_ > 1000){ flFreq_ = 1000;}
+ 912              		.loc 2 107 5
+ 913 0018 B2EE067A 		vmov.f32	s14, #1.1e+1
+ 914 001c F4EEC77A 		vcmpe.f32	s15, s14
+ 915 0020 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 916 0024 02D5     		bpl	.L26
+ 107:eulerssynthesis.cpp ****     if (flFreq_ > 1000){ flFreq_ = 1000;}
+ 917              		.loc 2 107 32 discriminator 1
+ 918 0026 7B68     		ldr	r3, [r7, #4]
+ 919 0028 0F4A     		ldr	r2, .L32
+ 920 002a DA60     		str	r2, [r3, #12]	@ float
+ 921              	.L26:
+ 108:eulerssynthesis.cpp ****     flPhaseInc_ = fxCalculatePhaseInc(flFreq_);
+ 922              		.loc 2 108 9
+ 923 002c 7B68     		ldr	r3, [r7, #4]
+ 924 002e D3ED037A 		vldr.32	s15, [r3, #12]
+ 108:eulerssynthesis.cpp ****     flPhaseInc_ = fxCalculatePhaseInc(flFreq_);
+ 925              		.loc 2 108 5
+ 926 0032 9FED0E7A 		vldr.32	s14, .L32+4
+ 927 0036 F4EEC77A 		vcmpe.f32	s15, s14
+ 928 003a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 929 003e 02DD     		ble	.L28
+ 108:eulerssynthesis.cpp ****     flPhaseInc_ = fxCalculatePhaseInc(flFreq_);
+ 930              		.loc 2 108 34 discriminator 1
+ 931 0040 7B68     		ldr	r3, [r7, #4]
+ 932 0042 0B4A     		ldr	r2, .L32+8
+ 933 0044 DA60     		str	r2, [r3, #12]	@ float
+ 934              	.L28:
+ 109:eulerssynthesis.cpp **** };
+ 935              		.loc 2 109 38
+ 936 0046 7B68     		ldr	r3, [r7, #4]
+ 937 0048 D3ED037A 		vldr.32	s15, [r3, #12]
+ 938 004c B0EE670A 		vmov.f32	s0, s15
+ 939 0050 7868     		ldr	r0, [r7, #4]
+ 940 0052 FFF7FEFF 		bl	_ZN20clasEulersOscillatorILi16EE19fxCalculatePhaseIncEf
+ 941 0056 F0EE407A 		vmov.f32	s15, s0
+ 109:eulerssynthesis.cpp **** };
+ 942              		.loc 2 109 17
+ 943 005a 7B68     		ldr	r3, [r7, #4]
+ 944 005c C3ED057A 		vstr.32	s15, [r3, #20]
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 22
+
+
+ 110:eulerssynthesis.cpp **** 
+ 945              		.loc 2 110 1
+ 946 0060 00BF     		nop
+ 947 0062 0837     		adds	r7, r7, #8
+ 948              		.cfi_def_cfa_offset 8
+ 949 0064 BD46     		mov	sp, r7
+ 950              		.cfi_def_cfa_register 13
+ 951              		@ sp needed
+ 952 0066 80BD     		pop	{r7, pc}
+ 953              	.L33:
+ 954              		.align	2
+ 955              	.L32:
+ 956 0068 00003041 		.word	1093664768
+ 957 006c 00007A44 		.word	1148846080
+ 958 0070 00007A44 		.word	1148846080
+ 959              		.cfi_endproc
+ 960              	.LFE5006:
+ 962              		.section	.text._ZN20clasEulersOscillatorILi16EE7GetFreqEv,"axG",%progbits,_ZN20clasEulersOscillato
+ 963              		.align	1
+ 964              		.weak	_ZN20clasEulersOscillatorILi16EE7GetFreqEv
+ 965              		.syntax unified
+ 966              		.thumb
+ 967              		.thumb_func
+ 968              		.fpu fpv5-d16
+ 970              	_ZN20clasEulersOscillatorILi16EE7GetFreqEv:
+ 971              	.LFB5007:
+ 132:eulerssynthesis.cpp **** 
+ 133:eulerssynthesis.cpp **** 
+ 134:eulerssynthesis.cpp **** //Get Current Frequency Setting
+ 135:eulerssynthesis.cpp **** template <int num_harmonics>
+ 136:eulerssynthesis.cpp **** float clasEulersOscillator<num_harmonics>::GetFreq(){
+ 972              		.loc 2 136 7
+ 973              		.cfi_startproc
+ 974              		@ args = 0, pretend = 0, frame = 8
+ 975              		@ frame_needed = 1, uses_anonymous_args = 0
+ 976              		@ link register save eliminated.
+ 977 0000 80B4     		push	{r7}
+ 978              		.cfi_def_cfa_offset 4
+ 979              		.cfi_offset 7, -4
+ 980 0002 83B0     		sub	sp, sp, #12
+ 981              		.cfi_def_cfa_offset 16
+ 982 0004 00AF     		add	r7, sp, #0
+ 983              		.cfi_def_cfa_register 7
+ 984 0006 7860     		str	r0, [r7, #4]
+ 137:eulerssynthesis.cpp ****     return flFreq_;
+ 985              		.loc 2 137 12
+ 986 0008 7B68     		ldr	r3, [r7, #4]
+ 987 000a DB68     		ldr	r3, [r3, #12]	@ float
+ 988 000c 07EE903A 		vmov	s15, r3
+ 138:eulerssynthesis.cpp **** };
+ 989              		.loc 2 138 1
+ 990 0010 B0EE670A 		vmov.f32	s0, s15
+ 991 0014 0C37     		adds	r7, r7, #12
+ 992              		.cfi_def_cfa_offset 4
+ 993 0016 BD46     		mov	sp, r7
+ 994              		.cfi_def_cfa_register 13
+ 995              		@ sp needed
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 23
+
+
+ 996 0018 5DF8047B 		ldr	r7, [sp], #4
+ 997              		.cfi_restore 7
+ 998              		.cfi_def_cfa_offset 0
+ 999 001c 7047     		bx	lr
+ 1000              		.cfi_endproc
+ 1001              	.LFE5007:
+ 1003              		.section	.text._ZN20clasEulersOscillatorILi16EE6SetAmpEf,"axG",%progbits,_ZN20clasEulersOscillator
+ 1004              		.align	1
+ 1005              		.weak	_ZN20clasEulersOscillatorILi16EE6SetAmpEf
+ 1006              		.syntax unified
+ 1007              		.thumb
+ 1008              		.thumb_func
+ 1009              		.fpu fpv5-d16
+ 1011              	_ZN20clasEulersOscillatorILi16EE6SetAmpEf:
+ 1012              	.LFB5008:
+ 115:eulerssynthesis.cpp ****     flAmplitude_ = amplitude;
+ 1013              		.loc 2 115 6
+ 1014              		.cfi_startproc
+ 1015              		@ args = 0, pretend = 0, frame = 8
+ 1016              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1017              		@ link register save eliminated.
+ 1018 0000 80B4     		push	{r7}
+ 1019              		.cfi_def_cfa_offset 4
+ 1020              		.cfi_offset 7, -4
+ 1021 0002 83B0     		sub	sp, sp, #12
+ 1022              		.cfi_def_cfa_offset 16
+ 1023 0004 00AF     		add	r7, sp, #0
+ 1024              		.cfi_def_cfa_register 7
+ 1025 0006 7860     		str	r0, [r7, #4]
+ 1026 0008 87ED000A 		vstr.32	s0, [r7]
+ 116:eulerssynthesis.cpp **** };
+ 1027              		.loc 2 116 18
+ 1028 000c 7B68     		ldr	r3, [r7, #4]
+ 1029 000e 3A68     		ldr	r2, [r7]	@ float
+ 1030 0010 9A61     		str	r2, [r3, #24]	@ float
+ 117:eulerssynthesis.cpp **** 
+ 1031              		.loc 2 117 1
+ 1032 0012 00BF     		nop
+ 1033 0014 0C37     		adds	r7, r7, #12
+ 1034              		.cfi_def_cfa_offset 4
+ 1035 0016 BD46     		mov	sp, r7
+ 1036              		.cfi_def_cfa_register 13
+ 1037              		@ sp needed
+ 1038 0018 5DF8047B 		ldr	r7, [sp], #4
+ 1039              		.cfi_restore 7
+ 1040              		.cfi_def_cfa_offset 0
+ 1041 001c 7047     		bx	lr
+ 1042              		.cfi_endproc
+ 1043              	.LFE5008:
+ 1045              		.section	.text._ZN20clasEulersOscillatorILi16EE19SetHarmonicWaveFormEh,"axG",%progbits,_ZN20clasEu
+ 1046              		.align	1
+ 1047              		.weak	_ZN20clasEulersOscillatorILi16EE19SetHarmonicWaveFormEh
+ 1048              		.syntax unified
+ 1049              		.thumb
+ 1050              		.thumb_func
+ 1051              		.fpu fpv5-d16
+ 1053              	_ZN20clasEulersOscillatorILi16EE19SetHarmonicWaveFormEh:
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 24
+
+
+ 1054              	.LFB5009:
+ 139:eulerssynthesis.cpp **** 
+ 140:eulerssynthesis.cpp **** 
+ 141:eulerssynthesis.cpp **** //Set Harmonic Waveform
+ 142:eulerssynthesis.cpp **** template <int num_harmonics>
+ 143:eulerssynthesis.cpp **** void clasEulersOscillator<num_harmonics>::SetHarmonicWaveForm(uint8_t value){
+ 1055              		.loc 2 143 6
+ 1056              		.cfi_startproc
+ 1057              		@ args = 0, pretend = 0, frame = 8
+ 1058              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1059              		@ link register save eliminated.
+ 1060 0000 80B4     		push	{r7}
+ 1061              		.cfi_def_cfa_offset 4
+ 1062              		.cfi_offset 7, -4
+ 1063 0002 83B0     		sub	sp, sp, #12
+ 1064              		.cfi_def_cfa_offset 16
+ 1065 0004 00AF     		add	r7, sp, #0
+ 1066              		.cfi_def_cfa_register 7
+ 1067 0006 7860     		str	r0, [r7, #4]
+ 1068 0008 0B46     		mov	r3, r1
+ 1069 000a FB70     		strb	r3, [r7, #3]
+ 144:eulerssynthesis.cpp ****     uiHarmonicWave_ = value;
+ 1070              		.loc 2 144 21
+ 1071 000c 7B68     		ldr	r3, [r7, #4]
+ 1072 000e FA78     		ldrb	r2, [r7, #3]
+ 1073 0010 83F82C20 		strb	r2, [r3, #44]
+ 145:eulerssynthesis.cpp ****     if (uiHarmonicWave_ <= 0) {uiHarmonicWave_ = 0;}
+ 1074              		.loc 2 145 9
+ 1075 0014 7B68     		ldr	r3, [r7, #4]
+ 1076 0016 93F82C30 		ldrb	r3, [r3, #44]	@ zero_extendqisi2
+ 1077              		.loc 2 145 5
+ 1078 001a 002B     		cmp	r3, #0
+ 1079 001c 03D1     		bne	.L38
+ 1080              		.loc 2 145 48 discriminator 1
+ 1081 001e 7B68     		ldr	r3, [r7, #4]
+ 1082 0020 0022     		movs	r2, #0
+ 1083 0022 83F82C20 		strb	r2, [r3, #44]
+ 1084              	.L38:
+ 146:eulerssynthesis.cpp ****     if (uiHarmonicWave_ >= 3) {uiHarmonicWave_ = 3;}
+ 1085              		.loc 2 146 9
+ 1086 0026 7B68     		ldr	r3, [r7, #4]
+ 1087 0028 93F82C30 		ldrb	r3, [r3, #44]	@ zero_extendqisi2
+ 1088              		.loc 2 146 5
+ 1089 002c 022B     		cmp	r3, #2
+ 1090 002e 03D9     		bls	.L40
+ 1091              		.loc 2 146 48 discriminator 1
+ 1092 0030 7B68     		ldr	r3, [r7, #4]
+ 1093 0032 0322     		movs	r2, #3
+ 1094 0034 83F82C20 		strb	r2, [r3, #44]
+ 1095              	.L40:
+ 147:eulerssynthesis.cpp **** };
+ 1096              		.loc 2 147 1
+ 1097 0038 00BF     		nop
+ 1098 003a 0C37     		adds	r7, r7, #12
+ 1099              		.cfi_def_cfa_offset 4
+ 1100 003c BD46     		mov	sp, r7
+ 1101              		.cfi_def_cfa_register 13
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 25
+
+
+ 1102              		@ sp needed
+ 1103 003e 5DF8047B 		ldr	r7, [sp], #4
+ 1104              		.cfi_restore 7
+ 1105              		.cfi_def_cfa_offset 0
+ 1106 0042 7047     		bx	lr
+ 1107              		.cfi_endproc
+ 1108              	.LFE5009:
+ 1110              		.section	.text._ZN20clasEulersOscillatorILi16EE19GetHarmonicWaveFormEv,"axG",%progbits,_ZN20clasEu
+ 1111              		.align	1
+ 1112              		.weak	_ZN20clasEulersOscillatorILi16EE19GetHarmonicWaveFormEv
+ 1113              		.syntax unified
+ 1114              		.thumb
+ 1115              		.thumb_func
+ 1116              		.fpu fpv5-d16
+ 1118              	_ZN20clasEulersOscillatorILi16EE19GetHarmonicWaveFormEv:
+ 1119              	.LFB5010:
+ 148:eulerssynthesis.cpp **** 
+ 149:eulerssynthesis.cpp **** //Set Harmonic Waveform
+ 150:eulerssynthesis.cpp **** template <int num_harmonics>
+ 151:eulerssynthesis.cpp **** uint8_t clasEulersOscillator<num_harmonics>::GetHarmonicWaveForm(){
+ 1120              		.loc 2 151 9
+ 1121              		.cfi_startproc
+ 1122              		@ args = 0, pretend = 0, frame = 8
+ 1123              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1124              		@ link register save eliminated.
+ 1125 0000 80B4     		push	{r7}
+ 1126              		.cfi_def_cfa_offset 4
+ 1127              		.cfi_offset 7, -4
+ 1128 0002 83B0     		sub	sp, sp, #12
+ 1129              		.cfi_def_cfa_offset 16
+ 1130 0004 00AF     		add	r7, sp, #0
+ 1131              		.cfi_def_cfa_register 7
+ 1132 0006 7860     		str	r0, [r7, #4]
+ 152:eulerssynthesis.cpp ****     return uiHarmonicWave_;
+ 1133              		.loc 2 152 12
+ 1134 0008 7B68     		ldr	r3, [r7, #4]
+ 1135 000a 93F82C30 		ldrb	r3, [r3, #44]	@ zero_extendqisi2
+ 153:eulerssynthesis.cpp **** };
+ 1136              		.loc 2 153 1
+ 1137 000e 1846     		mov	r0, r3
+ 1138 0010 0C37     		adds	r7, r7, #12
+ 1139              		.cfi_def_cfa_offset 4
+ 1140 0012 BD46     		mov	sp, r7
+ 1141              		.cfi_def_cfa_register 13
+ 1142              		@ sp needed
+ 1143 0014 5DF8047B 		ldr	r7, [sp], #4
+ 1144              		.cfi_restore 7
+ 1145              		.cfi_def_cfa_offset 0
+ 1146 0018 7047     		bx	lr
+ 1147              		.cfi_endproc
+ 1148              	.LFE5010:
+ 1150              		.section	.text._ZN20clasEulersOscillatorILi16EE14GetHarmonicAmpEf,"axG",%progbits,_ZN20clasEulersO
+ 1151              		.align	1
+ 1152              		.weak	_ZN20clasEulersOscillatorILi16EE14GetHarmonicAmpEf
+ 1153              		.syntax unified
+ 1154              		.thumb
+ 1155              		.thumb_func
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 26
+
+
+ 1156              		.fpu fpv5-d16
+ 1158              	_ZN20clasEulersOscillatorILi16EE14GetHarmonicAmpEf:
+ 1159              	.LFB5011:
+ 154:eulerssynthesis.cpp **** 
+ 155:eulerssynthesis.cpp **** 
+ 156:eulerssynthesis.cpp **** //Get the harmonic waveform.  NOT TESTED. 
+ 157:eulerssynthesis.cpp **** template <int num_harmonics>
+ 158:eulerssynthesis.cpp **** float clasEulersOscillator<num_harmonics>::GetHarmonicAmp(float loop_inc){
+ 1160              		.loc 2 158 7
+ 1161              		.cfi_startproc
+ 1162              		@ args = 0, pretend = 0, frame = 16
+ 1163              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1164 0000 80B5     		push	{r7, lr}
+ 1165              		.cfi_def_cfa_offset 8
+ 1166              		.cfi_offset 7, -8
+ 1167              		.cfi_offset 14, -4
+ 1168 0002 84B0     		sub	sp, sp, #16
+ 1169              		.cfi_def_cfa_offset 24
+ 1170 0004 00AF     		add	r7, sp, #0
+ 1171              		.cfi_def_cfa_register 7
+ 1172 0006 7860     		str	r0, [r7, #4]
+ 1173 0008 87ED000A 		vstr.32	s0, [r7]
+ 159:eulerssynthesis.cpp ****     float flHarmonicAmp = 0.0f;
+ 1174              		.loc 2 159 11
+ 1175 000c 4FF00003 		mov	r3, #0
+ 1176 0010 FB60     		str	r3, [r7, #12]	@ float
+ 160:eulerssynthesis.cpp ****     int j = loop_inc;
+ 1177              		.loc 2 160 9
+ 1178 0012 D7ED007A 		vldr.32	s15, [r7]
+ 1179 0016 FDEEE77A 		vcvt.s32.f32	s15, s15
+ 1180 001a 17EE903A 		vmov	r3, s15	@ int
+ 1181 001e BB60     		str	r3, [r7, #8]
+ 161:eulerssynthesis.cpp ****     if (loop_inc == 0){loop_inc = 1;}
+ 1182              		.loc 2 161 5
+ 1183 0020 D7ED007A 		vldr.32	s15, [r7]
+ 1184 0024 F5EE407A 		vcmp.f32	s15, #0
+ 1185 0028 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1186 002c 02D1     		bne	.L44
+ 1187              		.loc 2 161 33 discriminator 1
+ 1188 002e 4FF07E53 		mov	r3, #1065353216
+ 1189 0032 3B60     		str	r3, [r7]	@ float
+ 1190              	.L44:
+ 162:eulerssynthesis.cpp ****     switch(uiHarmonicWave_){
+ 1191              		.loc 2 162 12
+ 1192 0034 7B68     		ldr	r3, [r7, #4]
+ 1193 0036 93F82C30 		ldrb	r3, [r3, #44]	@ zero_extendqisi2
+ 1194 003a 032B     		cmp	r3, #3
+ 1195 003c 29D8     		bhi	.L45
+ 1196 003e 01A2     		adr	r2, .L47
+ 1197 0040 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+ 1198              		.p2align 2
+ 1199              	.L47:
+ 1200 0044 55000000 		.word	.L50+1
+ 1201 0048 67000000 		.word	.L49+1
+ 1202 004c 75000000 		.word	.L48+1
+ 1203 0050 7D000000 		.word	.L46+1
+ 1204              		.p2align 1
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 27
+
+
+ 1205              	.L50:
+ 163:eulerssynthesis.cpp ****         case 0: //Saw tooth
+ 164:eulerssynthesis.cpp ****             flHarmonicAmp = 1 / loop_inc;
+ 1206              		.loc 2 164 27
+ 1207 0054 F7EE006A 		vmov.f32	s13, #1.0e+0
+ 1208 0058 97ED007A 		vldr.32	s14, [r7]
+ 1209 005c C6EE877A 		vdiv.f32	s15, s13, s14
+ 1210 0060 C7ED037A 		vstr.32	s15, [r7, #12]
+ 165:eulerssynthesis.cpp ****             break;
+ 1211              		.loc 2 165 13
+ 1212 0064 1EE0     		b	.L51
+ 1213              	.L49:
+ 166:eulerssynthesis.cpp ****         case 1: //Sqaurewave
+ 167:eulerssynthesis.cpp ****             // flHarmonicAmp = (j % 2 == 0) ? 0.0f : 1.0f / loop_inc;
+ 168:eulerssynthesis.cpp ****             flHarmonicAmp = sinf(loop_inc);
+ 1214              		.loc 2 168 33
+ 1215 0066 97ED000A 		vldr.32	s0, [r7]
+ 1216 006a FFF7FEFF 		bl	sinf
+ 1217 006e 87ED030A 		vstr.32	s0, [r7, #12]
+ 169:eulerssynthesis.cpp ****             break;
+ 1218              		.loc 2 169 13
+ 1219 0072 17E0     		b	.L51
+ 1220              	.L48:
+ 170:eulerssynthesis.cpp ****         case 2: //Impulse train
+ 171:eulerssynthesis.cpp ****             flHarmonicAmp = 1.0f;
+ 1221              		.loc 2 171 27
+ 1222 0074 4FF07E53 		mov	r3, #1065353216
+ 1223 0078 FB60     		str	r3, [r7, #12]	@ float
+ 172:eulerssynthesis.cpp ****             break;
+ 1224              		.loc 2 172 13
+ 1225 007a 13E0     		b	.L51
+ 1226              	.L46:
+ 173:eulerssynthesis.cpp ****         case 3: //Bipolar impulse train
+ 174:eulerssynthesis.cpp ****             flHarmonicAmp = (j % 2 == 0) ? -1.0f : 1.0f;
+ 1227              		.loc 2 174 36
+ 1228 007c BB68     		ldr	r3, [r7, #8]
+ 1229 007e 03F00103 		and	r3, r3, #1
+ 1230              		.loc 2 174 42
+ 1231 0082 002B     		cmp	r3, #0
+ 1232 0084 01D1     		bne	.L52
+ 1233              		.loc 2 174 42 is_stmt 0 discriminator 1
+ 1234 0086 0B4B     		ldr	r3, .L55
+ 1235 0088 01E0     		b	.L53
+ 1236              	.L52:
+ 1237              		.loc 2 174 42 discriminator 2
+ 1238 008a 4FF07E53 		mov	r3, #1065353216
+ 1239              	.L53:
+ 1240              		.loc 2 174 27 is_stmt 1 discriminator 4
+ 1241 008e FB60     		str	r3, [r7, #12]	@ float
+ 175:eulerssynthesis.cpp ****             break;
+ 1242              		.loc 2 175 13 discriminator 4
+ 1243 0090 08E0     		b	.L51
+ 1244              	.L45:
+ 176:eulerssynthesis.cpp ****         default: flHarmonicAmp = 1 / loop_inc; 
+ 1245              		.loc 2 176 32
+ 1246 0092 F7EE006A 		vmov.f32	s13, #1.0e+0
+ 1247 0096 97ED007A 		vldr.32	s14, [r7]
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 28
+
+
+ 1248 009a C6EE877A 		vdiv.f32	s15, s13, s14
+ 1249 009e C7ED037A 		vstr.32	s15, [r7, #12]
+ 177:eulerssynthesis.cpp ****             break;
+ 1250              		.loc 2 177 13
+ 1251 00a2 00BF     		nop
+ 1252              	.L51:
+ 178:eulerssynthesis.cpp ****     }
+ 179:eulerssynthesis.cpp ****     return flHarmonicAmp;
+ 1253              		.loc 2 179 12
+ 1254 00a4 FB68     		ldr	r3, [r7, #12]	@ float
+ 1255 00a6 07EE903A 		vmov	s15, r3
+ 180:eulerssynthesis.cpp **** };
+ 1256              		.loc 2 180 1
+ 1257 00aa B0EE670A 		vmov.f32	s0, s15
+ 1258 00ae 1037     		adds	r7, r7, #16
+ 1259              		.cfi_def_cfa_offset 8
+ 1260 00b0 BD46     		mov	sp, r7
+ 1261              		.cfi_def_cfa_register 13
+ 1262              		@ sp needed
+ 1263 00b2 80BD     		pop	{r7, pc}
+ 1264              	.L56:
+ 1265              		.align	2
+ 1266              	.L55:
+ 1267 00b4 000080BF 		.word	-1082130432
+ 1268              		.cfi_endproc
+ 1269              	.LFE5011:
+ 1271              		.section	.text._ZN20clasEulersOscillatorILi16EE9SetOctaveEh,"axG",%progbits,_ZN20clasEulersOscilla
+ 1272              		.align	1
+ 1273              		.weak	_ZN20clasEulersOscillatorILi16EE9SetOctaveEh
+ 1274              		.syntax unified
+ 1275              		.thumb
+ 1276              		.thumb_func
+ 1277              		.fpu fpv5-d16
+ 1279              	_ZN20clasEulersOscillatorILi16EE9SetOctaveEh:
+ 1280              	.LFB5012:
+ 181:eulerssynthesis.cpp **** 
+ 182:eulerssynthesis.cpp **** 
+ 183:eulerssynthesis.cpp **** // //Set real amplitude
+ 184:eulerssynthesis.cpp **** // template <int num_harmonics>
+ 185:eulerssynthesis.cpp **** // void clasEulersOscillator<num_harmonics>::SetRealAmp(float amplitude){
+ 186:eulerssynthesis.cpp **** //     flRealAmp_ = amplitude;
+ 187:eulerssynthesis.cpp **** // };
+ 188:eulerssynthesis.cpp **** 
+ 189:eulerssynthesis.cpp **** 
+ 190:eulerssynthesis.cpp **** //Set imag amplutude
+ 191:eulerssynthesis.cpp **** // template <int num_harmonics>
+ 192:eulerssynthesis.cpp **** // void clasEulersOscillator<num_harmonics>::SetImagAmp(float amplitude){
+ 193:eulerssynthesis.cpp **** //     flImagAmp_ = amplitude;
+ 194:eulerssynthesis.cpp **** // };
+ 195:eulerssynthesis.cpp **** 
+ 196:eulerssynthesis.cpp **** 
+ 197:eulerssynthesis.cpp **** //Set the octave of the oscillator
+ 198:eulerssynthesis.cpp **** template <int num_harmonics>
+ 199:eulerssynthesis.cpp **** void clasEulersOscillator<num_harmonics>::SetOctave(uint8_t uiOctave){
+ 1281              		.loc 2 199 6
+ 1282              		.cfi_startproc
+ 1283              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 29
+
+
+ 1284              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1285              		@ link register save eliminated.
+ 1286 0000 80B4     		push	{r7}
+ 1287              		.cfi_def_cfa_offset 4
+ 1288              		.cfi_offset 7, -4
+ 1289 0002 83B0     		sub	sp, sp, #12
+ 1290              		.cfi_def_cfa_offset 16
+ 1291 0004 00AF     		add	r7, sp, #0
+ 1292              		.cfi_def_cfa_register 7
+ 1293 0006 7860     		str	r0, [r7, #4]
+ 1294 0008 0B46     		mov	r3, r1
+ 1295 000a FB70     		strb	r3, [r7, #3]
+ 200:eulerssynthesis.cpp ****     if (uiOctave < 0){uiOctave = 0;}
+ 201:eulerssynthesis.cpp ****     else if (uiOctave > 2){uiOctave = 2;}
+ 1296              		.loc 2 201 10
+ 1297 000c FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1298 000e 022B     		cmp	r3, #2
+ 1299 0010 01D9     		bls	.L58
+ 1300              		.loc 2 201 37 discriminator 1
+ 1301 0012 0223     		movs	r3, #2
+ 1302 0014 FB70     		strb	r3, [r7, #3]
+ 1303              	.L58:
+ 202:eulerssynthesis.cpp ****     uiOctave_ = uiOctave;
+ 1304              		.loc 2 202 15
+ 1305 0016 7B68     		ldr	r3, [r7, #4]
+ 1306 0018 FA78     		ldrb	r2, [r7, #3]
+ 1307 001a 83F82D20 		strb	r2, [r3, #45]
+ 203:eulerssynthesis.cpp **** };
+ 1308              		.loc 2 203 1
+ 1309 001e 00BF     		nop
+ 1310 0020 0C37     		adds	r7, r7, #12
+ 1311              		.cfi_def_cfa_offset 4
+ 1312 0022 BD46     		mov	sp, r7
+ 1313              		.cfi_def_cfa_register 13
+ 1314              		@ sp needed
+ 1315 0024 5DF8047B 		ldr	r7, [sp], #4
+ 1316              		.cfi_restore 7
+ 1317              		.cfi_def_cfa_offset 0
+ 1318 0028 7047     		bx	lr
+ 1319              		.cfi_endproc
+ 1320              	.LFE5012:
+ 1322              		.section	.text._ZN20clasEulersOscillatorILi16EE9GetOctaveEv,"axG",%progbits,_ZN20clasEulersOscilla
+ 1323              		.align	1
+ 1324              		.weak	_ZN20clasEulersOscillatorILi16EE9GetOctaveEv
+ 1325              		.syntax unified
+ 1326              		.thumb
+ 1327              		.thumb_func
+ 1328              		.fpu fpv5-d16
+ 1330              	_ZN20clasEulersOscillatorILi16EE9GetOctaveEv:
+ 1331              	.LFB5013:
+ 204:eulerssynthesis.cpp **** 
+ 205:eulerssynthesis.cpp **** 
+ 206:eulerssynthesis.cpp **** //Get the octave of the oscillator
+ 207:eulerssynthesis.cpp **** template <int num_harmonics>
+ 208:eulerssynthesis.cpp **** uint8_t clasEulersOscillator<num_harmonics>::GetOctave(){
+ 1332              		.loc 2 208 9
+ 1333              		.cfi_startproc
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 30
+
+
+ 1334              		@ args = 0, pretend = 0, frame = 8
+ 1335              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1336              		@ link register save eliminated.
+ 1337 0000 80B4     		push	{r7}
+ 1338              		.cfi_def_cfa_offset 4
+ 1339              		.cfi_offset 7, -4
+ 1340 0002 83B0     		sub	sp, sp, #12
+ 1341              		.cfi_def_cfa_offset 16
+ 1342 0004 00AF     		add	r7, sp, #0
+ 1343              		.cfi_def_cfa_register 7
+ 1344 0006 7860     		str	r0, [r7, #4]
+ 209:eulerssynthesis.cpp ****     return uiOctave_;
+ 1345              		.loc 2 209 12
+ 1346 0008 7B68     		ldr	r3, [r7, #4]
+ 1347 000a 93F82D30 		ldrb	r3, [r3, #45]	@ zero_extendqisi2
+ 210:eulerssynthesis.cpp **** };
+ 1348              		.loc 2 210 1
+ 1349 000e 1846     		mov	r0, r3
+ 1350 0010 0C37     		adds	r7, r7, #12
+ 1351              		.cfi_def_cfa_offset 4
+ 1352 0012 BD46     		mov	sp, r7
+ 1353              		.cfi_def_cfa_register 13
+ 1354              		@ sp needed
+ 1355 0014 5DF8047B 		ldr	r7, [sp], #4
+ 1356              		.cfi_restore 7
+ 1357              		.cfi_def_cfa_offset 0
+ 1358 0018 7047     		bx	lr
+ 1359              		.cfi_endproc
+ 1360              	.LFE5013:
+ 1362              		.section	.text._ZN20clasEulersOscillatorILi16EE10GetRealAmpEv,"axG",%progbits,_ZN20clasEulersOscil
+ 1363              		.align	1
+ 1364              		.weak	_ZN20clasEulersOscillatorILi16EE10GetRealAmpEv
+ 1365              		.syntax unified
+ 1366              		.thumb
+ 1367              		.thumb_func
+ 1368              		.fpu fpv5-d16
+ 1370              	_ZN20clasEulersOscillatorILi16EE10GetRealAmpEv:
+ 1371              	.LFB5014:
+ 211:eulerssynthesis.cpp **** 
+ 212:eulerssynthesis.cpp **** 
+ 213:eulerssynthesis.cpp **** template <int num_harmonics>
+ 214:eulerssynthesis.cpp **** float clasEulersOscillator<num_harmonics>::GetRealAmp(){
+ 1372              		.loc 2 214 7
+ 1373              		.cfi_startproc
+ 1374              		@ args = 0, pretend = 0, frame = 8
+ 1375              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1376              		@ link register save eliminated.
+ 1377 0000 80B4     		push	{r7}
+ 1378              		.cfi_def_cfa_offset 4
+ 1379              		.cfi_offset 7, -4
+ 1380 0002 83B0     		sub	sp, sp, #12
+ 1381              		.cfi_def_cfa_offset 16
+ 1382 0004 00AF     		add	r7, sp, #0
+ 1383              		.cfi_def_cfa_register 7
+ 1384 0006 7860     		str	r0, [r7, #4]
+ 215:eulerssynthesis.cpp ****     return flRealAmp_;
+ 1385              		.loc 2 215 12
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 31
+
+
+ 1386 0008 7B68     		ldr	r3, [r7, #4]
+ 1387 000a 5B6A     		ldr	r3, [r3, #36]	@ float
+ 1388 000c 07EE903A 		vmov	s15, r3
+ 216:eulerssynthesis.cpp **** }
+ 1389              		.loc 2 216 1
+ 1390 0010 B0EE670A 		vmov.f32	s0, s15
+ 1391 0014 0C37     		adds	r7, r7, #12
+ 1392              		.cfi_def_cfa_offset 4
+ 1393 0016 BD46     		mov	sp, r7
+ 1394              		.cfi_def_cfa_register 13
+ 1395              		@ sp needed
+ 1396 0018 5DF8047B 		ldr	r7, [sp], #4
+ 1397              		.cfi_restore 7
+ 1398              		.cfi_def_cfa_offset 0
+ 1399 001c 7047     		bx	lr
+ 1400              		.cfi_endproc
+ 1401              	.LFE5014:
+ 1403              		.section	.text._ZN20clasEulersOscillatorILi16EE10GetImagAmpEv,"axG",%progbits,_ZN20clasEulersOscil
+ 1404              		.align	1
+ 1405              		.weak	_ZN20clasEulersOscillatorILi16EE10GetImagAmpEv
+ 1406              		.syntax unified
+ 1407              		.thumb
+ 1408              		.thumb_func
+ 1409              		.fpu fpv5-d16
+ 1411              	_ZN20clasEulersOscillatorILi16EE10GetImagAmpEv:
+ 1412              	.LFB5015:
+ 217:eulerssynthesis.cpp **** 
+ 218:eulerssynthesis.cpp **** 
+ 219:eulerssynthesis.cpp **** template <int num_harmonics>
+ 220:eulerssynthesis.cpp **** float clasEulersOscillator<num_harmonics>::GetImagAmp(){
+ 1413              		.loc 2 220 7
+ 1414              		.cfi_startproc
+ 1415              		@ args = 0, pretend = 0, frame = 8
+ 1416              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1417              		@ link register save eliminated.
+ 1418 0000 80B4     		push	{r7}
+ 1419              		.cfi_def_cfa_offset 4
+ 1420              		.cfi_offset 7, -4
+ 1421 0002 83B0     		sub	sp, sp, #12
+ 1422              		.cfi_def_cfa_offset 16
+ 1423 0004 00AF     		add	r7, sp, #0
+ 1424              		.cfi_def_cfa_register 7
+ 1425 0006 7860     		str	r0, [r7, #4]
+ 221:eulerssynthesis.cpp ****     return flImagAmp_;
+ 1426              		.loc 2 221 12
+ 1427 0008 7B68     		ldr	r3, [r7, #4]
+ 1428 000a 9B6A     		ldr	r3, [r3, #40]	@ float
+ 1429 000c 07EE903A 		vmov	s15, r3
+ 222:eulerssynthesis.cpp **** 
+ 223:eulerssynthesis.cpp **** }
+ 1430              		.loc 2 223 1
+ 1431 0010 B0EE670A 		vmov.f32	s0, s15
+ 1432 0014 0C37     		adds	r7, r7, #12
+ 1433              		.cfi_def_cfa_offset 4
+ 1434 0016 BD46     		mov	sp, r7
+ 1435              		.cfi_def_cfa_register 13
+ 1436              		@ sp needed
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 32
+
+
+ 1437 0018 5DF8047B 		ldr	r7, [sp], #4
+ 1438              		.cfi_restore 7
+ 1439              		.cfi_def_cfa_offset 0
+ 1440 001c 7047     		bx	lr
+ 1441              		.cfi_endproc
+ 1442              	.LFE5015:
+ 1444              		.section	.text._ZN20clasEulersOscillatorILi16EE10SetRealAmpEf,"axG",%progbits,_ZN20clasEulersOscil
+ 1445              		.align	1
+ 1446              		.weak	_ZN20clasEulersOscillatorILi16EE10SetRealAmpEf
+ 1447              		.syntax unified
+ 1448              		.thumb
+ 1449              		.thumb_func
+ 1450              		.fpu fpv5-d16
+ 1452              	_ZN20clasEulersOscillatorILi16EE10SetRealAmpEf:
+ 1453              	.LFB5016:
+ 224:eulerssynthesis.cpp **** 
+ 225:eulerssynthesis.cpp **** 
+ 226:eulerssynthesis.cpp **** template <int num_harmonics>
+ 227:eulerssynthesis.cpp **** void clasEulersOscillator<num_harmonics>::SetRealAmp(float adcInput){
+ 1454              		.loc 2 227 6
+ 1455              		.cfi_startproc
+ 1456              		@ args = 0, pretend = 0, frame = 8
+ 1457              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1458              		@ link register save eliminated.
+ 1459 0000 80B4     		push	{r7}
+ 1460              		.cfi_def_cfa_offset 4
+ 1461              		.cfi_offset 7, -4
+ 1462 0002 83B0     		sub	sp, sp, #12
+ 1463              		.cfi_def_cfa_offset 16
+ 1464 0004 00AF     		add	r7, sp, #0
+ 1465              		.cfi_def_cfa_register 7
+ 1466 0006 7860     		str	r0, [r7, #4]
+ 1467 0008 87ED000A 		vstr.32	s0, [r7]
+ 228:eulerssynthesis.cpp ****     flRealAmp_ = (adcInput <= 0.f) ? 0.0f : (adcInput > 1.f) ? 1.0f : adcInput;
+ 1468              		.loc 2 228 36
+ 1469 000c D7ED007A 		vldr.32	s15, [r7]
+ 1470 0010 F5EEC07A 		vcmpe.f32	s15, #0
+ 1471 0014 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1472 0018 02D8     		bhi	.L74
+ 1473              		.loc 2 228 36 is_stmt 0 discriminator 1
+ 1474 001a 4FF00003 		mov	r3, #0
+ 1475 001e 0CE0     		b	.L68
+ 1476              	.L74:
+ 1477              		.loc 2 228 62 is_stmt 1 discriminator 2
+ 1478 0020 D7ED007A 		vldr.32	s15, [r7]
+ 1479 0024 B7EE007A 		vmov.f32	s14, #1.0e+0
+ 1480 0028 F4EEC77A 		vcmpe.f32	s15, s14
+ 1481 002c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1482 0030 02DD     		ble	.L75
+ 1483              		.loc 2 228 62 is_stmt 0 discriminator 4
+ 1484 0032 4FF07E53 		mov	r3, #1065353216
+ 1485 0036 00E0     		b	.L68
+ 1486              	.L75:
+ 1487              		.loc 2 228 62 discriminator 5
+ 1488 0038 3B68     		ldr	r3, [r7]	@ float
+ 1489              	.L68:
+ 1490              		.loc 2 228 16 is_stmt 1 discriminator 8
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 33
+
+
+ 1491 003a 7A68     		ldr	r2, [r7, #4]
+ 1492 003c 5362     		str	r3, [r2, #36]	@ float
+ 229:eulerssynthesis.cpp **** 
+ 230:eulerssynthesis.cpp **** }
+ 1493              		.loc 2 230 1 discriminator 8
+ 1494 003e 00BF     		nop
+ 1495 0040 0C37     		adds	r7, r7, #12
+ 1496              		.cfi_def_cfa_offset 4
+ 1497 0042 BD46     		mov	sp, r7
+ 1498              		.cfi_def_cfa_register 13
+ 1499              		@ sp needed
+ 1500 0044 5DF8047B 		ldr	r7, [sp], #4
+ 1501              		.cfi_restore 7
+ 1502              		.cfi_def_cfa_offset 0
+ 1503 0048 7047     		bx	lr
+ 1504              		.cfi_endproc
+ 1505              	.LFE5016:
+ 1507              		.section	.text._ZN20clasEulersOscillatorILi16EE10SetImagAmpEf,"axG",%progbits,_ZN20clasEulersOscil
+ 1508              		.align	1
+ 1509              		.weak	_ZN20clasEulersOscillatorILi16EE10SetImagAmpEf
+ 1510              		.syntax unified
+ 1511              		.thumb
+ 1512              		.thumb_func
+ 1513              		.fpu fpv5-d16
+ 1515              	_ZN20clasEulersOscillatorILi16EE10SetImagAmpEf:
+ 1516              	.LFB5017:
+ 231:eulerssynthesis.cpp **** 
+ 232:eulerssynthesis.cpp **** 
+ 233:eulerssynthesis.cpp **** template <int num_harmonics>
+ 234:eulerssynthesis.cpp **** void clasEulersOscillator<num_harmonics>::SetImagAmp(float adcInput){
+ 1517              		.loc 2 234 6
+ 1518              		.cfi_startproc
+ 1519              		@ args = 0, pretend = 0, frame = 8
+ 1520              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1521              		@ link register save eliminated.
+ 1522 0000 80B4     		push	{r7}
+ 1523              		.cfi_def_cfa_offset 4
+ 1524              		.cfi_offset 7, -4
+ 1525 0002 83B0     		sub	sp, sp, #12
+ 1526              		.cfi_def_cfa_offset 16
+ 1527 0004 00AF     		add	r7, sp, #0
+ 1528              		.cfi_def_cfa_register 7
+ 1529 0006 7860     		str	r0, [r7, #4]
+ 1530 0008 87ED000A 		vstr.32	s0, [r7]
+ 235:eulerssynthesis.cpp ****     flImagAmp_ = (adcInput <= 0.f) ? 0.0f : (adcInput > 1.f) ? 1.0f : adcInput;
+ 1531              		.loc 2 235 36
+ 1532 000c D7ED007A 		vldr.32	s15, [r7]
+ 1533 0010 F5EEC07A 		vcmpe.f32	s15, #0
+ 1534 0014 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1535 0018 02D8     		bhi	.L85
+ 1536              		.loc 2 235 36 is_stmt 0 discriminator 1
+ 1537 001a 4FF00003 		mov	r3, #0
+ 1538 001e 0CE0     		b	.L79
+ 1539              	.L85:
+ 1540              		.loc 2 235 62 is_stmt 1 discriminator 2
+ 1541 0020 D7ED007A 		vldr.32	s15, [r7]
+ 1542 0024 B7EE007A 		vmov.f32	s14, #1.0e+0
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 34
+
+
+ 1543 0028 F4EEC77A 		vcmpe.f32	s15, s14
+ 1544 002c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1545 0030 02DD     		ble	.L86
+ 1546              		.loc 2 235 62 is_stmt 0 discriminator 4
+ 1547 0032 4FF07E53 		mov	r3, #1065353216
+ 1548 0036 00E0     		b	.L79
+ 1549              	.L86:
+ 1550              		.loc 2 235 62 discriminator 5
+ 1551 0038 3B68     		ldr	r3, [r7]	@ float
+ 1552              	.L79:
+ 1553              		.loc 2 235 16 is_stmt 1 discriminator 8
+ 1554 003a 7A68     		ldr	r2, [r7, #4]
+ 1555 003c 9362     		str	r3, [r2, #40]	@ float
+ 236:eulerssynthesis.cpp **** 
+ 237:eulerssynthesis.cpp **** }
+ 1556              		.loc 2 237 1 discriminator 8
+ 1557 003e 00BF     		nop
+ 1558 0040 0C37     		adds	r7, r7, #12
+ 1559              		.cfi_def_cfa_offset 4
+ 1560 0042 BD46     		mov	sp, r7
+ 1561              		.cfi_def_cfa_register 13
+ 1562              		@ sp needed
+ 1563 0044 5DF8047B 		ldr	r7, [sp], #4
+ 1564              		.cfi_restore 7
+ 1565              		.cfi_def_cfa_offset 0
+ 1566 0048 7047     		bx	lr
+ 1567              		.cfi_endproc
+ 1568              	.LFE5017:
+ 1570              		.text
+ 1571              	.Letext0:
+ 1572              		.file 3 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1573              		.file 4 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 1574              		.file 5 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdint.h"
+ 1575              		.file 6 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stddef.h"
+ 1576              		.file 7 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\cpp_type_tr
+ 1577              		.file 8 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cmath"
+ 1578              		.file 9 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\std_abs.h"
+ 1579              		.file 10 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdint"
+ 1580              		.file 11 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdlib"
+ 1581              		.file 12 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\type_traits"
+ 1582              		.file 13 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\stl_pair.h
+ 1583              		.file 14 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\debug\\debug.h"
+ 1584              		.file 15 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cwchar"
+ 1585              		.file 16 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\exception_
+ 1586              		.file 17 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\arm-none-eabi\\t
+ 1587              		.file 18 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\clocale"
+ 1588              		.file 19 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdio"
+ 1589              		.file 20 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\basic_stri
+ 1590              		.file 21 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\charconv.h
+ 1591              		.file 22 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\algorithmf
+ 1592              		.file 23 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstring"
+ 1593              		.file 24 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\cstdarg"
+ 1594              		.file 25 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\bits\\predefined
+ 1595              		.file 26 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\_types.h"
+ 1596              		.file 27 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\reent.h"
+ 1597              		.file 28 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\sys\\lock.h"
+ 1598              		.file 29 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\math.h"
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 35
+
+
+ 1599              		.file 30 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdlib.h"
+ 1600              		.file 31 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\math.h"
+ 1601              		.file 32 "../../DaisySP//Source/Control/adenv.h"
+ 1602              		.file 33 "../../DaisySP//Source/Utility/dsp.h"
+ 1603              		.file 34 "c:\\program files\\daisytoolchain\\lib\\gcc\\arm-none-eabi\\10.2.1\\include\\stdarg.h"
+ 1604              		.file 35 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\wchar.h"
+ 1605              		.file 36 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\locale.h"
+ 1606              		.file 37 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\stdio.h"
+ 1607              		.file 38 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\c++\\10.2.1\\stdlib.h"
+ 1608              		.file 39 "c:\\program files\\daisytoolchain\\arm-none-eabi\\include\\string.h"
+ 1609              		.file 40 "../../libDaisy//src/daisy_core.h"
+ 1610              		.file 41 "../../libDaisy//src/util/wav_format.h"
+ 1611              		.file 42 "../../libDaisy//src/dev/max11300.h"
+ 1612              		.file 43 "../../libDaisy//src/daisy_seed.h"
+ 1613              		.file 44 "eulerssynthesis.h"
+ 1614              		.file 45 "../../libDaisy//src/dev/sr_595.h"
+ 1615              		.file 46 "<built-in>"
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 36
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 eulerssynthesis.cpp
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:17     .rodata._ZStL19piecewise_construct:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:20     .rodata._ZStL19piecewise_construct:00000000 _ZStL19piecewise_construct
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:23     .text._ZL20__gthread_key_deletei:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:30     .text._ZL20__gthread_key_deletei:00000000 _ZL20__gthread_key_deletei
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:63     .rodata._ZN7daisyspL9kRandFracE:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:66     .rodata._ZN7daisyspL9kRandFracE:00000000 _ZN7daisyspL9kRandFracE
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:69     .rodata._ZN7daisyspL11kOneTwelfthE:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:72     .rodata._ZN7daisyspL11kOneTwelfthE:00000000 _ZN7daisyspL11kOneTwelfthE
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:75     .rodata._ZN5daisyL15kWavFileChunkIdE:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:78     .rodata._ZN5daisyL15kWavFileChunkIdE:00000000 _ZN5daisyL15kWavFileChunkIdE
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:81     .rodata._ZN5daisyL14kWavFileWaveIdE:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:84     .rodata._ZN5daisyL14kWavFileWaveIdE:00000000 _ZN5daisyL14kWavFileWaveIdE
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:87     .rodata._ZN5daisyL19kWavFileSubChunk1IdE:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:90     .rodata._ZN5daisyL19kWavFileSubChunk1IdE:00000000 _ZN5daisyL19kWavFileSubChunk1IdE
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:93     .rodata._ZN5daisyL19kWavFileSubChunk2IdE:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:96     .rodata._ZN5daisyL19kWavFileSubChunk2IdE:00000000 _ZN5daisyL19kWavFileSubChunk2IdE
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:99     .rodata._ZL19kMaxSr595DaisyChain:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:102    .rodata._ZL19kMaxSr595DaisyChain:00000000 _ZL19kMaxSr595DaisyChain
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:105    .rodata._ZN5daisy4seedL2D0E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:108    .rodata._ZN5daisy4seedL2D0E:00000000 _ZN5daisy4seedL2D0E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:112    .rodata._ZN5daisy4seedL2D1E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:115    .rodata._ZN5daisy4seedL2D1E:00000000 _ZN5daisy4seedL2D1E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:119    .rodata._ZN5daisy4seedL2D2E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:122    .rodata._ZN5daisy4seedL2D2E:00000000 _ZN5daisy4seedL2D2E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:126    .rodata._ZN5daisy4seedL2D3E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:129    .rodata._ZN5daisy4seedL2D3E:00000000 _ZN5daisy4seedL2D3E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:133    .rodata._ZN5daisy4seedL2D4E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:136    .rodata._ZN5daisy4seedL2D4E:00000000 _ZN5daisy4seedL2D4E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:140    .rodata._ZN5daisy4seedL2D5E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:143    .rodata._ZN5daisy4seedL2D5E:00000000 _ZN5daisy4seedL2D5E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:147    .rodata._ZN5daisy4seedL2D6E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:150    .rodata._ZN5daisy4seedL2D6E:00000000 _ZN5daisy4seedL2D6E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:154    .rodata._ZN5daisy4seedL2D7E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:157    .rodata._ZN5daisy4seedL2D7E:00000000 _ZN5daisy4seedL2D7E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:161    .rodata._ZN5daisy4seedL2D8E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:164    .rodata._ZN5daisy4seedL2D8E:00000000 _ZN5daisy4seedL2D8E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:168    .rodata._ZN5daisy4seedL2D9E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:171    .rodata._ZN5daisy4seedL2D9E:00000000 _ZN5daisy4seedL2D9E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:175    .rodata._ZN5daisy4seedL3D10E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:178    .rodata._ZN5daisy4seedL3D10E:00000000 _ZN5daisy4seedL3D10E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:182    .rodata._ZN5daisy4seedL3D11E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:185    .rodata._ZN5daisy4seedL3D11E:00000000 _ZN5daisy4seedL3D11E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:189    .rodata._ZN5daisy4seedL3D12E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:192    .rodata._ZN5daisy4seedL3D12E:00000000 _ZN5daisy4seedL3D12E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:196    .rodata._ZN5daisy4seedL3D13E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:199    .rodata._ZN5daisy4seedL3D13E:00000000 _ZN5daisy4seedL3D13E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:203    .rodata._ZN5daisy4seedL3D14E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:206    .rodata._ZN5daisy4seedL3D14E:00000000 _ZN5daisy4seedL3D14E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:210    .rodata._ZN5daisy4seedL3D15E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:213    .rodata._ZN5daisy4seedL3D15E:00000000 _ZN5daisy4seedL3D15E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:217    .rodata._ZN5daisy4seedL3D16E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:220    .rodata._ZN5daisy4seedL3D16E:00000000 _ZN5daisy4seedL3D16E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:224    .rodata._ZN5daisy4seedL3D17E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:227    .rodata._ZN5daisy4seedL3D17E:00000000 _ZN5daisy4seedL3D17E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:231    .rodata._ZN5daisy4seedL3D18E:00000000 $d
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 37
+
+
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:234    .rodata._ZN5daisy4seedL3D18E:00000000 _ZN5daisy4seedL3D18E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:238    .rodata._ZN5daisy4seedL3D19E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:241    .rodata._ZN5daisy4seedL3D19E:00000000 _ZN5daisy4seedL3D19E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:245    .rodata._ZN5daisy4seedL3D20E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:248    .rodata._ZN5daisy4seedL3D20E:00000000 _ZN5daisy4seedL3D20E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:252    .rodata._ZN5daisy4seedL3D21E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:255    .rodata._ZN5daisy4seedL3D21E:00000000 _ZN5daisy4seedL3D21E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:259    .rodata._ZN5daisy4seedL3D22E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:262    .rodata._ZN5daisy4seedL3D22E:00000000 _ZN5daisy4seedL3D22E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:266    .rodata._ZN5daisy4seedL3D23E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:269    .rodata._ZN5daisy4seedL3D23E:00000000 _ZN5daisy4seedL3D23E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:273    .rodata._ZN5daisy4seedL3D24E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:276    .rodata._ZN5daisy4seedL3D24E:00000000 _ZN5daisy4seedL3D24E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:280    .rodata._ZN5daisy4seedL3D25E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:283    .rodata._ZN5daisy4seedL3D25E:00000000 _ZN5daisy4seedL3D25E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:286    .rodata._ZN5daisy4seedL3D26E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:289    .rodata._ZN5daisy4seedL3D26E:00000000 _ZN5daisy4seedL3D26E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:293    .rodata._ZN5daisy4seedL3D27E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:296    .rodata._ZN5daisy4seedL3D27E:00000000 _ZN5daisy4seedL3D27E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:300    .rodata._ZN5daisy4seedL3D28E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:303    .rodata._ZN5daisy4seedL3D28E:00000000 _ZN5daisy4seedL3D28E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:307    .rodata._ZN5daisy4seedL3D29E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:310    .rodata._ZN5daisy4seedL3D29E:00000000 _ZN5daisy4seedL3D29E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:314    .rodata._ZN5daisy4seedL3D30E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:317    .rodata._ZN5daisy4seedL3D30E:00000000 _ZN5daisy4seedL3D30E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:321    .rodata._ZN5daisy4seedL2A0E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:324    .rodata._ZN5daisy4seedL2A0E:00000000 _ZN5daisy4seedL2A0E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:328    .rodata._ZN5daisy4seedL2A1E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:331    .rodata._ZN5daisy4seedL2A1E:00000000 _ZN5daisy4seedL2A1E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:335    .rodata._ZN5daisy4seedL2A2E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:338    .rodata._ZN5daisy4seedL2A2E:00000000 _ZN5daisy4seedL2A2E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:342    .rodata._ZN5daisy4seedL2A3E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:345    .rodata._ZN5daisy4seedL2A3E:00000000 _ZN5daisy4seedL2A3E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:349    .rodata._ZN5daisy4seedL2A4E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:352    .rodata._ZN5daisy4seedL2A4E:00000000 _ZN5daisy4seedL2A4E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:356    .rodata._ZN5daisy4seedL2A5E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:359    .rodata._ZN5daisy4seedL2A5E:00000000 _ZN5daisy4seedL2A5E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:363    .rodata._ZN5daisy4seedL2A6E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:366    .rodata._ZN5daisy4seedL2A6E:00000000 _ZN5daisy4seedL2A6E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:370    .rodata._ZN5daisy4seedL2A7E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:373    .rodata._ZN5daisy4seedL2A7E:00000000 _ZN5daisy4seedL2A7E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:377    .rodata._ZN5daisy4seedL2A8E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:380    .rodata._ZN5daisy4seedL2A8E:00000000 _ZN5daisy4seedL2A8E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:384    .rodata._ZN5daisy4seedL2A9E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:387    .rodata._ZN5daisy4seedL2A9E:00000000 _ZN5daisy4seedL2A9E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:391    .rodata._ZN5daisy4seedL3A10E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:394    .rodata._ZN5daisy4seedL3A10E:00000000 _ZN5daisy4seedL3A10E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:397    .rodata._ZN5daisy4seedL3A11E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:400    .rodata._ZN5daisy4seedL3A11E:00000000 _ZN5daisy4seedL3A11E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:404    .rodata._ZN5daisy4seedL3D31E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:407    .rodata._ZN5daisy4seedL3D31E:00000000 _ZN5daisy4seedL3D31E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:411    .rodata._ZN5daisy4seedL3D32E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:414    .rodata._ZN5daisy4seedL3D32E:00000000 _ZN5daisy4seedL3D32E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:418    .rodata._ZN5daisy4seedL3A12E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:421    .rodata._ZN5daisy4seedL3A12E:00000000 _ZN5daisy4seedL3A12E
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:425    .rodata._ZN5daisy4seedL3A13E:00000000 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:428    .rodata._ZN5daisy4seedL3A13E:00000000 _ZN5daisy4seedL3A13E
+ARM GAS  C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s 			page 38
+
+
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:432    .text._ZN20clasEulersOscillatorILi16EE19fxCalculatePhaseIncEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:439    .text._ZN20clasEulersOscillatorILi16EE19fxCalculatePhaseIncEf:00000000 _ZN20clasEulersOscillatorILi16EE19fxCalculatePhaseIncEf
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:476    .text._ZN20clasEulersOscillatorILi16EE4InitEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:483    .text._ZN20clasEulersOscillatorILi16EE4InitEf:00000000 _ZN20clasEulersOscillatorILi16EE4InitEf
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:567    .text._ZN20clasEulersOscillatorILi16EE4InitEf:0000008c $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:572    .text._ZN20clasEulersOscillatorILi16EE7ProcessEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:579    .text._ZN20clasEulersOscillatorILi16EE7ProcessEv:00000000 _ZN20clasEulersOscillatorILi16EE7ProcessEv
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1158   .text._ZN20clasEulersOscillatorILi16EE14GetHarmonicAmpEf:00000000 _ZN20clasEulersOscillatorILi16EE14GetHarmonicAmpEf
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:837    .text._ZN20clasEulersOscillatorILi16EE8PhaseAddEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:844    .text._ZN20clasEulersOscillatorILi16EE8PhaseAddEf:00000000 _ZN20clasEulersOscillatorILi16EE8PhaseAddEf
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:882    .text._ZN20clasEulersOscillatorILi16EE7SetFreqEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:889    .text._ZN20clasEulersOscillatorILi16EE7SetFreqEf:00000000 _ZN20clasEulersOscillatorILi16EE7SetFreqEf
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:956    .text._ZN20clasEulersOscillatorILi16EE7SetFreqEf:00000068 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:963    .text._ZN20clasEulersOscillatorILi16EE7GetFreqEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:970    .text._ZN20clasEulersOscillatorILi16EE7GetFreqEv:00000000 _ZN20clasEulersOscillatorILi16EE7GetFreqEv
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1004   .text._ZN20clasEulersOscillatorILi16EE6SetAmpEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1011   .text._ZN20clasEulersOscillatorILi16EE6SetAmpEf:00000000 _ZN20clasEulersOscillatorILi16EE6SetAmpEf
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1046   .text._ZN20clasEulersOscillatorILi16EE19SetHarmonicWaveFormEh:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1053   .text._ZN20clasEulersOscillatorILi16EE19SetHarmonicWaveFormEh:00000000 _ZN20clasEulersOscillatorILi16EE19SetHarmonicWaveFormEh
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1111   .text._ZN20clasEulersOscillatorILi16EE19GetHarmonicWaveFormEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1118   .text._ZN20clasEulersOscillatorILi16EE19GetHarmonicWaveFormEv:00000000 _ZN20clasEulersOscillatorILi16EE19GetHarmonicWaveFormEv
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1151   .text._ZN20clasEulersOscillatorILi16EE14GetHarmonicAmpEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1200   .text._ZN20clasEulersOscillatorILi16EE14GetHarmonicAmpEf:00000044 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1204   .text._ZN20clasEulersOscillatorILi16EE14GetHarmonicAmpEf:00000054 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1267   .text._ZN20clasEulersOscillatorILi16EE14GetHarmonicAmpEf:000000b4 $d
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1272   .text._ZN20clasEulersOscillatorILi16EE9SetOctaveEh:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1279   .text._ZN20clasEulersOscillatorILi16EE9SetOctaveEh:00000000 _ZN20clasEulersOscillatorILi16EE9SetOctaveEh
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1323   .text._ZN20clasEulersOscillatorILi16EE9GetOctaveEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1330   .text._ZN20clasEulersOscillatorILi16EE9GetOctaveEv:00000000 _ZN20clasEulersOscillatorILi16EE9GetOctaveEv
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1363   .text._ZN20clasEulersOscillatorILi16EE10GetRealAmpEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1370   .text._ZN20clasEulersOscillatorILi16EE10GetRealAmpEv:00000000 _ZN20clasEulersOscillatorILi16EE10GetRealAmpEv
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1404   .text._ZN20clasEulersOscillatorILi16EE10GetImagAmpEv:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1411   .text._ZN20clasEulersOscillatorILi16EE10GetImagAmpEv:00000000 _ZN20clasEulersOscillatorILi16EE10GetImagAmpEv
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1445   .text._ZN20clasEulersOscillatorILi16EE10SetRealAmpEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1452   .text._ZN20clasEulersOscillatorILi16EE10SetRealAmpEf:00000000 _ZN20clasEulersOscillatorILi16EE10SetRealAmpEf
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1508   .text._ZN20clasEulersOscillatorILi16EE10SetImagAmpEf:00000000 $t
+C:\Users\jandr\AppData\Local\Temp\ccsg2gKx.s:1515   .text._ZN20clasEulersOscillatorILi16EE10SetImagAmpEf:00000000 _ZN20clasEulersOscillatorILi16EE10SetImagAmpEf
+
+UNDEFINED SYMBOLS
+cosf
+sinf
