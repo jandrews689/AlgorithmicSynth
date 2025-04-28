@@ -44,12 +44,6 @@ class clasOscillator
         WAVE_TRI,
         WAVE_SAW,
         WAVE_SQUARE,
-        // WAVE_EXP_D,
-        // WAVE_GAUSSIAN,
-        // WAVE_SUPERSAW,
-        // WAVE_PARABOLA,
-        // WAVE_TANH,
-        // WAVE_PWM
     } DRONE_WAVEFORM;
 
 

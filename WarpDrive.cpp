@@ -2,9 +2,7 @@
 #include "daisy_seed.h"
 #include "math.h"
 #include "adsr.h"
-#include "dronevoice.h"
 #include "eulerssynthesis.h"
-#include "leadvoice.h"
 #include "twoorderfilter.h"
 #include "control.h"
 
